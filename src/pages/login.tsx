@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import { useState } from "react"
 
 
@@ -23,7 +23,10 @@ export default function Login(){
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                window.open("/layout/home")
+                return(
+                    <Navigate to="/layout/home"/>
+                )
+                
         }, 2000);
             }
         }
