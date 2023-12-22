@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 
 
