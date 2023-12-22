@@ -70,7 +70,10 @@ export default function Login(){
                             }
                         }}
                         >
+                            <Link to="/layout/home">
                             <Button block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
+                            </Link>
+                            
                     </ConfigProvider>
                     </Form.Item>
 
