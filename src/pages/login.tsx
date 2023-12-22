@@ -24,7 +24,7 @@ export default function Login(){
                 setTimeout(() => {
                 setLoading(false)
                 return(
-                    <Navigate to="/layout/home"/>
+                    <Navigate to="https://coffee-gilt-chi.vercel.app/layout/home"/>
                 )
                 
         }, 2000);
