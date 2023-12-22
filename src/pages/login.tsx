@@ -23,9 +23,7 @@ export default function Login(){
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                return(
-                    window.open("https://coffee-gilt-chi.vercel.app/layout/home")
-                )
+                
                 
         }, 2000);
             }
