@@ -23,7 +23,7 @@ export default function Login(){
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                window.location.replace("/layout/home");
+                window.open("/layout/home")
         }, 2000);
             }
         }
