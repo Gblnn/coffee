@@ -1,0 +1,19 @@
+#black{
+    background-color: #1a1a1a;
+    color: #9a9a9a
+}
+
+#white{
+    background-color: rgb(240,240,240);
+    color: #1a1a1a;
+}
+
+#sad{
+    background-color: #0f172a;
+    color: #818cf8;
+}
+
+#royal{
+    background: #172554;
+    color: goldenrod;
+}
