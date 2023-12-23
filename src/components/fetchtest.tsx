@@ -1,7 +1,7 @@
 import { Button, ConfigProvider } from "antd";
 
 const onFetch = () =>{
-    // window.location.reload()
+    window.location.reload()
     
 
 
