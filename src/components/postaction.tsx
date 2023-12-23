@@ -46,7 +46,7 @@ export default function PostAction(){
     }
     return(
         <>
-        <FloatButton onClick={showDrawer} shape='square' tooltip={"Create a new Post"} icon={<PlusOutlined/>}/>
+        <FloatButton onClick={showDrawer} shape='square' icon={<PlusOutlined/>}/>
                     <Drawer placement='bottom' size='default' title={"Create a post"} onClose={onClose} open={open}>
                     <ConfigProvider
                     theme={{
