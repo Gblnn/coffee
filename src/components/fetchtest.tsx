@@ -2,7 +2,7 @@ import { Button } from "antd";
 
 
 const onFetch = () =>{
-    fetch('https://6586a271468ef171392e80df.mockapi.io/posts/')
+    fetch('https://6586a271468ef171392e80df.mockapi.io/posts?id=1')
                 .then(data => {
                     return data.json();
                 })

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PostAction from '../components/postaction.tsx';
 import FetchTest from '../components/fetchtest.tsx';
+import { PageHeader } from '@ant-design/pro-layout';
 
 
 export default function Home(){
@@ -25,9 +26,11 @@ export default function Home(){
     return(
         <>
         
-            
-            <div className='page_container'>
+            <PageHeader>
                 <FetchTest/>
+            </PageHeader>
+            <div className='page_container'>
+                
                 <div >
                     <InfiniteScroll
                     style={{padding:"1rem"}}
@@ -50,12 +53,12 @@ export default function Home(){
                     {
                     post.map((item)=>(
                     
-                    <Post key={item.id} admin={item.admin} author={item.author} profile={item.profile} date={item.date} content={item.content} likes={item.likes} comments={item.comments} bookmarks={item.bookmarks} colorscheme={item.colorscheme}
+                    <Post id={item.id} key={item.id} admin={item.admin} author={item.author} profile={item.profile} date={item.date} content={item.content} likes={item.likes} comments={item.comments} bookmarks={item.bookmarks} colorscheme={item.colorscheme}
                     />))
                     }
                     {
                     posts.map((posts)=>(
-                        <Post key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" />
+                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" />
                     ))
                     }
                     </InfiniteScroll>

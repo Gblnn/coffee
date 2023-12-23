@@ -4,6 +4,7 @@ import {EllipsisOutlined} from '@ant-design/icons';
 import { useState } from "react";
 
 interface Props {
+    id:string
     profile: string;
     author: string;
     date: string;
@@ -29,10 +30,10 @@ export default function Post(props: Props){
       content: 'This action can not be undone',
       onOk(){
         // const {id} = useParams()
-        // fetch("https://6586a271468ef171392e80df.mockapi.io/posts/:id",
-        // {
-        //     method:"DELETE",   
-        // })
+        fetch("https://6586a271468ef171392e80df.mockapi.io/posts/?id="+1,
+        {
+            method:"DELETE",   
+        })
       },
       onCancel(){
   
@@ -80,7 +81,7 @@ const onLike = () =>{
     return(
         <>
         
-        <ProCard  className='procard' style={{border:"1px solid #8a8a8a", borderRadius:"1rem"}}>
+        <ProCard id={props.id} className='procard' style={{border:"1px solid #8a8a8a", borderRadius:"1rem"}}>
             <div className='procard_header'>
                 <div className='procard_profile'>
                     <img className='procard_img' src={props.profile}></img>
