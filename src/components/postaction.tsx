@@ -58,7 +58,7 @@ export default function PostAction(){
                     }}
                     >
                     
-                    <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"1rem"}} rows={6} maxLength={200} placeholder='Write your thoughts here'/>
+                    <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"1rem"}} rows={8} maxLength={200} placeholder='Write your thoughts here'/>
                     </ConfigProvider>
                     
                     <div className='empty'></div>
