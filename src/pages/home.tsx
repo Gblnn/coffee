@@ -25,7 +25,7 @@ export default function Home(){
     return(
         <>
         
-            <PageHeader className='flex' style={{padding:0,margin:0}}>
+            <PageHeader>
                 <FetchTest/>
             </PageHeader>
             <div className='page_container'>
