@@ -104,7 +104,7 @@ const onBookmarked = () =>{
     return(
         <>
         
-        <ProCard id={props.id} className='procard' style={{border:"1px solid #8a8a8a", borderRadius:"1rem"}}>
+        <ProCard id={props.id} className='procard' style={{ borderRadius:"1rem"}}>
             <div className='procard_header'>
                 <div className='procard_profile'>
                     <img className='procard_img' src={props.profile}></img>
