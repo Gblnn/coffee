@@ -35,6 +35,7 @@ export default function Post(props: Props){
       content: 'This action can not be undone',
       footer:[
         <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>
+          <Button>Cancel</Button>
           <Button type="primary">Confirm</Button>
         </div>
         
@@ -60,6 +61,10 @@ export default function Post(props: Props){
 const onLike = () =>{
   console.log("Liked post")
   message.info("Liked Post")
+}
+const onBookmarked = () =>{
+  console.log("Liked post")
+  message.success("Saved to bookmarks")
 }
 
     const items: MenuProps['items'] = [
@@ -130,7 +135,7 @@ const onLike = () =>{
                 </button>
                 </div>
                 
-                <button className=' no_bg procard_buttons'>
+                <button onClick={onBookmarked} className=' no_bg procard_buttons'>
                     <p className='like_count'>{props.bookmarks}</p>
                     <img className='footer_icon' src='/bookmark.png'></img> 
                 </button>
@@ -147,7 +152,7 @@ const onLike = () =>{
                         }
                     }}
                     >
-                      <Input style={{marginRight:"1rem"}}></Input>
+                      <Input placeholder="Type here" style={{marginRight:"1rem", fontSize:"16px"}}></Input>
                       <Button type="primary">Post</Button>
                     </ConfigProvider>
                     

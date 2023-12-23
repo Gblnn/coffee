@@ -3,10 +3,12 @@ import { useState } from "react";
 import {PlusOutlined} from '@ant-design/icons'
 import TextArea from "antd/es/input/TextArea";
 
+interface Props {
+    author:string
+}
 
-export default function PostAction(){
-
-    const author = "user"
+export default function PostAction(props:Props){
+    const author = props.author
     const profile = "/coffee.png"
     let commentlist = ['']
     let likes = ""

@@ -10,7 +10,6 @@ import PostAction from '../components/postaction.tsx';
 
 export default function Home(){
 
-    
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
@@ -61,7 +60,7 @@ export default function Home(){
             
             
             <div className='empty'></div>
-            <PostAction/>
+            <PostAction author='user'/>
         
 
             

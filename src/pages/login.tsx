@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 
+
 export default function Login(){
 
     const [posts, setPosts] = useState<any[]>([])
@@ -41,7 +42,7 @@ export default function Login(){
                     console.log(post.username)
                     if(post.username==username&&post.password==password){
                         console.log("Login successful")
-                        usenavigate('/layout/home')
+                        usenavigate('/layout/home/')
                     }
                     else{
                         console.log("Login failed")
