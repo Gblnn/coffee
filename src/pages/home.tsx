@@ -35,7 +35,7 @@ export default function Home(){
                     className='procard_container'
                     dataLength={1}
                     next={()=>{}}
-                    hasMore={true}
+                    hasMore={false}
                     loader={<div className='loader'><LoadingOutlined style={{fontSize:"2rem"}}/></div>}
                     endMessage={
                         <div className='loader'>

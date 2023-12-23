@@ -32,6 +32,7 @@ export default function PostAction(){
         setLoading(true)
         setTimeout(() => {
             message.success("Posted Sucessfully")
+            window.location.reload()
             fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
             {
                 method:"POST",
@@ -83,6 +84,7 @@ export default function PostAction(){
                                 { value: 'black', label: 'Black' },
                                 { value: 'sad', label: 'Sad' },
                                 { value: 'royal', label: 'Red' },
+                                { value: 'pink', label: 'Pink' },
                             ]}
                         />
                 </Drawer>
