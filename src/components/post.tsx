@@ -91,9 +91,9 @@ const onLike = () =>{
     setOpen(false);
   };
 
-  const handleClick = () =>{
-    console.log("liked post")
-  }
+  // const handleClick = () =>{
+  //   console.log("liked post")
+  // }
 
     return(
         <>
