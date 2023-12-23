@@ -41,7 +41,7 @@ export default function Login(){
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                // usenavigate('/layout/home')
+                usenavigate('/layout/home')
                 
         }, 2000);
             }

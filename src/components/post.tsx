@@ -20,7 +20,7 @@ interface Props {
 export default function Post(props: Props){
 
   // const id = useParams()
-  const [deleteid, setDeleteId] = useState("")
+  // const [deleteid, setDeleteId] = useState("")
 
   const onDeleteDropdown = () =>{
 
