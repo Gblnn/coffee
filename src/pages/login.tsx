@@ -64,7 +64,17 @@ export default function Login(){
                 >
                     
 
-                    <Form.Item name="username" rules={[{ required: true }]}>
+                    
+                    <Form.Item>
+                    <ConfigProvider
+                        theme={{
+                            token: {
+                            colorPrimary:"black",
+                            colorBorder:"#8a8a8a"
+                            }
+                        }}
+                        >
+                            <Form.Item name="username" rules={[{ required: true }]}>
                         <Input value={username} onChange={e=>usernameUpdate(e.target.value)} className="input_field" placeholder="Enter Username"></Input>
                     </Form.Item>
 
@@ -73,14 +83,6 @@ export default function Login(){
                     </Form.Item>
 
                     <div className="empty"></div>
-                    <Form.Item>
-                    <ConfigProvider
-                        theme={{
-                            token: {
-                            colorPrimary:"black"
-                            }
-                        }}
-                        >
                             
                             <Button block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
                             

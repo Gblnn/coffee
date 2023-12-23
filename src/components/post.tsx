@@ -58,10 +58,7 @@ export default function Post(props: Props){
      
 }
 const onLike = () =>{
-  fetch("http://localhost:3000/posts/likes",
-        {
-            method:"UPDATE",   
-        })
+  console.log("Liked post")
 }
 
     const items: MenuProps['items'] = [
@@ -93,6 +90,11 @@ const onLike = () =>{
   const onClose = () => {
     setOpen(false);
   };
+
+  const handleClick = () =>{
+    console.log("liked post")
+  }
+
     return(
         <>
         
@@ -109,9 +111,12 @@ const onLike = () =>{
                     </button>
                 </Dropdown>
             </div>
+            
             <div id={props.colorscheme} className='procard_content'>
                 <h1 id={props.colorscheme} className='procard_text'>"{props.content}"</h1>
             </div>
+            
+            
             <div className='procard_footer'>
                 <div className="footer_left">
                 <button onClick={onLike} className=' no_bg no_border procard_buttons'>
