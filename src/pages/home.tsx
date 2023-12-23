@@ -4,8 +4,8 @@ import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PostAction from '../components/postaction.tsx';
-import FetchTest from '../components/fetchtest.tsx';
-import { PageHeader } from '@ant-design/pro-layout';
+// import FetchTest from '../components/fetchtest.tsx';
+// import { PageHeader } from '@ant-design/pro-layout';
 
 
 export default function Home(){
@@ -24,9 +24,9 @@ export default function Home(){
     return(
         <>
         
-            <PageHeader>
+            {/* <PageHeader>
                 <FetchTest/>
-            </PageHeader>
+            </PageHeader> */}
             <div className='page_container'>
                 
                 <div >
