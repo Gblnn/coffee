@@ -60,7 +60,7 @@ export default function Home(){
             
             
             <div className='empty'></div>
-            <PostAction author='user'/>
+            <PostAction/>
         
 
             
