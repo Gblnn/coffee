@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PostAction from '../components/postaction.tsx';
+import FetchTest from '../components/fetchtest.tsx';
 
 
 export default function Home(){
@@ -26,6 +27,7 @@ export default function Home(){
         
             
             <div className='page_container'>
+                <FetchTest/>
                 <div >
                     <InfiniteScroll
                     style={{padding:"1rem"}}
