@@ -64,16 +64,16 @@ export default function SignUp(){
                 style={{marginTop:"1.5rem"}}
                 >
                     <Form.Item name="email" hasFeedback rules={[{ required:true, type:"email", message: 'Please enter a valid email' }]}>
-                        <Input style={{fontSize:"16px"}} type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input_field" placeholder="Email or phone number"></Input>
+                        <Input style={{fontSize:"14px"}} type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input_field" placeholder="Email or phone number"></Input>
                     </Form.Item>
                     <Form.Item name="fullname" hasFeedback rules={[{ min:3, required: true, message: 'Please enter your fullname' }]}>
-                        <Input style={{fontSize:"16px"}} value={fullname} onChange={e=>setFullname(e.target.value)} className="input_field" placeholder="Full Name"></Input>
+                        <Input style={{fontSize:"14px"}} value={fullname} onChange={e=>setFullname(e.target.value)} className="input_field" placeholder="Full Name"></Input>
                     </Form.Item>
                     <Form.Item name="username" hasFeedback rules={[{ min:4, required:true, message: 'Please enter a username' }]}>
-                        <Input style={{fontSize:"16px"}} value={username} onChange={e=>setUsername(e.target.value)} className="input_field" placeholder="Username"></Input>
+                        <Input style={{fontSize:"14px"}} value={username} onChange={e=>setUsername(e.target.value)} className="input_field" placeholder="Username"></Input>
                     </Form.Item>
                     <Form.Item name="password" hasFeedback rules={[{ required: true, message: 'Please enter a password', min:6 }]}>
-                        <Input.Password style={{fontSize:"16px"}} value={password} onChange={e=>setPassword(e.target.value)} className="input_field" type="Password" placeholder="Password"></Input.Password>
+                        <Input.Password style={{fontSize:"14px"}} value={password} onChange={e=>setPassword(e.target.value)} className="input_field" type="Password" placeholder="Password"></Input.Password>
                     </Form.Item>
                 </Form>
                         <Button loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
