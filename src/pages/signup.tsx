@@ -62,7 +62,7 @@ export default function SignUp(){
                     <Form.Item hasFeedback rules={[{ required:true, message: 'Please enter a username' }]}>
                         <Input value={username} onChange={e=>setUsername(e.target.value)} className="input_field" placeholder="Username"></Input>
                     </Form.Item>
-                    <Form.Item name="password" hasFeedback rules={[{ required: true, message: 'Please enter a password' }]}>
+                    <Form.Item name="password" hasFeedback rules={[{ required: true, message: 'Please enter a password', min:6 }]}>
                         <Input.Password value={password} onChange={e=>setPassword(e.target.value)} className="input_field" type="Password" placeholder="Password"></Input.Password>
                     </Form.Item>
                 </Form>
