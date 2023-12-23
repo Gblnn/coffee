@@ -1,14 +1,15 @@
-import { Button, ConfigProvider, Drawer, FloatButton, Select, message } from "antd";
+import { Button, ConfigProvider, Drawer, FloatButton, Input, Select, message } from "antd";
 import { useState } from "react";
 import {PlusOutlined} from '@ant-design/icons'
 import TextArea from "antd/es/input/TextArea";
 
-interface Props {
-    author:string
-}
+// interface Props {
+//     author:string
+// }
 
-export default function PostAction(props:Props){
-    const author = props.author
+export default function PostAction(){
+    // const author = props.author
+    const [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
     let likes = ""
@@ -68,8 +69,8 @@ export default function PostAction(props:Props){
                         },
                     }}
                     >
-                    
-                    <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={8} maxLength={200} placeholder='Write your thoughts here'/>
+                    <Input onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
+                    <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Write your thoughts here'/>
                     </ConfigProvider>
                     
                     <div className='empty'></div>
