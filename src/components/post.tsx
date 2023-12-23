@@ -101,7 +101,7 @@ const onLike = () =>{
                 <div className='procard_profile'>
                     <img className='procard_img' src={props.profile}></img>
                     <Typography.Text className='procard_name'>{props.author}</Typography.Text>
-                    <Typography.Text style={{fontSize:"0.75rem"}}>{props.date}</Typography.Text>
+                    <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>{props.date}</Typography.Text>
                 </div>
                 <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
                     <button onClick={onDeleteDropdown} style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
