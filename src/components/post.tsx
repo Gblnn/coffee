@@ -30,7 +30,7 @@ export default function Post(props: Props){
       content: 'This action can not be undone',
       onOk(){
         // const {id} = useParams()
-        fetch("https://6586a271468ef171392e80df.mockapi.io/posts/?id="+1,
+        fetch("https://6586a271468ef171392e80df.mockapi.io/posts/?id=2",
         {
             method:"DELETE",   
         })
