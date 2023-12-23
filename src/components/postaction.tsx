@@ -8,7 +8,9 @@ export default function PostAction(){
 
     const author = "user"
     const profile = "/coffee.png"
-    const comments = ['']
+    let commentlist = ['']
+    let likes = ""
+    let comments = ""
     let date = new Date().toLocaleDateString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
@@ -26,7 +28,7 @@ export default function PostAction(){
       };
 
       const onPost=()=>{
-        let obj = {profile, author, content, colorscheme, date, comments}
+        let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments}
         setLoading(true)
         setTimeout(() => {
             message.success("Posted Sucessfully")

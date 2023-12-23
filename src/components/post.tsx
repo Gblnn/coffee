@@ -124,16 +124,16 @@ const onLike = () =>{
                 </button>
                 </div>
                 
-                <Button className=' no_bg procard_buttons'>
+                <button className=' no_bg procard_buttons'>
                     <p className='like_count'>{props.bookmarks}</p>
                     <img className='footer_icon' src='/bookmark.png'></img> 
-                </Button>
+                </button>
                 <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>
                   <div className="comment_container">
                   <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>No Comments</span>}/>
                   </div>
                     <div className="flex">
-                    <Input style={{marginRight:"1rem"}}></Input>
+                    
                     <ConfigProvider
                     theme={{
                         token: {
@@ -141,6 +141,7 @@ const onLike = () =>{
                         }
                     }}
                     >
+                      <Input style={{marginRight:"1rem"}}></Input>
                       <Button type="primary">Post</Button>
                     </ConfigProvider>
                     
