@@ -57,7 +57,7 @@ export default function Posts(){
                     <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>No new Posts</span>}/> 
                     
 
-                   <PostAction/>
+                   <PostAction author="user"/>
                     
                     
                     
