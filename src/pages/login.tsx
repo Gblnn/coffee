@@ -2,44 +2,53 @@ import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export default function Login(){
+
+    const [posts, setPosts] = useState<any[]>([])
+                useEffect(()=>{
+                    fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
+                    .then(res => res.json())
+                    .then(data => setPosts(data))
+                })
+
     const [loading, setLoading] = useState(false)
 
     //Data
     const [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
-    let id = "2"
+
+    // const [posts, setPosts] = useState<any[]>([])
+    
+    // let id = "2"
     const usenavigate = useNavigate()
 
         const Validate = () =>{
             if (username==""||password==""){
                 message.info('Fields can not be empty');
             }
-            else{
-
-                fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+id, {
-                    method: 'GET',
-                    headers: {'content-type':'application/json'},
-                  }).then(res => {
-                    if (res.ok) {
-                        return res.json();
-                    }
-                  }).then(users => {
-                    console.log(users.id)
-                    if(users.password==password){
-                        
-                    }
-                  })
-
-                
-                
+            else{        
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                usenavigate('/layout/home')
+
+                
+
+                
+                posts.map((post)=>{
+                    console.log(post.username)
+                    if(post.username==username&&post.password==password){
+                        console.log("Login successful")
+                        usenavigate('/layout/home')
+                    }
+                    else{
+                        console.log("Login failed")
+                        message.info("Invalid credentials")
+                    }
+                })
+                
                 
                 
         }, 1000);
