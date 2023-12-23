@@ -1,5 +1,5 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Button, ConfigProvider, Drawer, Dropdown, Empty, Input, MenuProps, Modal, Typography } from "antd";
+import { Button, ConfigProvider, Drawer, Dropdown, Empty, Input, MenuProps, Modal, Typography, message } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
 import { useState } from "react";
 
@@ -59,6 +59,7 @@ export default function Post(props: Props){
 }
 const onLike = () =>{
   console.log("Liked post")
+  message.info("Liked Post")
 }
 
     const items: MenuProps['items'] = [
