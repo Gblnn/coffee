@@ -1,6 +1,5 @@
 import '../styles/colorscheme.css'
 import Post from '../components/post';
-import {post} from '../posts.ts'
 import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 
@@ -50,12 +49,7 @@ export default function Home(){
                       
                     
                     >
-                    {
-                    post.map((item)=>(
                     
-                    <Post id={item.id} key={item.id} admin={item.admin} author={item.author} profile={item.profile} date={item.date} content={item.content} likes={item.likes} comments={item.comments} bookmarks={item.bookmarks} colorscheme={item.colorscheme}
-                    />))
-                    }
                     {
                     posts.map((posts)=>(
                         <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" />

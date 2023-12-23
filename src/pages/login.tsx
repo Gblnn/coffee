@@ -29,19 +29,19 @@ export default function Login(){
                 //     }
                 // })
 
-                fetch('https://6586a271468ef171392e80df.mockapi.io/users')
+                fetch('https://6586a271468ef171392e80df.mockapi.io/users?password='+password)
                 .then(data => {
                     return data.json();
                 })
                     .then(res => {
-                    console.log(res);
                     console.log(res.password);
+                    
                 });
                 
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                usenavigate('/layout/home')
+                // usenavigate('/layout/home')
                 
         }, 2000);
             }

@@ -1,8 +1,8 @@
-import { Button } from "antd";
-
+import { Button, ConfigProvider } from "antd";
 
 const onFetch = () =>{
-    fetch('https://6586a271468ef171392e80df.mockapi.io/posts?id=2')
+    window.location.reload()
+    fetch('https://6586a271468ef171392e80df.mockapi.io/posts?id')
                 .then(data => {
                     return data.json();
                 })
@@ -14,7 +14,16 @@ const onFetch = () =>{
 export default function FetchTest(){
     return(
         <>
-        <Button type="primary" onClick={onFetch}>FETCH TEST</Button>
+        <ConfigProvider
+            theme={{
+                token: {
+                        colorPrimary:"black"
+                        }
+                    }}
+                    >
+                        <Button type="primary" onClick={onFetch}>FETCH TEST</Button>
+        </ConfigProvider>
+        
         </>
     )
 }

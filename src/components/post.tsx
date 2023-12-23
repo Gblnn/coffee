@@ -20,6 +20,11 @@ interface Props {
 export default function Post(props: Props){
 
   // const id = useParams()
+  const [deleteid, setDeleteId] = useState("")
+
+  const onDeleteDropdown = () =>{
+
+  }
 
   const onDelete = () =>{
     // const [deleteid, setDeleteid] = useState(0)
@@ -30,10 +35,18 @@ export default function Post(props: Props){
       content: 'This action can not be undone',
       onOk(){
         // const {id} = useParams()
-        fetch("https://6586a271468ef171392e80df.mockapi.io/posts/?id=2",
-        {
-            method:"DELETE",   
-        })
+        // fetch("https://6586a271468ef171392e80df.mockapi.io/posts/?id=1",
+        // {
+        //     method:"DELETE",   
+        // })
+        fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
+              method: 'DELETE',
+            }).then(res => {
+              if (res.ok) {
+                  return res.json();
+              }
+              // handle error
+            })
       },
       onCancel(){
   
@@ -89,7 +102,7 @@ const onLike = () =>{
                     <Typography.Text style={{fontSize:"0.75rem"}}>{props.date}</Typography.Text>
                 </div>
                 <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
-                    <Button style={{display:"hidden"}} id={props.admin} className="no_bg no_border">
+                    <Button onClick={onDeleteDropdown} style={{display:"hidden"}} id={props.admin} className="no_bg no_border">
                     <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
                     </Button>
                 </Dropdown>
