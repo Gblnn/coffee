@@ -27,11 +27,11 @@ export default function PostAction(){
         setOpen(false);
       };
 
-    //   const reloadPage = () => {
-    //     setTimeout(()=>{
-    //         window.location.reload()
-    //     },2000)
-    //   }
+      const reloadPage = () => {
+        setTimeout(()=>{
+            window.location.reload()
+        },2000)
+      }
 
       const onPost=()=>{
         let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments}
@@ -47,9 +47,9 @@ export default function PostAction(){
             )
             setLoading(false)
             onClose()
-            // reloadPage()
+            reloadPage()
             
-        }, 3000);
+        }, 1000);
     }
     return(
         <>
