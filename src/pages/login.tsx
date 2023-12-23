@@ -1,4 +1,4 @@
-import { Button, Card, ConfigProvider, Form, Input, Typography, message } from "antd"
+import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
 import { Link, useNavigate } from "react-router-dom"
