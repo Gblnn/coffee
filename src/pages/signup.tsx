@@ -79,7 +79,7 @@ export default function SignUp(){
                         <Button loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
                 </ConfigProvider>
                 
-                <Typography.Text style={{color:"#9a9a9a", fontFamily:"Supreme"}} className="form_text">Already have an account?<Link style={{color:"black",fontWeight:600}} to="/" className="link" type="link">Login</Link></Typography.Text>
+                <Typography.Text style={{color:"#9a9a9a"}} className="form_text">Already have an account?<Link style={{color:"black",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
                 </div>
                 
                         
