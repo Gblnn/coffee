@@ -63,7 +63,8 @@ export default function Layout(){
         <ProLayout
         title="Coffee"
         logo="/coffee-black.png"
-        
+        fixedHeader={true}
+        fixSiderbar={true}
         {...MenuItems}
         location={{pathname}}
         menuItemRender={(item, dom) => (

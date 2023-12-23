@@ -42,7 +42,7 @@ export default function Login(){
                 usenavigate('/layout/home')
                 
                 
-        }, 2000);
+        }, 1000);
             }
         }
         

@@ -43,7 +43,7 @@ export default function SignUp(){
                 body:JSON.stringify(obj)
             }
             )
-        }, 2000);
+        }, 1000);
     }
     return(
         <>
