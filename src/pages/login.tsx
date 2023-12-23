@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
+import { Button, Card, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
 import { Link, useNavigate } from "react-router-dom"
@@ -58,14 +58,16 @@ export default function Login(){
     
     return(
         <>
+        
         <div className="fullpage_container">
-            <div className="form_container">
+            
+                <div className="form_container">
                 <div className="form_header">
                     <img src="coffee.png"></img>
                     <h1>LOGIN</h1>
                 </div>
-                
                 <div className="empty"></div>
+                
                 <Form
                 name="basic"
                 style={{marginTop:"1.5rem"}}
@@ -92,6 +94,7 @@ export default function Login(){
                     </Form.Item>
 
                     <div className="empty"></div>
+                    
                             
                             <Button block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
                             
@@ -101,13 +104,11 @@ export default function Login(){
 
 
                 </Form>
-                
-                
-                
-                
-                
                 <Typography.Text style={{color:"#9a9a9a"}} className="form_text">Don't have an account?<Link style={{color:"black"}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
-            </div>
+                </div>
+           
+            
+            
         </div>
         
         
