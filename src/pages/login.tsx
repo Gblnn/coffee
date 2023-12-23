@@ -84,11 +84,11 @@ export default function Login(){
                         }}
                         >
                             <Form.Item name="username" rules={[{ required: true }]}>
-                        <Input value={username} onChange={e=>usernameUpdate(e.target.value)} className="input_field" placeholder="Enter Username"></Input>
+                        <Input style={{fontSize:"16px"}} value={username} onChange={e=>usernameUpdate(e.target.value)} className="input_field" placeholder="Enter Username"></Input>
                     </Form.Item>
 
                     <Form.Item name="password" rules={[{ required: true}]}> 
-                        <Input.Password value={password} onChange={e=>passwordUpdate(e.target.value)} className="input_field" type="Password" placeholder="Enter Password"></Input.Password>
+                        <Input.Password style={{fontSize:"16px"}} value={password} onChange={e=>passwordUpdate(e.target.value)} className="input_field" type="Password" placeholder="Enter Password"></Input.Password>
                     </Form.Item>
 
                     <div className="empty"></div>
