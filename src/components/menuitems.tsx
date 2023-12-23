@@ -1,4 +1,4 @@
-import {HomeFilled, HeartFilled, BookFilled, EditFilled, UserOutlined, CommentOutlined} from '@ant-design/icons'
+import {HomeFilled, HeartFilled, BookFilled, EditFilled, UserOutlined} from '@ant-design/icons'
 
 export default {
     route: {
