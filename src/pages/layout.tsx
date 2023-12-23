@@ -2,7 +2,7 @@ import ProLayout from "@ant-design/pro-layout";
 import MenuItems from "../components/menuitems";
 import { useState } from "react";
 import Home from "./home";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Likes from "./liked";
 import Bookmarks from "./bookmarks";
 import Posts from "./posts";
@@ -46,16 +46,16 @@ export default function Layout(){
         menuItemRender={(item, dom) => (
           <>
           
-          <a
+          <Link
 
               onClick={() => {
                 setPathname(item.path || '/home');
                 
               }}
-              href={item.path}
+              to={item.path||""}
             >
               {dom}
-            </a>
+            </Link>
           </>
             
           )}

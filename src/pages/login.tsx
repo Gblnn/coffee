@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 
@@ -11,7 +11,7 @@ export default function Login(){
     const [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
 
-    
+    const usenavigate = useNavigate()
 
         const Validate = () =>{
             if (username==""||password==""){
@@ -23,7 +23,7 @@ export default function Login(){
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                
+                usenavigate('/layout/home')
                 
         }, 2000);
             }
@@ -68,9 +68,9 @@ export default function Login(){
                             }
                         }}
                         >
-                            <Link to="/layout/home">
+                            
                             <Button block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
-                            </Link>
+                            
                             
                     </ConfigProvider>
                     </Form.Item>
