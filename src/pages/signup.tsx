@@ -50,7 +50,17 @@ export default function SignUp(){
         <div className="fullpage_container">
             <div className="form_container">
                 <h1>SIGN-UP</h1>
-                <Form
+                
+                <div className="empty"></div>
+                <div className="form_footer">
+                <ConfigProvider
+                    theme={{
+                        token: {
+                        colorPrimary:"black"
+                        }
+                    }}
+                    >
+                        <Form
                 style={{marginTop:"1.5rem"}}
                 >
                     <Form.Item name="email" hasFeedback rules={[{ required:true, type:"email", message: 'Please enter a valid email' }]}>
@@ -66,15 +76,6 @@ export default function SignUp(){
                         <Input.Password value={password} onChange={e=>setPassword(e.target.value)} className="input_field" type="Password" placeholder="Password"></Input.Password>
                     </Form.Item>
                 </Form>
-                <div className="empty"></div>
-                <div className="form_footer">
-                <ConfigProvider
-                    theme={{
-                        token: {
-                        colorPrimary:"black"
-                        }
-                    }}
-                    >
                         <Button loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
                 </ConfigProvider>
                 
