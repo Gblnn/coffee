@@ -9,7 +9,7 @@ import TextArea from "antd/es/input/TextArea";
 
 export default function PostAction(){
     // const author = props.author
-    const [author, setAuthor] = useState("")
+    let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
     let likes = ""
@@ -18,6 +18,7 @@ export default function PostAction(){
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
 
+    
 
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false)
@@ -37,7 +38,11 @@ export default function PostAction(){
     //   }
 
       const onPost=()=>{
+        if (author===""){
+            author="unknown"
+        }
         let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments}
+        
         setLoading(true)
         setTimeout(() => {
             message.success("Posted Sucessfully")
