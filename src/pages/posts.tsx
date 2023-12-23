@@ -10,16 +10,6 @@ import PostAction from "../components/postaction";
 
 
 export default function Posts(){
-
-    const container = document.getElementById('container')
-    if (container?.childNodes.length == 1){
-         <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>No new Posts</span>}/>  
-    }
-    
-
-    
-    
-    
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
@@ -64,7 +54,7 @@ export default function Posts(){
                     ))
                     }
                     </InfiniteScroll>
-
+                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>No new Posts</span>}/> 
                     
 
                    <PostAction/>
