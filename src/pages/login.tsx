@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 
 
@@ -11,7 +11,7 @@ export default function Login(){
     const [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
 
-    const usenavigate = useNavigate()
+    // const usenavigate = useNavigate()
 
         const Validate = () =>{
             if (username==""||password==""){
@@ -19,11 +19,28 @@ export default function Login(){
                 message.info('Fields can not be empty');
             }
             else{
-                // setEmpty(false)
+                // fetch("https://6586a271468ef171392e80df.mockapi.io/users" + username).then((res)=>{return res.json}).then((resp)=>{
+                //     if (resp.password == username){
+
+                //     }
+                //     else{
+                //         message.info('Invalid credentials');
+                //     }
+                // })
+
+                fetch('https://6586a271468ef171392e80df.mockapi.io/users')
+                .then(data => {
+                    return data.json();
+                })
+                    .then(res => {
+                    console.log(res);
+                    console.log(res.password);
+                });
+                
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                usenavigate('/layout/home')
+                //usenavigate('/layout/home')
                 
         }, 2000);
             }

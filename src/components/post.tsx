@@ -2,7 +2,7 @@ import { ProCard } from "@ant-design/pro-components";
 import { Button, ConfigProvider, Drawer, Dropdown, Empty, Input, MenuProps, Modal, Typography } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
 import { useState } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 interface Props {
     profile: string;
@@ -19,7 +19,7 @@ interface Props {
 
 export default function Post(props: Props){
 
-  
+  const id = useParams()
 
   const onDelete = () =>{
     // const [deleteid, setDeleteid] = useState(0)
@@ -30,7 +30,7 @@ export default function Post(props: Props){
       content: 'This action can not be undone',
       onOk(){
         // const {id} = useParams()
-        fetch("http://localhost:3000/posts/"+1,
+        fetch("http://localhost:3000/posts/"+id,
         {
             method:"DELETE",   
         })

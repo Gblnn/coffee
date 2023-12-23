@@ -2,31 +2,54 @@ import ProLayout from "@ant-design/pro-layout";
 import MenuItems from "../components/menuitems";
 import { useState } from "react";
 import Home from "./home";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Likes from "./liked";
 import Bookmarks from "./bookmarks";
 import Posts from "./posts";
 import Profile from "./profile";
-import { Modal } from "antd";
+import { Button, Modal } from "antd";
 
 
 
 export default function Layout(){
+
+  const [open, setOpen] = useState(false);
+  const usenavigate = useNavigate()
+  
+  const handleOk = () => {
+    setOpen(false)
+    usenavigate('/')
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+  };
     
     const Logout = () => {
       
-        Modal.confirm({
+        Modal.info({
+          open:open,
           centered:true,
           title: 'Confirm Logout?',
-          content: 'You are logging out of current session',
           
-          onOk(){
-            window.location.replace("/")
-          },
-
-          onCancel(){
-
-          }
+          content: 'You are logging out of current session',
+          onOk:handleOk,
+          onCancel:handleCancel,
+          footer:[
+            <>
+            <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>
+            
+                <Button style={{right:0}} onClick={handleCancel}>Cancel</Button>
+                <Button style={{right:0}} onClick={handleOk} type="primary">Confirm</Button>
+                        
+            
+            
+            </div>
+            
+            </>
+            
+          ]
+          
           
           
         });

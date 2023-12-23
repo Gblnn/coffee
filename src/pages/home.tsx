@@ -1,63 +1,22 @@
 import '../styles/colorscheme.css'
 import Post from '../components/post';
 import {post} from '../posts.ts'
-import { Button, ConfigProvider, Drawer, FloatButton, Select, message } from 'antd';
-import {PlusOutlined, LoadingOutlined} from '@ant-design/icons'
+import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
-import TextArea from 'antd/es/input/TextArea';
+
 import InfiniteScroll from 'react-infinite-scroll-component';
+import PostAction from '../components/postaction.tsx';
 
 
 export default function Home(){
 
     
-    const [loading, setLoading] = useState(false)
-    const author = "gbln___"
-    const profile = "/coffee.png"
-    const [content, setContent] = useState("")
-    let date = new Date().toLocaleDateString()
-    const [colorscheme, setColor] = useState("")
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
-        fetch("http://localhost:3000/posts")
+        fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
         .then(res => res.json())
         .then(data => setPosts(data))
     })
-
-    const onPost=()=>{
-        let obj = {profile, author, content, colorscheme, date}
-        setLoading(true)
-        setColor("white")
-        setTimeout(() => {
-            message.success("Posted Sucessfully")
-            fetch("http://localhost:3000/posts",
-            {
-                method:"POST",
-                headers:{'content-type':'application/json'},
-                body:JSON.stringify(obj)
-            }
-            )
-            setLoading(false)
-            onClose()
-            
-        }, 2000);
-    }
-
-    
-
-    const [open, setOpen] = useState(false);
-
-    const showDrawer = () => {
-        setOpen(true);
-      };
-    
-      const onClose = () => {
-        setOpen(false);
-      };
-
-    //   const handleChange = (value: string) => {
-    //     console.log(`selected ${value}`);
-    //   };
     
       
       
@@ -104,48 +63,10 @@ export default function Home(){
             
             
             <div className='empty'></div>
-            
+            <PostAction/>
         
 
-            <FloatButton onClick={showDrawer} shape='square' tooltip={"Create a new Post"} icon={<PlusOutlined/>}/>
-            <Drawer placement='bottom' size='default' title={"Create a post"} onClose={onClose} open={open}>
-                <ConfigProvider
-                theme={{
-                    components: {
-                      Input: {
-                        hoverBorderColor:"black",
-                        activeBorderColor:"#4a4a4a",
-                        activeShadow:"#8a8a8a"
-                      },
-                    },
-                  }}
-                >
-                <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"1rem", resize: 'none'}} rows={8} maxLength={200} placeholder='Write your thoughts here'/>
-                </ConfigProvider>
-                
-                <div className='empty'></div>
-                <ConfigProvider
-                    theme={{
-                        token: {
-                        colorPrimary:"black"
-                        }
-                    }}
-                    >
-                    <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}>Post</Button>
-                    
-                </ConfigProvider>
-                <Select
-                        defaultValue="white"
-                        style={{ width: 120, marginLeft:"1rem" }}
-                        onChange={setColor}
-                        options={[
-                            { value: 'white', label: 'White' },
-                            { value: 'black', label: 'Black' },
-                            { value: 'sad', label: 'Sad' },
-                            { value: 'royal', label: 'Royal' },
-                        ]}
-                    />
-            </Drawer>
+            
             
         
         {/* <Layout>

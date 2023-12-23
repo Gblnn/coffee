@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 
@@ -11,11 +11,12 @@ export default function SignUp(){
     //Sign-in Data
     const [fullname, setFullname] = useState("")
     const [email, setEmail] = useState("")
-    const [id, setId] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const usenavigate = useNavigate()
 
     const Validate = () =>{
-        if (fullname==""||email==""||id==""||password==""){
+        if (fullname==""||email==""||username==""||password==""){
             message.info('Fields can not be empty');
         }
         else{
@@ -23,7 +24,7 @@ export default function SignUp(){
             setLoading(true)
             setTimeout(() => {
             setLoading(false)
-            window.location.replace("/success");
+            usenavigate('/success')
     }, 2000);
         }
         
@@ -31,12 +32,11 @@ export default function SignUp(){
 
     const SignUp=()=>{
         
-        let obj = {email, fullname, id, password}
+        let obj = {email, fullname, username, password}
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-            window.location.replace("/success");
-            fetch("http://localhost:3000/users",
+            fetch("https://6586a271468ef171392e80df.mockapi.io/users",
             {
                 method:"POST",
                 headers:{'content-type':'application/json'},
@@ -60,7 +60,7 @@ export default function SignUp(){
                         <Input value={fullname} onChange={e=>setFullname(e.target.value)} className="input_field" placeholder="Full Name"></Input>
                     </Form.Item>
                     <Form.Item hasFeedback rules={[{ required:true, message: 'Please enter a username' }]}>
-                        <Input value={id} onChange={e=>setId(e.target.value)} className="input_field" placeholder="Username"></Input>
+                        <Input value={username} onChange={e=>setUsername(e.target.value)} className="input_field" placeholder="Username"></Input>
                     </Form.Item>
                     <Form.Item name="password" hasFeedback rules={[{ required: true, message: 'Please enter a password' }]}>
                         <Input.Password value={password} onChange={e=>setPassword(e.target.value)} className="input_field" type="Password" placeholder="Password"></Input.Password>
@@ -78,7 +78,7 @@ export default function SignUp(){
                         <Button loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
                 </ConfigProvider>
                 
-                <Typography.Text style={{color:"#9a9a9a", fontFamily:"Supreme"}} className="form_text">Already have an account?<Link style={{color:"black"}} to="/login" className="link" type="link">Login</Link></Typography.Text>
+                <Typography.Text style={{color:"#9a9a9a", fontFamily:"Supreme"}} className="form_text">Already have an account?<Link style={{color:"black"}} to="/" className="link" type="link">Login</Link></Typography.Text>
                 </div>
                 
                         
