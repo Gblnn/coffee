@@ -1,17 +1,18 @@
 import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 
 export default function Login(){
     const [loading, setLoading] = useState(false)
-    // const [empty, setEmpty] = useState(true)
+
+    //Data
     const [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
 
-    // const usenavigate = useNavigate()
+    const usenavigate = useNavigate()
 
         const Validate = () =>{
             if (username==""||password==""){
@@ -40,7 +41,7 @@ export default function Login(){
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-                //usenavigate('/layout/home')
+                usenavigate('/layout/home')
                 
         }, 2000);
             }
