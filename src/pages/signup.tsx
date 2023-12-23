@@ -45,9 +45,6 @@ export default function SignUp(){
             )
         }, 2000);
     }
-    const toLogin=()=>{
-        window.location.replace("/")
-    }
     return(
         <>
         <div className="fullpage_container">
@@ -81,7 +78,7 @@ export default function SignUp(){
                         <Button loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
                 </ConfigProvider>
                 
-                <Typography.Text style={{color:"#9a9a9a", fontFamily:"Supreme"}} className="form_text">Already have an account?<Link style={{color:"black"}} to={{}} onClick={toLogin} className="link" type="link">Login</Link></Typography.Text>
+                <Typography.Text style={{color:"#9a9a9a", fontFamily:"Supreme"}} className="form_text">Already have an account?<Link style={{color:"black"}} to="/login" className="link" type="link">Login</Link></Typography.Text>
                 </div>
                 
                         
