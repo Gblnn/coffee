@@ -1,10 +1,12 @@
 import { Button, ConfigProvider, Result } from "antd";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Success(){
 
+    const usenavigate = useNavigate()
     const toHome=()=>{
-        window.location.replace("/layout/home")
+        usenavigate("/layout/home")
     }
     return(
         <>
