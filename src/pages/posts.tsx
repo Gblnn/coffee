@@ -24,9 +24,6 @@ export default function Posts(){
         <div className='page_container'>
                 <div id="container" >
                     
-                    
-                    
-                    
                     <InfiniteScroll
                     
                     style={{padding:"1rem"}}
