@@ -104,9 +104,9 @@ const onLike = () =>{
                     <Typography.Text style={{fontSize:"0.75rem"}}>{props.date}</Typography.Text>
                 </div>
                 <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
-                    <Button onClick={onDeleteDropdown} style={{display:"hidden"}} id={props.admin} className="no_bg no_border">
+                    <button onClick={onDeleteDropdown} style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                     <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
-                    </Button>
+                    </button>
                 </Dropdown>
             </div>
             <div id={props.colorscheme} className='procard_content'>
