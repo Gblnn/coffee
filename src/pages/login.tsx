@@ -11,37 +11,36 @@ export default function Login(){
     //Data
     const [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
-
+    let id = "2"
     const usenavigate = useNavigate()
 
         const Validate = () =>{
             if (username==""||password==""){
-                // setEmpty(true)
                 message.info('Fields can not be empty');
             }
             else{
-                // fetch("https://6586a271468ef171392e80df.mockapi.io/users" + username).then((res)=>{return res.json}).then((resp)=>{
-                //     if (resp.password == username){
 
-                //     }
-                //     else{
-                //         message.info('Invalid credentials');
-                //     }
-                // })
+                fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+id, {
+                    method: 'GET',
+                    headers: {'content-type':'application/json'},
+                  }).then(res => {
+                    if (res.ok) {
+                        return res.json();
+                    }
+                  }).then(users => {
+                    console.log(users.id)
+                    if(users.password==password){
+                        
+                    }
+                  })
 
-                fetch('https://6586a271468ef171392e80df.mockapi.io/users?password='+password)
-                .then(data => {
-                    return data.json();
-                })
-                    .then(res => {
-                    console.log(res.password);
-                    
-                });
+                
                 
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
                 usenavigate('/layout/home')
+                
                 
         }, 2000);
             }

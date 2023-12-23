@@ -6,7 +6,7 @@ import TextArea from "antd/es/input/TextArea";
 
 export default function PostAction(){
 
-    const author = "gbln___"
+    const author = "user"
     const profile = "/coffee.png"
     const comments = ['']
     let date = new Date().toLocaleDateString()
@@ -80,7 +80,7 @@ export default function PostAction(){
                                 { value: 'white', label: 'White' },
                                 { value: 'black', label: 'Black' },
                                 { value: 'sad', label: 'Sad' },
-                                { value: 'royal', label: 'Royal' },
+                                { value: 'royal', label: 'Red' },
                             ]}
                         />
                 </Drawer>

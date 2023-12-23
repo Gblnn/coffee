@@ -29,16 +29,18 @@ export default function Post(props: Props){
   const onDelete = () =>{
     // const [deleteid, setDeleteid] = useState(0)
     // setDeleteid(2)
-    Modal.confirm({
+    Modal.info({
       centered:true,
       title: 'Confirm Delete?',
       content: 'This action can not be undone',
+      footer:[
+        <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>
+          <Button type="primary">Confirm</Button>
+        </div>
+        
+      ],
+    
       onOk(){
-        // const {id} = useParams()
-        // fetch("https://6586a271468ef171392e80df.mockapi.io/posts/?id=1",
-        // {
-        //     method:"DELETE",   
-        // })
         fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
               method: 'DELETE',
             }).then(res => {

@@ -1,14 +1,20 @@
 import { Button, ConfigProvider } from "antd";
 
 const onFetch = () =>{
-    window.location.reload()
-    fetch('https://6586a271468ef171392e80df.mockapi.io/posts?id')
-                .then(data => {
-                    return data.json();
-                })
-                    .then(res => {
-                    console.log(res);
-                });
+    // window.location.reload()
+    
+
+
+                fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
+                    method: 'GET',
+                    headers: {'content-type':'application/json'},
+                  }).then(res => {
+                    if (res.ok) {
+                        return res.json();
+                    }
+                  }).then(tasks => {
+                    console.log(tasks.id)
+                  })
 }
 
 export default function FetchTest(){
