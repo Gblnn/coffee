@@ -27,12 +27,17 @@ export default function PostAction(){
         setOpen(false);
       };
 
+      const reloadPage = () => {
+        setTimeout(()=>{
+            window.location.reload()
+        },1000)
+      }
+
       const onPost=()=>{
         let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments}
         setLoading(true)
         setTimeout(() => {
             message.success("Posted Sucessfully")
-            window.location.reload()
             fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
             {
                 method:"POST",
@@ -42,6 +47,7 @@ export default function PostAction(){
             )
             setLoading(false)
             onClose()
+            reloadPage()
             
         }, 1000);
     }
