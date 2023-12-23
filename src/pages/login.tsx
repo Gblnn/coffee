@@ -82,7 +82,7 @@ export default function Login(){
                         theme={{
                             token: {
                             colorPrimary:"black",
-                            colorBorder:"#8a8a8a"
+                            
                             }
                         }}
                         >
