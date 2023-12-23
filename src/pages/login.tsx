@@ -30,10 +30,6 @@ export default function Login(){
         }
         
     
-
-    const toSignUp=()=>{
-        window.location.replace("/signup")
-    }
     return(
         <>
         <div className="fullpage_container">
@@ -82,7 +78,7 @@ export default function Login(){
                 
                 
                 
-                <Typography.Text style={{color:"#9a9a9a"}} className="form_text">Don't have an account?<Link style={{color:"black"}} to={{}} onClick={toSignUp} className="link" type="link">Sign-up</Link></Typography.Text>
+                <Typography.Text style={{color:"#9a9a9a"}} className="form_text">Don't have an account?<Link style={{color:"black"}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
             </div>
         </div>
         
