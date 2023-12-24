@@ -10,7 +10,7 @@ import TextArea from "antd/es/input/TextArea";
 export default function PostAction(){
     // const author = props.author
     let [author, setAuthor] = useState("")
-    const profile = "/coffee.png"
+    const profile = "/coffee-bag.png"
     let commentlist = ['']
     let likes = ""
     let comments = ""
