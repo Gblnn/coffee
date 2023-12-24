@@ -1,8 +1,8 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Button, ConfigProvider, Drawer, Dropdown, Input, MenuProps, Modal, Typography, message } from "antd";
+import { Button, Dropdown, MenuProps, Modal, Typography, message } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
-import { useEffect, useState } from "react";
-import ChatInput from "./chat";
+
+import CommentButton from "./commentbutton";
 ;
 
 interface Props {
@@ -21,20 +21,10 @@ interface Props {
 
 export default function Post(props: Props){
 
-  const [posts, setPosts] = useState<any[]>([])
-  
-    useEffect(()=>{
-        fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
-        .then(res => res.json())
-        .then(data => setPosts(data))
-    })
-
   const onDeleteDropdown = () =>{
-
   }
 
   const onDelete = () =>{
-
     Modal.info({
       centered:true,
       title: 'Confirm Delete?',
@@ -54,7 +44,6 @@ export default function Post(props: Props){
               if (res.ok) {
                   return res.json();
               }
-              // handle error
             })
       },
       onCancel(){
@@ -93,21 +82,6 @@ const onBookmarked = () =>{
         },
       ];
 
-    const [open, setOpen] = useState(false);
-
-  const showComments = () => {
-
-  }
-
-  const showDrawer = () => {
-    setOpen(true);
-    showComments()
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
     return(
         <>
         
@@ -136,53 +110,14 @@ const onBookmarked = () =>{
                     <img className='footer_icon' src='/heart.png'></img>
                     <p className='like_count'>{props.likes}</p>
                 </button>
-                <button className='no_bg no_border procard_buttons' onClick={showDrawer}>
-                    <img className='footer_icon' src='/comment.png'></img>
-                    <p className='like_count'>{props.comments}</p>
-                </button>
+                <CommentButton comments={props.comments}/>
                 </div>
                 
                 <button onClick={onBookmarked} className=' no_bg procard_buttons'>
                     <p className='like_count'>{props.bookmarks}</p>
                     <img className='footer_icon' src='/bookmark.png'></img> 
                 </button>
-                <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>
-                
-                  <div className="comment_container">
-                  
-                    <ChatInput author="gbln" message="Sample Text"/>
-                    {
-                    posts.map((posts)=>(
-                      posts.commentlist.map((items:any)=>{
-                        <ChatInput author={items.author} message={items.comment} />
-                      })
-                    ))
-                    }
-                    
-                    
-                    
-  
-                  
-                  </div>
-                    <div className="flex">
-                    
-                    <ConfigProvider
-                    theme={{
-                        token: {
-                        colorPrimary:"black"
-                        }
-                    }}
-                    >
-                      <Input placeholder="Type here" style={{marginRight:"1rem", fontSize:"16px"}}></Input>
-                      <Button type="primary">Post</Button>
-                    </ConfigProvider>
-                    
-                    </div>
-                    
-                    
-                </Drawer>
-                            
-                            
+          
             </div>                                   
         </ProCard>
         </>

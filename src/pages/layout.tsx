@@ -37,29 +37,17 @@ export default function Layout(){
           onCancel:handleCancel,
           footer:[
             <>
-            <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>
-            
+            <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>  
                 <Button style={{right:0}} onClick={handleCancel}>Cancel</Button>
                 <Button style={{right:0}} onClick={handleOk} type="primary">Confirm</Button>
-                        
-            
-            
-            </div>
-            
-            </>
-            
-          ]
-          
-          
-          
+            </div>          
+            </>   
+          ]    
         });
-      
-
     }
     const [pathname, setPathname] = useState('/home');
     return(
         <>
-        
         <ProLayout
         title="Coffee"
         logo="/coffee-black.png"
@@ -69,12 +57,9 @@ export default function Layout(){
         location={{pathname}}
         menuItemRender={(item, dom) => (
           <>
-          
           <Link
-
               onClick={() => {
                 setPathname(item.path || '/home');
-                
               }}
               to={item.path||""}
             >

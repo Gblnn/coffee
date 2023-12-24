@@ -25,11 +25,11 @@ export default function FetchTest(){
         <ConfigProvider
             theme={{
                 token: {
-                        colorPrimary:"black"
+                        colorPrimary:"crimson"
                         }
                     }}
         >
-            <Button type="primary" onClick={onFetch}>FETCH TEST</Button>
+            <Button style={{marginRight:"1rem",marginLeft:"1rem"}} type="primary" onClick={onFetch}>TEST</Button>
         </ConfigProvider>
         
         </>
