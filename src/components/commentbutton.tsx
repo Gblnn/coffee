@@ -32,7 +32,9 @@ export default function CommentButton(props:Props) {
             post.commentlist.map((items:any) => {
                 console.log(items.author)
                 console.log(items.comment)
-                
+                {
+                  <ChatInput author={items.author} message={items.comment}/>
+                }
             })           
         })
     }
@@ -43,18 +45,16 @@ export default function CommentButton(props:Props) {
             <img className='footer_icon' src='/comment.png'></img>
             <p className='like_count'>{props.comments}</p>
         </button>
-        <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>
-                
-            <div className="comment_container">  
-                <ChatInput author="gbln" message="Sample Text"/>
-                    {
+        <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>           
+            <div className="comment_container">
+            {
                     posts.map((posts)=>(
                       posts.commentlist.map((items:any)=>{
                         <ChatInput author={items.author} message={items.comment} />
                       })
                     ))
-                    }
-                  
+                    }  
+                <ChatInput author="gbln" message="Sample Text"/>
                   </div>
                     <div className="flex">
                     

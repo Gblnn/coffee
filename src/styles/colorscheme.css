@@ -1,6 +1,6 @@
 #black{
     background-color: #1a1a1a;
-    color: #9a9a9a
+    color: rgb(200,200,200)
 }
 
 #white{
@@ -20,5 +20,5 @@
 
 #pink{
     background-color: pink;
-    color: palevioletred;
+    color: rgb(185, 96, 125);
 }

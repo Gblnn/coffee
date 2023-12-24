@@ -9,11 +9,18 @@ import { useEffect, useState } from "react"
 export default function Login(){
 
     const [posts, setPosts] = useState<any[]>([])
-                useEffect(()=>{
-                    fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
-                    .then(res => res.json())
-                    .then(data => setPosts(data))
-                })
+    setTimeout(()=>{
+        
+    },1000)
+    useEffect(()=>{
+        setTimeout(()=>{
+        fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
+        .then(res => res.json())
+        .then(data => setPosts(data))
+        },1000)
+        
+    })
+    
 
     const [loading, setLoading] = useState(false)
 

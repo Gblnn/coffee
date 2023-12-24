@@ -10,10 +10,19 @@ export default function Home(){
 
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
-        fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
-        .then(res => res.json())
-        .then(data => setPosts(data))
+        setTimeout(()=>{
+            fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
+            .then(res => res.json())
+            .then(data => {
+                setPosts(data)
+                console.log(data)
+            })
+        },1000)
     })
+   
+        
+        
+    
     return(
         <>
         <div className='page_container'>
