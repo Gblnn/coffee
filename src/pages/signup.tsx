@@ -51,7 +51,7 @@ export default function SignUp(){
             <div className="form_container">
                 <h1>SIGN-UP</h1>
                 
-                <div className="empty"></div>
+                {/* <div className="empty"></div> */}
                 <div className="form_footer">
                 <ConfigProvider
                     theme={{
