@@ -54,7 +54,7 @@ export default function CommentButton(props:Props) {
                       })
                     ))
                     }  
-                <ChatInput author="user" message="Sample Text"/>
+                <ChatInput author="user" message="Sample Comment"/>
                   </div>
                     <div className="flex">
                     
