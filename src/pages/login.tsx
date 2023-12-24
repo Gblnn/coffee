@@ -59,7 +59,7 @@ export default function Login(){
                 
                 
                 
-        }, 1000);
+        },50);
             }
         }
         
