@@ -112,7 +112,7 @@ export default function Login(){
 
 
                 </Form>
-                <Typography.Text style={{color:"#9a9a9a"}} className="form_text">Don't have an account?<Link style={{color:"black",fontWeight:600}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
+                <Typography.Text style={{color:"#4a4a4a"}} className="form_text">Don't have an account?<Link style={{color:"black",fontWeight:600}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
                 </div>
            
             
