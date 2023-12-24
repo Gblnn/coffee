@@ -20,5 +20,6 @@
 
 #pink{
     background-color: pink;
-    color: rgb(128, 66, 87);
+    /* color: rgb(128, 66, 87); */
+    color: white;
 }
