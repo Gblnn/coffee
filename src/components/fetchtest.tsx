@@ -1,23 +1,25 @@
 import { Button, ConfigProvider } from "antd";
-
-const onFetch = () =>{
-    window.location.reload()
-    
-
-
-                fetch('https://6586a271468ef171392e80df.mockapi.io/users?username=gbln', {
-                    method: 'GET',
-                    headers: {'content-type':'application/json'},
-                  }).then(res => {
-                    if (res.ok) {
-                        return res.json();
-                    }
-                  }).then(posts => {
-                    console.log(posts)
-                  })
-}
+import { useEffect, useState } from "react";
 
 export default function FetchTest(){
+
+    const [posts, setPosts] = useState<any[]>([])
+  
+    useEffect(()=>{
+        fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
+        .then(res => res.json())
+        .then(data => setPosts(data))
+    })
+
+    const onFetch = () =>{
+        // window.location.reload()
+        posts.map((post)=>{           
+            post.commentlist.map((items:any) => {
+                console.log(items.author)
+                console.log(items.comment)
+            })           
+        })
+    }
     return(
         <>
         <ConfigProvider
@@ -26,8 +28,8 @@ export default function FetchTest(){
                         colorPrimary:"black"
                         }
                     }}
-                    >
-                        <Button type="primary" onClick={onFetch}>FETCH TEST</Button>
+        >
+            <Button type="primary" onClick={onFetch}>FETCH TEST</Button>
         </ConfigProvider>
         
         </>

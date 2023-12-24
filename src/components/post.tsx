@@ -1,7 +1,9 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Button, ConfigProvider, Drawer, Dropdown, Empty, Input, MenuProps, Modal, Typography, message } from "antd";
+import { Button, ConfigProvider, Drawer, Dropdown, Input, MenuProps, Modal, Typography, message } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ChatInput from "./chat";
+;
 
 interface Props {
     id:string
@@ -19,16 +21,20 @@ interface Props {
 
 export default function Post(props: Props){
 
-  // const id = useParams()
-  // const [deleteid, setDeleteId] = useState("")
+  const [posts, setPosts] = useState<any[]>([])
+  
+    useEffect(()=>{
+        fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
+        .then(res => res.json())
+        .then(data => setPosts(data))
+    })
 
   const onDeleteDropdown = () =>{
 
   }
 
   const onDelete = () =>{
-    // const [deleteid, setDeleteid] = useState(0)
-    // setDeleteid(2)
+
     Modal.info({
       centered:true,
       title: 'Confirm Delete?',
@@ -89,17 +95,18 @@ const onBookmarked = () =>{
 
     const [open, setOpen] = useState(false);
 
+  const showComments = () => {
+
+  }
+
   const showDrawer = () => {
     setOpen(true);
+    showComments()
   };
 
   const onClose = () => {
     setOpen(false);
   };
-
-  // const handleClick = () =>{
-  //   console.log("liked post")
-  // }
 
     return(
         <>
@@ -140,8 +147,22 @@ const onBookmarked = () =>{
                     <img className='footer_icon' src='/bookmark.png'></img> 
                 </button>
                 <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>
+                
                   <div className="comment_container">
-                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>No Comments</span>}/>
+                  
+                    <ChatInput author="gbln" message="Sample Text"/>
+                    {
+                    posts.map((posts)=>(
+                      posts.commentlist.map((items:any)=>{
+                        <ChatInput author={items.author} message={items.comment} />
+                      })
+                    ))
+                    }
+                    
+                    
+                    
+  
+                  
                   </div>
                     <div className="flex">
                     
