@@ -10,14 +10,14 @@ import TextArea from "antd/es/input/TextArea";
 export default function PostAction(){
     // const author = props.author
     let [author, setAuthor] = useState("")
-    const profile = "/coffee-bag.png"
+    const profile = "/coffee.png"
     let commentlist = ['']
     let likes = ""
     let comments = ""
     let date = new Date().toLocaleDateString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
-
+    
     
 
     const [open, setOpen] = useState(false);

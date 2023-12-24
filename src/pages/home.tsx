@@ -17,7 +17,7 @@ export default function Home(){
                 setPosts(data)
                 console.log(data)
             })
-        },1000)
+        },100)
     })
    
         
