@@ -88,7 +88,7 @@ const onBookmarked = () =>{
         <ProCard id={props.id} className='procard' style={{ borderRadius:"1rem"}}>
             <div className='procard_header'>
                 <div className='procard_profile'>
-                    <img className='procard_img' src={props.profile}></img>
+                    <img alt="icon" className='procard_img' src={props.profile}></img>
                     <Typography.Text className='procard_name'>{props.author}</Typography.Text>
                     <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>{props.date}</Typography.Text>
                 </div>
