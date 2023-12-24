@@ -106,16 +106,16 @@ const onBookmarked = () =>{
             
             <div className='procard_footer'>
                 <div className="footer_left">
-                <button onClick={onLike} className=' no_bg no_border procard_buttons'>
-                    <img className='footer_icon' src='/heart.png'></img>
+                <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
+                    <img alt="Like" className='footer_icon' src='/heart.png'></img>
                     <p className='like_count'>{props.likes}</p>
                 </button>
                 <CommentButton comments={props.comments}/>
                 </div>
                 
-                <button onClick={onBookmarked} className=' no_bg procard_buttons'>
+                <button id="bookmark_btn" onClick={onBookmarked} className=' no_bg procard_buttons'>
                     <p className='like_count'>{props.bookmarks}</p>
-                    <img className='footer_icon' src='/bookmark.png'></img> 
+                    <img alt="Bookmark" className='footer_icon' src='/bookmark.png'></img> 
                 </button>
           
             </div>                                   
