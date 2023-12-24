@@ -1,4 +1,5 @@
 import { ProTable } from "@ant-design/pro-components";
+import { Table } from "antd";
 
 
 
@@ -13,7 +14,7 @@ export default function Posts(){
     
     return(
         <>
-        <ProTable/>
+        <Table/>
         </>
     )
 }
