@@ -39,7 +39,7 @@ export default function bookmarks(){
                 endMessage={
                     <div className='loader'>
                         <p style={{ textAlign: 'center' }}>
-                            <b>You've reached the end</b>
+                            {/* <b>You've reached the end</b> */}
                         </p>
                     </div>  
                       }>
