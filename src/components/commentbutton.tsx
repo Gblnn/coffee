@@ -12,22 +12,9 @@ export default function CommentButton(props:Props) {
     const [posts, setPosts] = useState<any[]>([])
   
     useEffect(()=>{
-        // fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
-        // .then(res => res.json())
-        // .then(data => {
-        //   setPosts(data)
-        //   console.log(data)
-        // })
-        fetch('https://PROJECT_TOKEN.mockapi.io/tasks', {
-          method: 'GET',
-          headers: {'content-type':'application/json'},
-        }).then(res => {
-          if (res.ok) {
-              return res.json();
-          }
-        }).then(data => {
-          setPosts(data)
-        })
+      fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
+      .then(res => res.json())
+      .then(data => setPosts(data))
     },[])
 
     const [open, setOpen] = useState(false);
@@ -57,10 +44,7 @@ export default function CommentButton(props:Props) {
             <p className='like_count'>{props.comments}</p>
         </button>
         <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>           
-            <div className="comment_container">
-            {
-                    
-                    }  
+            <div className="comment_container"> 
                 <ChatInput author="user" message="Comment"/>
                   </div>
                     <div className="flex">
