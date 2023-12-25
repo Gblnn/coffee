@@ -7,19 +7,19 @@ import PostAction from '../components/postaction.tsx';
 import { Empty } from 'antd';
 
 
-export default function Home(){
+export default function Liked(){
 
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
-        setTimeout(()=>{
-            fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
+        
+            fetch("https://6586a271468ef171392e80df.mockapi.io/posts?liked=true")
             .then(res => res.json())
             .then(data => {
                 setPosts(data)
                 console.log(data)
             })
-        },100)
-    })
+        
+    },[])
    
         
         
@@ -46,7 +46,7 @@ export default function Home(){
                     {
                         posts==null?<Empty/>:
                     posts.map((posts)=>(
-                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" />
+                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked}/>
                     ))
                     }
                 </InfiniteScroll>         

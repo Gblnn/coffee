@@ -9,17 +9,23 @@ import { useEffect, useState } from "react"
 export default function Login(){
 
     const [posts, setPosts] = useState<any[]>([])
-    setTimeout(()=>{
-        
-    },1000)
+
     useEffect(()=>{
         setTimeout(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
         .then(res => res.json())
-        .then(data => setPosts(data))
-        },1000)
+        .then(data => {
+            setPosts(data) 
+            console.log(data)
+        })
+        },2000)
         
     })
+
+    const Fetch = () =>{
+        
+    }
+    
     
 
     const [loading, setLoading] = useState(false)
@@ -34,16 +40,15 @@ export default function Login(){
     const usenavigate = useNavigate()
 
         const Validate = () =>{
+            
             if (username==""||password==""){
                 message.info('Fields can not be empty');
             }
-            else{        
+            else{    
+                Fetch()    
                 setLoading(true)
                 setTimeout(() => {
                 setLoading(false)
-
-                
-
                 
                 posts.map((post)=>{
                     console.log(post.username)
@@ -59,7 +64,7 @@ export default function Login(){
                 
                 
                 
-        },50);
+                },1000);
             }
         }
         

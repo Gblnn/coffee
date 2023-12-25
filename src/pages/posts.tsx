@@ -79,7 +79,7 @@ const App: React.FC = () => {
     <>
       <Table
         columns={columns}
-        expandable={{ expandedRowRender, defaultExpandedRowKeys: ['0'] }}
+        expandable={{ expandedRowRender }}
         dataSource={data}
       />
       

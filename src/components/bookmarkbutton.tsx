@@ -3,42 +3,44 @@ import { useEffect, useState } from "react";
 
 
 interface Props {
-    likecount:number
-    liked:boolean
+    bookmarkcount:number
+    bookmarked:boolean
 }
 
-export default function LikeButton(props:Props){
-    let [likestate, setLikestate] = useState("/heart.png")
-    let [liked, setLiked] = useState(props.liked)
+export default function BookmarkButton(props:Props){
+
+    let [likestate, setLikestate] = useState("/bookmark.png")
+    let [bookmarked, setBookmarked] = useState(props.bookmarked)
 
     useEffect(()=>{
-        if(liked == false){
-            setLikestate("/heart.png")
+        if(bookmarked == false){
+            setLikestate("/bookmark.png")
         }
-        if(liked == true){
-            setLikestate("/heart-filled.png")
+        if(bookmarked == true){
+            setLikestate("/bookmark-filled.png")
         }
     })
 
     const onLike = () =>{
-        if (likestate==="/heart.png"){
-        setLiked(true)
+        if (likestate==="/bookmark.png"){
+        setBookmarked(true)
           console.log("Liked post")
-
+          
+        
             fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
             method: 'PUT',
             headers: {'content-type':'application/json'},
-            body: JSON.stringify({liked: true, likes:1})
+            body: JSON.stringify({bookmarked: true, bookmarks: 1})
             })
-          
+        
         }
         else{
-        setLiked(false)
+        setBookmarked(false)
           console.log("Removed Like")
           fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
             method: 'PUT',
             headers: {'content-type':'application/json'},
-            body: JSON.stringify({liked: false, likes:0})
+            body: JSON.stringify({bookmarked: false, bookmarks: 0})
             })
         }
       }
@@ -49,7 +51,7 @@ export default function LikeButton(props:Props){
         <>
         <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
             <img alt="Like" className='footer_icon' src={likestate}></img>
-            <p className='like_count'>{props.likecount}</p>
+            <p className='like_count'>{props.bookmarkcount}</p>
         </button>
         </>
     )

@@ -14,13 +14,24 @@ export default function CommentButton(props:Props) {
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
         .then(res => res.json())
-        .then(data => setPosts(data))
-    })
+        .then(data => {
+          setPosts(data)
+          console.log(data)
+          
+          
+        })
+    },[])
 
     const [open, setOpen] = useState(false);
 
     const showDrawer = () => {
         setOpen(true);
+        posts.map((post)=>{           
+          post.commentlist.map((items:any) => {
+              console.log(items.author)
+              console.log(items.comment)
+          })           
+      })
       };
     
       const onClose = () => {
@@ -28,15 +39,7 @@ export default function CommentButton(props:Props) {
       };
 
     const onPost = () => {
-        posts.map((post)=>{           
-            post.commentlist.map((items:any) => {
-                console.log(items.author)
-                console.log(items.comment)
-                {
-                  <ChatInput author={items.author} message={items.comment}/>
-                }
-            })           
-        })
+        
     }
 
     return(
@@ -48,11 +51,7 @@ export default function CommentButton(props:Props) {
         <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>           
             <div className="comment_container">
             {
-                    posts.map((posts)=>(
-                      posts.commentlist.map((items:any)=>{
-                        <ChatInput author={items.author} message={items.comment} />
-                      })
-                    ))
+                    
                     }  
                 <ChatInput author="user" message="Comment"/>
                   </div>

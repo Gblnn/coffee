@@ -1,9 +1,10 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Button, Dropdown, MenuProps, Modal, Typography, message } from "antd";
+import { Button, Dropdown, MenuProps, Modal, Typography } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
 
 import CommentButton from "./commentbutton";
 import LikeButton from "./likebutton";
+import BookmarkButton from "./bookmarkbutton";
 ;
 
 interface Props {
@@ -14,15 +15,15 @@ interface Props {
     content:string;
     likes:number;
     comments:string;
-    bookmarks:string;
+    bookmarks:number;
     colorscheme:string;
     admin:string;
+    liked:boolean;
+    bookmarked:boolean
 }
 
 
 export default function Post(props: Props){
-
-
 
   const onDeleteDropdown = () =>{
   }
@@ -59,10 +60,7 @@ export default function Post(props: Props){
 
 
 
-const onBookmarked = () =>{
-  console.log("Liked post")
-  message.success("Saved to bookmarks")
-}
+
 
     const items: MenuProps['items'] = [
         {
@@ -115,14 +113,11 @@ const onBookmarked = () =>{
                     <img alt="Like" className='footer_icon' src={likestate}></img>
                     <p className='like_count'>{props.likes}</p>
                 </button> */}
-                <LikeButton likecount={props.likes}/>
+                <LikeButton liked={props.liked} likecount={props.likes}/>
                 <CommentButton comments={props.comments}/>
                 </div>
+                <BookmarkButton bookmarked={props.bookmarked} bookmarkcount={props.bookmarks}/>
                 
-                <button id="bookmark_btn" onClick={onBookmarked} className=' no_bg procard_buttons'>
-                    <p className='like_count'>{props.bookmarks}</p>
-                    <img alt="Bookmark" className='footer_icon' src='/bookmark.png'></img> 
-                </button>
           
             </div>                                   
         </ProCard>

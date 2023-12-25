@@ -7,7 +7,9 @@ export default function PostAction(){
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
-    let likes = ""
+    let likes = 0
+    let liked = false
+    let bookmarked = false
     let comments = ""
     let date = new Date().toLocaleDateString()
     const [colorscheme, setColor] = useState("")
@@ -30,7 +32,7 @@ export default function PostAction(){
         if (author===""){
             author="unknown"
         }
-        let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments}
+        let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments, liked, bookmarked}
         
         setLoading(true)
         setTimeout(() => {
