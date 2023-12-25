@@ -1,5 +1,5 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Button, Dropdown, MenuProps, Modal, Typography } from "antd";
+import { Dropdown, MenuProps, Modal, Typography } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
 
 import CommentButton from "./commentbutton";
@@ -28,40 +28,28 @@ export default function Post(props: Props){
   const onDeleteDropdown = () =>{
   }
 
-  const onDelete = () =>{
-    Modal.info({
-      centered:true,
-      title: 'Confirm Delete?',
-      content: 'This action can not be undone',
-      footer:[
-        <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>
-          <Button>Cancel</Button>
-          <Button type="primary">Confirm</Button>
-        </div>
-        
-      ],
-    
-      onOk(){
-        fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
+  const handleDelete = () => {
+    fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
               method: 'DELETE',
             }).then(res => {
               if (res.ok) {
                   return res.json();
               }
             })
-      },
-      onCancel(){
-  
-      }
+  }
+
+  const onDelete = () =>{
+    Modal.confirm({
+      centered:true,
+      title: 'Confirm Delete?',
+      content: 'This action can not be undone',
+      okText:"Confirm",
+      cancelText:"Cancel",
+      onOk:handleDelete,
       
     });
      
 }
-
-
-
-
-
     const items: MenuProps['items'] = [
         {
           key: '1',
