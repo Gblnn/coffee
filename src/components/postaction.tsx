@@ -1,9 +1,11 @@
-import { Button, ConfigProvider, Drawer, FloatButton, Input, Select, message } from "antd";
-import { useState } from "react";
+import { Button, ConfigProvider, Drawer, FloatButton, Form, Input, Select, message } from "antd";
+import { useEffect, useState } from "react";
 import {PlusOutlined} from '@ant-design/icons'
 import TextArea from "antd/es/input/TextArea";
 
+
 export default function PostAction(){
+
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
@@ -18,7 +20,17 @@ export default function PostAction(){
     
 
     const [open, setOpen] = useState(false);
+    const [postable, setPostable] = useState(false)
     const [loading, setLoading] = useState(false)
+
+    useEffect(()=>{
+        if(content==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+    })
 
     const showDrawer = () => {
         setOpen(true);
@@ -39,6 +51,7 @@ export default function PostAction(){
         if (author===""){
             author="unknown"
         }
+        
         let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments, liked, bookmarked}
         
         setLoading(true)
@@ -55,6 +68,8 @@ export default function PostAction(){
             onClose()
             Reload()
         }, 1000);
+        
+        
     }
     return(
         <>
@@ -72,7 +87,11 @@ export default function PostAction(){
                     }}
                     >
                     <Input onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
+                    
+                    
                     <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Write your thoughts here'/>
+                    
+                    
                     </ConfigProvider>
                     
                     <div className='empty'></div>
@@ -83,7 +102,8 @@ export default function PostAction(){
                             }
                         }}
                         >
-                        <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}>Post</Button>
+                        <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}  disabled={!postable}>Post</Button>
+                        
                     </ConfigProvider>
 
                         <Select

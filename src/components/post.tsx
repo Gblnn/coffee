@@ -25,7 +25,11 @@ interface Props {
 
 export default function Post(props: Props){
 
-  const onDeleteDropdown = () =>{
+  const Reload = () =>{
+    setTimeout(()=>{
+        window.location.reload()
+    },1000)
+    
   }
 
   const handleDelete = () => {
@@ -35,7 +39,9 @@ export default function Post(props: Props){
               if (res.ok) {
                   return res.json();
               }
+              
             })
+            Reload()
   }
 
   const onDelete = () =>{
@@ -83,7 +89,7 @@ export default function Post(props: Props){
                     <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>{props.date}</Typography.Text>
                 </div>
                 <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
-                    <button onClick={onDeleteDropdown} style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
+                    <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                     <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
                     </button>
                 </Dropdown>
@@ -101,10 +107,10 @@ export default function Post(props: Props){
                     <img alt="Like" className='footer_icon' src={likestate}></img>
                     <p className='like_count'>{props.likes}</p>
                 </button> */}
-                <LikeButton liked={props.liked} likecount={props.likes}/>
+                <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
                 <CommentButton comments={props.comments}/>
                 </div>
-                <BookmarkButton bookmarked={props.bookmarked} bookmarkcount={props.bookmarks}/>
+                <BookmarkButton id={props.id} bookmarked={props.bookmarked} bookmarkcount={props.bookmarks}/>
                 
           
             </div>                                   

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 interface Props {
     likecount:number
     liked:boolean
+    id:string
 }
 
 export default function LikeButton(props:Props){
@@ -25,7 +26,7 @@ export default function LikeButton(props:Props){
         setLiked(true)
           console.log("Liked post")
 
-            fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
+            fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
             method: 'PUT',
             headers: {'content-type':'application/json'},
             body: JSON.stringify({liked: true, likes:1})
@@ -35,10 +36,10 @@ export default function LikeButton(props:Props){
         else{
         setLiked(false)
           console.log("Removed Like")
-          fetch('https://6586a271468ef171392e80df.mockapi.io/posts/1', {
+          fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
             method: 'PUT',
             headers: {'content-type':'application/json'},
-            body: JSON.stringify({liked: false, likes:0})
+            body: JSON.stringify({liked: false, likes:""})
             })
         }
       }
