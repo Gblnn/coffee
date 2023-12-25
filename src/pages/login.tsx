@@ -18,7 +18,7 @@ export default function Login(){
             setPosts(data) 
             console.log(data)
         })
-        },2000)
+        },3000)
         
     })
 
