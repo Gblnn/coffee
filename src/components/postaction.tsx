@@ -85,7 +85,7 @@ export default function PostAction(){
                             onChange={setColor}
                             options={[
                                 { value: 'white', label: 'White' },
-                                { value: 'black', label: 'Black' },
+                                { value: 'black', label: 'Dark' },
                                 { value: 'sad', label: 'Night' },
                                 { value: 'royal', label: 'Neon' },
                                 { value: 'pink', label: 'Pink' },
