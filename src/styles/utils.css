@@ -102,6 +102,10 @@
     height: 1rem;
 }
 
+.big_empty{
+    height:4rem
+}
+
 .sidemenu{
     height: 100vh;
 }
@@ -116,6 +120,8 @@
 .procard_container{
     display: flex;
     justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
     gap: 2rem;
     margin: 0;
     flex-wrap: wrap;
@@ -124,7 +130,7 @@
 }
 
 .procard{
-    width: 70vw;
+    width: 85vw;
     /* height:48ch; */
     box-shadow: 1px 1px 10px #8a8a8a;
 }
@@ -259,11 +265,11 @@
 @media (min-width:1028px){
 
     .procard_container{
-        width: 70ch;
+        width: 80ch;
         
     }
     .procard{
-        width: 75ch;
+        width: 65ch;
     }
     .procard_name{
         font-size: 1rem;

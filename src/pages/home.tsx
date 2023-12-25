@@ -1,6 +1,5 @@
 import '../styles/colorscheme.css'
 import Post from '../components/post';
-import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PostAction from '../components/postaction.tsx';
@@ -32,7 +31,8 @@ export default function Home(){
                 dataLength={1}
                 next={()=>{}}
                 hasMore={true}
-                loader={<div className='loader'><LoadingOutlined style={{fontSize:"2rem"}}/></div>}
+                loader=""
+                // loader={<div className='loader'><LoadingOutlined style={{fontSize:"2rem"}}/></div>}
                 endMessage={
                     <div className='loader'>
                         <p style={{ textAlign: 'center' }}>
@@ -45,12 +45,14 @@ export default function Home(){
                         <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} />
                     ))
                     }
-                </InfiniteScroll>         
+                    
+                </InfiniteScroll>
+                <div className='big_empty'></div>         
             </div>
         </div>
             
             
-        <div className='empty'></div>
+        
         <PostAction/>
         </>
     )
