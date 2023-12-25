@@ -37,7 +37,7 @@ export default function Home(){
                 endMessage={
                     <div className='loader'>
                         <p style={{ textAlign: 'center' }}>
-                            <b>You're all caught up</b>
+                            {/* <b>You're all caught up</b> */}
                         </p>
                     </div>  
                       }>
