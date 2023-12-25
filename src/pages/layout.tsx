@@ -7,7 +7,7 @@ import Likes from "./liked";
 import Bookmarks from "./bookmarks";
 import Posts from "./posts";
 import Profile from "./profile";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 
 
 
@@ -27,22 +27,15 @@ export default function Layout(){
     
     const Logout = () => {
       
-        Modal.info({
+        Modal.confirm({
           open:open,
           centered:true,
           title: 'Confirm Logout?',
-          
           content: 'You are logging out of current session',
           onOk:handleOk,
           onCancel:handleCancel,
-          footer:[
-            <>
-            <div style={{ display:"flex", justifyContent:"flex-end", gap:"0.5rem", marginTop:"1rem"}}>  
-                <Button style={{right:0}} onClick={handleCancel}>Cancel</Button>
-                <Button style={{right:0}} onClick={handleOk} type="primary">Confirm</Button>
-            </div>          
-            </>   
-          ]    
+          okText:"Confirm",
+          cancelText:"Cancel"  
         });
     }
     const [pathname, setPathname] = useState('/home');

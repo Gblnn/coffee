@@ -12,13 +12,21 @@ export default function CommentButton(props:Props) {
     const [posts, setPosts] = useState<any[]>([])
   
     useEffect(()=>{
-        fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
-        .then(res => res.json())
-        .then(data => {
+        // fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
+        // .then(res => res.json())
+        // .then(data => {
+        //   setPosts(data)
+        //   console.log(data)
+        // })
+        fetch('https://PROJECT_TOKEN.mockapi.io/tasks', {
+          method: 'GET',
+          headers: {'content-type':'application/json'},
+        }).then(res => {
+          if (res.ok) {
+              return res.json();
+          }
+        }).then(data => {
           setPosts(data)
-          console.log(data)
-          
-          
         })
     },[])
 

@@ -86,8 +86,8 @@ export default function PostAction(){
                             options={[
                                 { value: 'white', label: 'White' },
                                 { value: 'black', label: 'Black' },
-                                { value: 'sad', label: 'Sad' },
-                                { value: 'royal', label: 'Red' },
+                                { value: 'sad', label: 'Night' },
+                                { value: 'royal', label: 'Neon' },
                                 { value: 'pink', label: 'Pink' },
                             ]}
                         />
