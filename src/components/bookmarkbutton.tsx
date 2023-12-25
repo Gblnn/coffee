@@ -31,7 +31,7 @@ export default function BookmarkButton(props:Props){
             fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
             method: 'PUT',
             headers: {'content-type':'application/json'},
-            body: JSON.stringify({bookmarked: true, bookmarks: 1})
+            body: JSON.stringify({bookmarked: true, bookmarks: ""})
             })
         
         }

@@ -55,8 +55,7 @@ const App: React.FC = () => {
   };
 
   const columns: TableColumnsType<DataType> = [
-    { title: 'Posts', dataIndex: 'name', key: 'name' },
-    { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
+    { title: 'Posts', dataIndex: 'name', key: 'name' }
 
   ];
 
