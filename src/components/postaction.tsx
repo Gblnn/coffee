@@ -3,12 +3,7 @@ import { useState } from "react";
 import {PlusOutlined} from '@ant-design/icons'
 import TextArea from "antd/es/input/TextArea";
 
-// interface Props {
-//     author:string
-// }
-
 export default function PostAction(){
-    // const author = props.author
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
@@ -31,12 +26,6 @@ export default function PostAction(){
         setOpen(false);
       };
 
-    //   const reloadPage = () => {
-    //     setTimeout(()=>{
-    //         window.location.reload()
-    //     },4000)
-    //   }
-
       const onPost=()=>{
         if (author===""){
             author="unknown"
@@ -55,7 +44,6 @@ export default function PostAction(){
             )
             setLoading(false)
             onClose()
-            // reloadPage()
             
         }, 1000);
     }

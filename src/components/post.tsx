@@ -3,7 +3,7 @@ import { Button, Dropdown, MenuProps, Modal, Typography, message } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
 
 import CommentButton from "./commentbutton";
-import { useState } from "react";
+import LikeButton from "./likebutton";
 ;
 
 interface Props {
@@ -22,9 +22,7 @@ interface Props {
 
 export default function Post(props: Props){
 
-  
 
-  const [likestate, setLikestate] = useState("/heart.png")
 
   const onDeleteDropdown = () =>{
   }
@@ -58,21 +56,9 @@ export default function Post(props: Props){
     });
      
 }
-const onLike = () =>{
-  
-  
 
-  if (likestate==="/heart.png"){
-    setLikestate("/heart-filled.png")
-    console.log("Liked post")
-    message.info("Liked Post")
-  }
-  else{
-    setLikestate("/heart.png")
-    console.log("Removed Like")
-    message.info("Removed Like")
-  }
-}
+
+
 const onBookmarked = () =>{
   console.log("Liked post")
   message.success("Saved to bookmarks")
@@ -125,10 +111,11 @@ const onBookmarked = () =>{
             <div className='procard_footer'>
                 <div className="footer_left">
                   
-                <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
+                {/* <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
                     <img alt="Like" className='footer_icon' src={likestate}></img>
                     <p className='like_count'>{props.likes}</p>
-                </button>
+                </button> */}
+                <LikeButton likecount={props.likes}/>
                 <CommentButton comments={props.comments}/>
                 </div>
                 
