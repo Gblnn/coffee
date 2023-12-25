@@ -28,6 +28,13 @@ export default function PostAction(){
         setOpen(false);
       };
 
+      const Reload = () =>{
+        setTimeout(()=>{
+            window.location.reload()
+        },1000)
+        
+      }
+
       const onPost=()=>{
         if (author===""){
             author="unknown"
@@ -46,7 +53,7 @@ export default function PostAction(){
             )
             setLoading(false)
             onClose()
-            
+            Reload()
         }, 1000);
     }
     return(
