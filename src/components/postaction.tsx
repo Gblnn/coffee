@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Drawer, FloatButton, Input, Select, message } from "antd";
+import { Button, ConfigProvider, Drawer, FloatButton, Input, Select, Tooltip, message } from "antd";
 import { useEffect, useState } from "react";
 import {PlusOutlined} from '@ant-design/icons'
 import TextArea from "antd/es/input/TextArea";
@@ -21,6 +21,7 @@ export default function PostAction(){
 
     const [open, setOpen] = useState(false);
     const [postable, setPostable] = useState(false)
+    const [warn, setWarn] = useState(false)
     const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
@@ -30,6 +31,16 @@ export default function PostAction(){
         else{
             setPostable(true)
         }
+        if(author.length > 8){
+            setWarn(true)
+        }
+        else{
+            setWarn(false)
+        }
+        if (author.length > 8){
+            setPostable(false)
+        }
+        
     })
 
     const showDrawer = () => {
@@ -85,8 +96,13 @@ export default function PostAction(){
                         },
                         },
                     }}
-                    >
-                    <Input onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
+                    >   <Tooltip title="Max limit is 8 characters" placement="topLeft" open={warn}>
+                        <Input onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
+                    </Tooltip>
+                        
+                        
+                    
+                    
                     
                     
                     <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Write your thoughts here'/>

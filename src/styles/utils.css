@@ -21,6 +21,15 @@
     
 }
 
+.empty_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    
+}
+
 .comment_container{
     width: 100%;
     height: 90%;
