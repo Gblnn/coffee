@@ -40,7 +40,7 @@ export default function Layout(){
           content: 'You are logging out of current session',
           onOk:handleOk,
           onCancel:handleCancel,
-          okText:"Confirm",
+          okText:"Logout",
           cancelText:"Cancel",
           okButtonProps:{style:{background:"black"}},
           cancelButtonProps:{style:{borderColor:"rgb(175,175,175)", color:"black"}}  

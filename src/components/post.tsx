@@ -172,12 +172,13 @@ export default function Post(props: Props){
                 <div className="procard_right">
                   <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                   {
-                    props.author=="gbln"||"muskan"||"Muski"?
+                    props.author=="gbln"?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                       <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
                       </button>
-                  </Dropdown>:null
+                    </Dropdown>
+                    :null
                   }
                   
                 </div>
@@ -225,7 +226,7 @@ export default function Post(props: Props){
                     
                     
                     
-                    <TextArea value={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Second thoughts'></TextArea>
+                    <TextArea defaultValue={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Second thoughts'></TextArea>
                     
                     
                     </ConfigProvider>
@@ -243,7 +244,7 @@ export default function Post(props: Props){
                     </ConfigProvider>
 
                         <Select
-                            defaultValue="white"
+                            defaultValue={props.colorscheme}
                             style={{ width: 120, marginLeft:"1rem", fontSize:"16px" }}
                             onChange={setColor}
                             options={[

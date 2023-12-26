@@ -31,7 +31,7 @@ export default function Login(){
     const [loading, setLoading] = useState(false)
 
     //Data
-    const [username, usernameUpdate] = useState('')
+    let [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
 
     // const [posts, setPosts] = useState<any[]>([])
@@ -44,7 +44,8 @@ export default function Login(){
             if (username==""||password==""){
                 message.info('Fields can not be empty');
             }
-            else{    
+            else{
+                username = username.toLowerCase()    
                 Fetch()    
                 setLoading(true)
                 setTimeout(() => {

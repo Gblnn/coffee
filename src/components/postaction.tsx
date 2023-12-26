@@ -68,6 +68,7 @@ export default function PostAction(){
 
       const onPost=()=>{
         if (author===""){
+            author.toLowerCase
             author="user"
         }
         
