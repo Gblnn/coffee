@@ -7,6 +7,14 @@ export default function Chats(){
 
     const [chat, setChat] = useState("")
 
+    //     const [posts, setPosts] = useState<any[]>([])
+  
+    // useEffect(()=>{
+    //     fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
+    //     .then(res => res.json())
+    //     .then(data => setPosts(data))
+    // },[])
+
     const handleSend = () => {
         console.log(chat)
     }
@@ -18,6 +26,15 @@ export default function Chats(){
             <div className="comment_container">
             <ChatInput author="user" message="Message"/>
             <ChatInput author="user" message="Message"/>
+            {/* {
+                posts.map((post)=>(           
+                    post.commentlist.map((items:any) => {
+                        <ChatInput author={post.author} message={items.comment}/>
+                        console.log(items.author)
+                        console.log(items.comment)
+                    })           
+                ))
+            } */}
             </div>
 
             <div className="flex">          

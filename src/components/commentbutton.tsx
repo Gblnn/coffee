@@ -1,5 +1,5 @@
 import { Button, ConfigProvider, Drawer, Input } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ChatInput from "./chat";
 
 
@@ -9,24 +9,24 @@ interface Props {
 
 export default function CommentButton(props:Props) {
 
-    const [posts, setPosts] = useState<any[]>([])
+    // const [posts, setPosts] = useState<any[]>([])
   
-    useEffect(()=>{
-      fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
-      .then(res => res.json())
-      .then(data => setPosts(data))
-    },[])
+    // useEffect(()=>{
+    //   fetch("https://6586a271468ef171392e80df.mockapi.io/posts?id=1")
+    //   .then(res => res.json())
+    //   .then(data => setPosts(data))
+    // },[])
 
     const [open, setOpen] = useState(false);
 
     const showDrawer = () => {
         setOpen(true);
-        posts.map((post)=>{           
-          post.commentlist.map((items:any) => {
-              console.log(items.author)
-              console.log(items.comment)
-          })           
-      })
+      //   posts.map((post)=>{           
+      //     post.commentlist.map((items:any) => {
+      //         console.log(items.author)
+      //         console.log(items.comment)
+      //     })           
+      // })
       };
     
       const onClose = () => {
