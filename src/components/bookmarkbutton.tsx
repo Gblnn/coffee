@@ -31,7 +31,7 @@ export default function BookmarkButton(props:Props){
             fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
             method: 'PUT',
             headers: {'content-type':'application/json'},
-            body: JSON.stringify({bookmarked: true, bookmarks: ""})
+            body: JSON.stringify({bookmarked: true, bookmarks: 1})
             })
         
         }
@@ -51,7 +51,7 @@ export default function BookmarkButton(props:Props){
     return(
         <>
         <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
-            <p>{props.bookmarkcount}</p>
+            <p style={{fontWeight:700}}>{props.bookmarkcount}</p>
             <img alt="Like" className='footer_icon' src={likestate}></img>
             
         </button>

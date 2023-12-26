@@ -9,7 +9,7 @@ export default function PostAction(){
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
-    let likes = 0
+    let likes = ""
     let liked = false
     let bookmarked = false
     let comments = ""
@@ -67,9 +67,11 @@ export default function PostAction(){
       }
 
       const onPost=()=>{
-        if (author===""){
-            author.toLowerCase
+        if (author===""){   
             author="user"
+        }
+        else{
+            author = author.toLowerCase()
         }
         
         let obj = {profile, author, content, colorscheme, date, time, commentlist, likes, comments, liked, bookmarked}

@@ -172,7 +172,7 @@ export default function Post(props: Props){
                 <div className="procard_right">
                   <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                   {
-                    props.author=="gbln"?
+                    props.author=="user"?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                       <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
