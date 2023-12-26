@@ -15,15 +15,20 @@ import Chats from "./chat";
 export default function Layout(){
 
   const [open, setOpen] = useState(false);
+  const [pathname, setPathname] = useState('/home');
   const usenavigate = useNavigate()
   
   const handleOk = () => {
+
     setOpen(false)
     usenavigate('/')
+
   };
 
   const handleCancel = () => {
+
     setOpen(false);
+
   };
     
     const Logout = () => {
@@ -39,7 +44,7 @@ export default function Layout(){
           cancelText:"Cancel"  
         });
     }
-    const [pathname, setPathname] = useState('/home');
+
     return(
         <>
         <ProLayout

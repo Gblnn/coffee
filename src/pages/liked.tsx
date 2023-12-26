@@ -10,25 +10,22 @@ import { Empty } from 'antd';
 export default function Liked(){
 
     const [posts, setPosts] = useState<any[]>([])
+
+
     useEffect(()=>{
-        
-            fetch("https://6586a271468ef171392e80df.mockapi.io/posts?liked=true")
-            .then(res => res.json())
-            .then(data => {
-                setPosts(data)
-                console.log(data)
-            })
-        
+        fetch("https://6586a271468ef171392e80df.mockapi.io/posts?liked=true")
+        .then(res => res.json())
+        .then(data => {
+            setPosts(data)
+            console.log(data)
+        })
     },[])
    
-        
-        
-    
     return(
         <>
         <div className='page_container'>
-                {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
-                <InfiniteScroll
+            {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
+            <InfiniteScroll
                 style={{padding:"1rem"}}
                 className='container'
                 dataLength={1}
@@ -51,14 +48,14 @@ export default function Liked(){
                     }
                             </div>                 
                     
-                </InfiniteScroll> 
-                }
+            </InfiniteScroll> 
+            }
                         
             
-        </div>
-            
-            
+        </div>   
         <div className='empty'></div>
+
+        {/* Add new Post (Float Button) */}
         <PostAction/>
         </>
     )
