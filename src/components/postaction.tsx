@@ -17,7 +17,8 @@ export default function PostAction(){
     
     let hours = new Date().getHours()
     let minutes = new Date().getMinutes()
-    let time = hours-12+":"+minutes
+    let ampm = ""
+    let time = (hours-12+":"+minutes+ampm).toString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
     
@@ -43,6 +44,12 @@ export default function PostAction(){
         }
         if (author.length > 6){
             setPostable(false)
+        }
+        if (hours>12){
+            ampm = "PM"
+        }
+        else{
+            ampm = "AM"
         }
         
     })
