@@ -65,7 +65,7 @@ export default function PostAction(){
 
       const onPost=()=>{
         if (author===""){
-            author="unknown"
+            author="user"
         }
         
         let obj = {profile, author, content, colorscheme, date, time, commentlist, likes, comments, liked, bookmarked}
