@@ -20,6 +20,7 @@ interface Props {
     admin:string;
     liked:boolean;
     bookmarked:boolean
+    time:string
 }
 
 
@@ -88,11 +89,15 @@ export default function Post(props: Props){
                     <Typography.Text className='procard_name'>{props.author}</Typography.Text>
                     <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>{props.date}</Typography.Text>
                 </div>
+                <div className="procard_right">
+                  <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                 <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
                     <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                     <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
                     </button>
                 </Dropdown>
+                </div>
+                
             </div>
             
             <div id={props.colorscheme} className='procard_content'>

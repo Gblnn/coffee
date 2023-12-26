@@ -14,6 +14,8 @@ export default function PostAction(){
     let bookmarked = false
     let comments = ""
     let date = new Date().toLocaleDateString()
+    let time = new Date().toLocaleTimeString()
+  
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
     
@@ -31,13 +33,13 @@ export default function PostAction(){
         else{
             setPostable(true)
         }
-        if(author.length > 8){
+        if(author.length > 6){
             setWarn(true)
         }
         else{
             setWarn(false)
         }
-        if (author.length > 8){
+        if (author.length > 6){
             setPostable(false)
         }
         
@@ -45,6 +47,7 @@ export default function PostAction(){
 
     const showDrawer = () => {
         setOpen(true);
+        console.log(time)
       };
     
       const onClose = () => {
@@ -63,7 +66,7 @@ export default function PostAction(){
             author="unknown"
         }
         
-        let obj = {profile, author, content, colorscheme, date, commentlist, likes, comments, liked, bookmarked}
+        let obj = {profile, author, content, colorscheme, date, time, commentlist, likes, comments, liked, bookmarked}
         
         setLoading(true)
         setTimeout(() => {
@@ -96,7 +99,7 @@ export default function PostAction(){
                         },
                         },
                     }}
-                    >   <Tooltip title="Max limit is 8 characters" placement="topLeft" open={warn}>
+                    >   <Tooltip title="Max limit is 6 characters" placement="topLeft" open={warn}>
                         <Input onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
                     </Tooltip>
                         

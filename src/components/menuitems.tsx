@@ -20,7 +20,7 @@ export default {
         },
         {
             path: 'layout/bookmarks',
-            name: 'Bookmarks',
+            name: 'Saved',
             icon: <BookFilled />,
             
             
