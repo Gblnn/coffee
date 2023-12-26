@@ -51,8 +51,9 @@ export default function BookmarkButton(props:Props){
     return(
         <>
         <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
+            <p>{props.bookmarkcount}</p>
             <img alt="Like" className='footer_icon' src={likestate}></img>
-            <p className='like_count'>{props.bookmarkcount}</p>
+            
         </button>
         </>
     )

@@ -46,6 +46,9 @@ export default function CommentButton(props:Props) {
         <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>           
             <div className="comment_container"> 
                 <ChatInput author="user" message="Comment"/>
+                {
+                  
+                }
                   </div>
                     <div className="flex">
                     

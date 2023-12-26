@@ -17,8 +17,7 @@ export default function PostAction(){
     
     let hours = new Date().getHours()
     let minutes = new Date().getMinutes()
-    let ampm = ""
-    let time = (hours-12+":"+minutes+ampm).toString()
+    let time = (hours-12+":"+minutes).toString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
     
@@ -44,12 +43,6 @@ export default function PostAction(){
         }
         if (author.length > 6){
             setPostable(false)
-        }
-        if (hours>12){
-            ampm = "PM"
-        }
-        else{
-            ampm = "AM"
         }
         
     })
@@ -79,7 +72,7 @@ export default function PostAction(){
         
         setLoading(true)
         setTimeout(() => {
-            message.success("Posted Sucessfully")
+            message.loading("Posting")
             fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
             {
                 method:"POST",

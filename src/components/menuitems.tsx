@@ -1,4 +1,4 @@
-import {HomeFilled, HeartFilled, BookFilled, EditFilled, UserOutlined} from '@ant-design/icons'
+import {HomeFilled, HeartFilled, BookFilled, EditFilled, UserOutlined, CommentOutlined} from '@ant-design/icons'
 
 export default {
     route: {
@@ -27,19 +27,28 @@ export default {
         },
         {
             path: 'layout/posts',
-            name: 'Posts',
+            name: 'Posts (Not Ready)',
             icon: <EditFilled />,
             
             
         },
         {
+          path: 'layout/chats',
+          name: 'Chats (Not Ready)',
+          icon: <CommentOutlined />,
+          
+          
+          
+      },
+        {
             path: 'layout/profile',
-            name: 'Profile',
+            name: 'Profile (Not Ready)',
             icon: <UserOutlined />,
             
             
             
-        },
+        }
+        
     ]
 },
 };

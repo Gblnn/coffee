@@ -8,6 +8,7 @@ import Bookmarks from "./bookmarks";
 import Posts from "./posts";
 import Profile from "./profile";
 import { Modal } from "antd";
+import Chats from "./chat";
 
 
 
@@ -96,6 +97,7 @@ export default function Layout(){
             <Route path="bookmarks" element={<Bookmarks/>}/>
             <Route path="posts" element={<Posts/>}/>
             <Route path="profile" element={<Profile/>}/>
+            <Route path="chats" element={<Chats/>}/>
           </Routes>
             
         </ProLayout>

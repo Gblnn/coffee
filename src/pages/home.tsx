@@ -8,6 +8,13 @@ import {LoadingOutlined} from '@ant-design/icons'
 
 export default function Home(){
 
+    // const Reload = () =>{
+    //     setTimeout(()=>{
+    //         window.location.reload()
+    //     },1000)
+        
+    //   }
+
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
@@ -17,6 +24,13 @@ export default function Home(){
                 console.log(data)
             })
     },[])
+
+
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         Reload()
+    //     },60000)
+    // },[])
    
         
         

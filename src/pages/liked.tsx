@@ -27,7 +27,7 @@ export default function Liked(){
     return(
         <>
         <div className='page_container'>
-                {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"40%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
+                {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
                 <InfiniteScroll
                 style={{padding:"1rem"}}
                 className='container'

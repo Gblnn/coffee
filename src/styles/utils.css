@@ -13,8 +13,18 @@
 
 .page_container{
     width: 100%;
-    height: 85vh;
+    height: 100%;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
     
+}
+.chat_container{
+    width: 100%;
+    height: 79vh;
+    flex-direction: column;
     /* border: 1px solid red; */
     display: flex;
     justify-content: center;
@@ -32,7 +42,7 @@
 
 .comment_container{
     width: 100%;
-    height: 90%;
+    height: 100%;
     /* border: 1px solid; */
     display: flex;
     flex-direction: column;
@@ -60,6 +70,7 @@
     align-items: center;
     align-self: center;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .form_container{
@@ -259,6 +270,8 @@
 
 .container{
     display: flex;
+    width: 100%;
+    border: "1px solid";
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -282,6 +295,11 @@
     .procard_content{
         
         height: 40ch;
+        
+    }
+    .chat_container{
+        height: 87vh;
+        
         
     }
 }
