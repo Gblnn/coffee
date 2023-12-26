@@ -6,13 +6,15 @@ import PostAction from '../components/postaction.tsx';
 import {LoadingOutlined} from '@ant-design/icons'
 
 
+
 export default function Home(){
 
-    const Reload = () =>{
-        setTimeout(()=>{
-            window.location.reload()
-        },1000)       
-      }
+    // const Reload = () =>{
+    //     message.loading("Refreshing")
+    //     setTimeout(()=>{
+    //         window.location.reload()
+    //     },1000)       
+    //   }
 
     const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
@@ -25,11 +27,11 @@ export default function Home(){
     },[])
 
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            Reload()
-        },90000)
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         Reload()
+    //     },60000)
+    // },[])
    
         
         

@@ -41,7 +41,9 @@ export default function Layout(){
           onOk:handleOk,
           onCancel:handleCancel,
           okText:"Confirm",
-          cancelText:"Cancel"  
+          cancelText:"Cancel",
+          okButtonProps:{style:{background:"black"}},
+          cancelButtonProps:{style:{borderColor:"rgb(175,175,175)", color:"black"}}  
         });
     }
 
