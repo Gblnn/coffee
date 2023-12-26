@@ -14,8 +14,10 @@ export default function PostAction(){
     let bookmarked = false
     let comments = ""
     let date = new Date().toLocaleDateString()
-    let time = new Date().toLocaleTimeString()
-  
+    
+    let hours = new Date().getHours()
+    let minutes = new Date().getMinutes()
+    let time = hours-12+":"+minutes
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
     
