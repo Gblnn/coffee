@@ -76,7 +76,7 @@ export default function Login(){
             
                 <div className="form_container">
                 <div className="form_header">
-                    {/* <img alt="logo" style={{width:"2.75rem",height:"2.75rem"}} src="coffee-bag-color.png"></img> */}
+                    <img alt="logo" style={{width:"2.75rem",height:"2.75rem"}} src="coffee-bag.png"></img>
                     <h1>LOGIN</h1>
                 </div>
                 <div className="empty"></div>
