@@ -143,7 +143,8 @@ export default function PostAction(){
                                 { value: 'sad', label: 'Night' },
                                 { value: 'royal', label: 'Neon' },
                                 { value: 'pink', label: 'Pink' },
-                                { value: 'sky', label: 'Sky' }
+                                { value: 'sky', label: 'Sky' },
+                                { value: 'coffee', label: 'Coffee' }
                             ]}
                         />
                 </Drawer>
