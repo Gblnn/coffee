@@ -96,7 +96,7 @@ export default function Post(props: Props){
       centered:true,
       title: "Confirm Delete?",
       content: 'This action can not be undone',
-      okText:"Confirm",
+      okText:"Delete",
       cancelText:"Cancel",
       onOk:handleDelete,
       okButtonProps:{style:{background:"black"}},
@@ -172,7 +172,7 @@ export default function Post(props: Props){
                 <div className="procard_right">
                   <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                   {
-                    props.author=="gbln"?
+                    props.author=="gbln"||"muskan"||"Muski"?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                       <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
@@ -225,7 +225,7 @@ export default function Post(props: Props){
                     
                     
                     
-                    <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Second thoughts'/>
+                    <TextArea value={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Second thoughts'></TextArea>
                     
                     
                     </ConfigProvider>
