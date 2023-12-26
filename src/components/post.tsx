@@ -1,5 +1,5 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Dropdown, MenuProps, Modal, Typography } from "antd";
+import { Dropdown, MenuProps, Modal, Typography, message } from "antd";
 import {EllipsisOutlined} from '@ant-design/icons';
 
 import CommentButton from "./commentbutton";
@@ -34,6 +34,7 @@ export default function Post(props: Props){
   }
 
   const handleDelete = () => {
+    message.loading("Deleting")
     fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
       method: 'DELETE',
     }).then(res => {

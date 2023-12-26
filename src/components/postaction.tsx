@@ -17,12 +17,10 @@ export default function PostAction(){
     
     let hours = new Date().getHours()
     let minutes = new Date().getMinutes()
-    let time = (hours-12+":"+minutes).toString()
+    let hrs = hours.toString()
+    let mins = minutes.toString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
-    
-    
-
     const [open, setOpen] = useState(false);
     const [postable, setPostable] = useState(false)
     const [warn, setWarn] = useState(false)
@@ -44,8 +42,13 @@ export default function PostAction(){
         if (author.length > 6){
             setPostable(false)
         }
+        if (minutes<10){
+            mins = "0"+mins
+        }
         
     })
+
+    let time = (hrs+":"+mins).toString()
 
     const showDrawer = () => {
         setOpen(true);
