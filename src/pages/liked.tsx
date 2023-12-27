@@ -24,7 +24,7 @@ export default function Liked(){
    
     return(
         <>
-        <h3 style={{marginBottom:"1rem"}}>Liked Posts</h3>
+        
          
         <div className='page_container'>
             {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:

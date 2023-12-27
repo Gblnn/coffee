@@ -31,7 +31,7 @@ export default function Post(props: Props){
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false)
   // const [warn, setWarn] = useState(false);
-  const [postable, setPostable] = useState(false)
+  // const [postable, setPostable] = useState(false)
   const [colorscheme, setColor] = useState("")
   // let [author, setAuthor] = useState("");
   const [content, setContent] = useState("")
@@ -39,14 +39,10 @@ export default function Post(props: Props){
   let hours = new Date().getHours()
   let minutes = new Date().getMinutes()
   let time = hours+":"+minutes
+  const [posts, setPosts] = useState("")
 
   useEffect(()=>{
-    if(content==""){
-        setPostable(false)
-    }
-    else{
-        setPostable(true)
-    }
+    
     // if(author.length > 6){
     //     setWarn(true)
     // }
@@ -57,7 +53,16 @@ export default function Post(props: Props){
     //     setPostable(false)
     // }
     
-})
+    
+},[])
+
+useEffect(()=>{
+  fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
+      .then(res => res.json())
+      .then(data => {
+        setPosts(data)
+      })
+},[])
 
   const Reload = () =>{
     setTimeout(()=>{
@@ -79,11 +84,12 @@ export default function Post(props: Props){
     message.loading("Deleting")
     fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
       method: 'DELETE',
-    }).then(res => {
-      if (res.ok) {
-        return res.json();
-      }        
-      })
+    })
+
+    fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id, {
+      method: 'DELETE',
+    })
+
       Reload()
   }
 
@@ -196,7 +202,8 @@ export default function Post(props: Props){
                 {/* Like & Comment Buttons */}
                 <div className="footer_left">
                   <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
-                  <CommentButton comments={props.comments}/>
+                  {/* <CommentButton postid={props.id} comments={props.comments}/> */}
+                  <CommentButton postid={props.id} comments={String(posts.length)=="9"?"0":String(posts.length)}/>
                 </div>
 
                 {/* Bookmark Button */}
@@ -239,12 +246,12 @@ export default function Post(props: Props){
                             }
                         }}
                         >
-                        <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}  disabled={!postable}>Post</Button>
+                        <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}  >Post</Button>
                         
                     </ConfigProvider>
 
                         <Select
-                            defaultValue={props.colorscheme}
+                            defaultValue="white"
                             style={{ width: 120, marginLeft:"1rem", fontSize:"16px" }}
                             onChange={setColor}
                             options={[

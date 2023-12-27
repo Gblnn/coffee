@@ -22,7 +22,7 @@ export default function bookmarks(){
     
     return(
         <>
-        <h3 style={{marginBottom:"1rem"}}>Saved Posts</h3>
+        
         <div className='page_container'>
             
             <InfiniteScroll
