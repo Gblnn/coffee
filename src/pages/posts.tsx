@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import type { TableColumnsType } from 'antd';
-import { Space, Table } from 'antd';
+import { ConfigProvider, Empty, Space, Table } from 'antd';
 
 interface DataType {
   key: React.Key;
@@ -15,14 +15,11 @@ interface ExpandedDataType {
   upgradeNum: string;
 }
 
-
-
-
 const App: React.FC = () => {
 
   const [posts, setPosts] = useState<any[]>([])
   useEffect(()=>{
-    fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
+    fetch("https://6586a271468ef171392e80df.mockapi.io/posts?author=gbln")
             .then(res => res.json())
             .then(data => {
                 setPosts(data)
@@ -69,17 +66,6 @@ const App: React.FC = () => {
   ];
 
   const data: DataType[] = [];
-  // for (let i = 0; i < 12; ++i) {
-  //   data.push({
-  //     key: i.toString(),
-  //     name: '',
-  //     platform: 'iOS',
-  //     version: '10.3.4.5654',
-  //     upgradeNum: 500,
-  //     creator: 'Jack',
-  //     createdAt: '2014-12-24 23:12:00',
-  //   });
-  // }
   posts.map((posts:any)=>{
     data.push({
           key: posts.id,
@@ -91,11 +77,13 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Table
+    <ConfigProvider renderEmpty={()=><Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No posts"/>}>
+    <Table
         columns={columns}
         expandable={{ expandedRowRender }}
         dataSource={data}
       />
+    </ConfigProvider>
       
     </>
   );
