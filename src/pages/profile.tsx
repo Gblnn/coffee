@@ -49,6 +49,7 @@ const App: React.FC = () => {
 
   return (
     <>
+    <h3 style={{marginBottom:"1rem"}}>Profile</h3>
       <Upload
         name="avatar"
         listType="picture-card"

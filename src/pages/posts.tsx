@@ -77,6 +77,7 @@ const App: React.FC = () => {
 
   return (
     <>
+    <h3 style={{marginBottom:"1rem"}}>Posts</h3>
     <ConfigProvider renderEmpty={()=><Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No posts"/>}>
     <Table
         columns={columns}

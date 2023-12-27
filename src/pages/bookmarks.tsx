@@ -3,7 +3,7 @@ import Post from '../components/post';
 import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import PostAction from '../components/postaction.tsx';
+
 
 
 export default function bookmarks(){
@@ -22,6 +22,7 @@ export default function bookmarks(){
     
     return(
         <>
+        <h3 style={{marginBottom:"1rem"}}>Saved Posts</h3>
         <div className='page_container'>
             
             <InfiniteScroll
@@ -52,7 +53,7 @@ export default function bookmarks(){
             
             
         <div className='empty'></div>
-        <PostAction/>
+        
         </>
     )
 }

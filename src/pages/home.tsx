@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PostAction from '../components/postaction.tsx';
 import {LoadingOutlined} from '@ant-design/icons'
+import { FloatButton } from 'antd';
 
 
 
@@ -38,6 +39,7 @@ export default function Home(){
     
     return(
         <>
+        <h3>Home</h3>
         <div className='page_container'>
                 
             <div >
@@ -71,8 +73,11 @@ export default function Home(){
         </div>
             
             
+        <FloatButton.Group shape="square" style={{ right: 24 }}>  
+            <FloatButton.BackTop/>
+            <PostAction/>
+        </FloatButton.Group>
         
-        <PostAction/>
         </>
     )
 }

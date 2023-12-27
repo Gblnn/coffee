@@ -3,8 +3,9 @@ import Post from '../components/post';
 import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import PostAction from '../components/postaction.tsx';
+
 import { Empty } from 'antd';
+
 
 
 export default function Liked(){
@@ -23,6 +24,8 @@ export default function Liked(){
    
     return(
         <>
+        <h3 style={{marginBottom:"1rem"}}>Liked Posts</h3>
+         
         <div className='page_container'>
             {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
             <InfiniteScroll
@@ -55,8 +58,7 @@ export default function Liked(){
         </div>   
         <div className='empty'></div>
 
-        {/* Add new Post (Float Button) */}
-        <PostAction/>
+        
         </>
     )
 }
