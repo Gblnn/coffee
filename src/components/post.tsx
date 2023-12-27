@@ -1,6 +1,6 @@
 import { ProCard } from "@ant-design/pro-components";
 import { Button, ConfigProvider, Drawer, Dropdown, MenuProps, Modal, Select, Typography, message } from "antd";
-import {EllipsisOutlined} from '@ant-design/icons';
+import {MoreOutlined} from '@ant-design/icons';
 
 import CommentButton from "./commentbutton";
 import LikeButton from "./likebutton";
@@ -182,7 +182,7 @@ useEffect(()=>{
                     props.author==props.author?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft">
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
-                      <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
+                      <MoreOutlined style={{fontSize:"1.25rem"}}/>
                       </button>
                     </Dropdown>
                     :null
