@@ -39,7 +39,7 @@ export default function Home(){
     
     return(
         <>
-        <h3>Home</h3>
+        
         <div className='page_container'>
                 
             <div >
