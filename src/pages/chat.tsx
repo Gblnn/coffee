@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Input } from "antd";
 import {ArrowUpOutlined} from '@ant-design/icons'
 import { useState } from "react";
-import ChatInput from "../components/chat";
+
 
 export default function Chats(){
 
@@ -24,8 +24,7 @@ export default function Chats(){
         <Input style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
         <div className="chat_container">
             <div className="comment_container">
-            <ChatInput author="user" message="Message"/>
-            <ChatInput author="user" message="Message"/>
+            
             {/* {
                 posts.map((post)=>(           
                     post.commentlist.map((items:any) => {
