@@ -9,22 +9,28 @@ import { useEffect, useState } from "react"
 export default function Login(){
 
     const [posts, setPosts] = useState<any[]>([])
+    const [postable, setPostable] = useState(false)
 
     useEffect(()=>{
-        setTimeout(()=>{
-        fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
-        .then(res => res.json())
-        .then(data => {
-            setPosts(data) 
-            console.log(data)
-        })
+        if(username==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+        if(password==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+    })
+
+    useEffect(()=>{
+        setTimeout(()=>{   
         },3000)
         
     })
-
-    const Fetch = () =>{
-        
-    }
     
     
 
@@ -39,34 +45,35 @@ export default function Login(){
     // let id = "2"
     const usenavigate = useNavigate()
 
-        const Validate = () =>{
-            
-            if (username==""||password==""){
-                message.info('Fields can not be empty');
+    const Validate = () =>{
+
+        fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
+        .then(res => res.json())
+        .then(data => {
+            setPosts(data) 
+            console.log(data)
+        })
+
+        username = username.toLowerCase()     
+        setLoading(true)
+
+
+        setTimeout(() => {
+
+            setLoading(false)
+            posts.map((post)=>{
+            console.log(post.username)
+            if(post.username === username && post.password === password){
+                console.log("Login successful")
+                usenavigate('/layout/home/')
             }
             else{
-                username = username.toLowerCase()    
-                Fetch()    
-                setLoading(true)
-                setTimeout(() => {
-                setLoading(false)
-                
-                posts.map((post)=>{
-                    console.log(post.username)
-                    if(post.username==username&&post.password==password){
-                        console.log("Login successful")
-                        usenavigate('/layout/home/')
-                    }
-                    else{
-                        console.log("Login failed")
-                        message.info("Invalid credentials")
-                    }
-                })
-                
-                
-                
-                },1000);
-            }
+                console.log("Login failed")
+                message.info("Invalid credentials")
+                }
+            })
+        },1000);
+            
         }
         
     
@@ -85,38 +92,29 @@ export default function Login(){
                 <Form
                 name="basic"
                 style={{marginTop:"1.5rem"}}
-                
-                >
-                    
-
-                    
+                >  
                     <Form.Item>
                     <ConfigProvider
                         theme={{
-                            token: {
-                            colorPrimary:"black",
-                            
+                            token:{
+                                colorPrimary:"black",
                             }
                         }}
-                        >
-                            <Form.Item name="username" rules={[{ required: true }]}>
-                        <Input style={{fontSize:"14px"}} value={username} onChange={e=>usernameUpdate(e.target.value)} className="input_field" placeholder="Enter Username"></Input>
-                    </Form.Item>
+                    >
+                        <Form.Item name="username" rules={[{ required: true }]}>
+                            <Input style={{fontSize:"14px"}} value={username} onChange={e=>usernameUpdate(e.target.value)} className="input_field" placeholder="Enter Username"></Input>
+                        </Form.Item>
 
-                    <Form.Item name="password" rules={[{ required: true}]}> 
-                        <Input.Password style={{fontSize:"14px"}} value={password} onChange={e=>passwordUpdate(e.target.value)} className="input_field" type="Password" placeholder="Enter Password"></Input.Password>
-                    </Form.Item>
+                        <Form.Item name="password" rules={[{ required: true}]}> 
+                            <Input.Password style={{fontSize:"14px"}} value={password} onChange={e=>passwordUpdate(e.target.value)} className="input_field" type="Password" placeholder="Enter Password"></Input.Password>
+                        </Form.Item>
 
-                    <div className="empty"></div>
-                    
-                            
-                            <Button block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
-                            
-                            
+                        <div className="empty"></div>
+                        
+                        <Button disabled={!postable} block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
+                                   
                     </ConfigProvider>
                     </Form.Item>
-
-
                 </Form>
                 <Typography.Text style={{color:"#4a4a4a"}} className="form_text">Don't have an account?<Link style={{color:"black",fontWeight:600}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
                 </div>

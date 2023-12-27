@@ -86,7 +86,7 @@ useEffect(()=>{
       method: 'DELETE',
     })
 
-    
+
     fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id, {
       method: 'DELETE',
     })
@@ -180,7 +180,7 @@ useEffect(()=>{
                   <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                   {
                     props.author==props.author?
-                    <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft" arrow>
+                    <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft">
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                       <EllipsisOutlined style={{fontSize:"1.5rem"}}/>
                       </button>
