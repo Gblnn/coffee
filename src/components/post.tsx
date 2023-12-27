@@ -67,7 +67,7 @@ useEffect(()=>{
   const Reload = () =>{
     setTimeout(()=>{
         window.location.reload()
-    },1000)
+    },2000)
     
   }
 
@@ -86,6 +86,7 @@ useEffect(()=>{
       method: 'DELETE',
     })
 
+    
     fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id, {
       method: 'DELETE',
     })

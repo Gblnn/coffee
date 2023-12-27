@@ -38,28 +38,35 @@ export default function CommentButton(props:Props) {
         setOpen(false);
       };
 
-      // const Reload = () =>{
-      //   window.location.reload()
-      // }
+      const Reload = () =>{
+        message.loading("Posting")
+        setLoading(true)
+        setTimeout(()=>{
+          setLoading(false)
+          window.location.reload()
+        },1000)
+        
+      }
 
       
 
     const onPost = () => {
 
       let obj = {postid, user, comment, date}
-      setLoading(true)
-      message.loading("Posting")
-      setTimeout(() => {
-        fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments",
-        {
+      
+      
+      fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments",
+      {
             method:"POST",
             headers:{'content-type':'application/json'},
             body:JSON.stringify(obj)
-        }
-        )
-        setLoading(false)
+      }
+      )
+    
+        Reload()
+    
         
-    }, 1000);
+    
     }
 
     return(
