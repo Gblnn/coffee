@@ -4,6 +4,9 @@
     margin: 0;
     
 }
+body{
+    font-family: "Supreme";
+}
 
 button{
     border: none;

@@ -60,7 +60,7 @@ const App: React.FC = () => {
             upgradeNum: '',
           });
     return <Table columns={columns} dataSource={data} pagination={false} />;
-    
+
   };
 
   const columns: TableColumnsType<DataType> = [
@@ -82,11 +82,14 @@ const App: React.FC = () => {
     <>
     <h3 style={{marginBottom:"1rem"}}>Posts</h3>
     <ConfigProvider renderEmpty={()=><Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No posts"/>}>
-    <Table
-        columns={columns}
-        expandable={{ expandedRowRender }}
-        dataSource={data}
-      />
+      {String(posts.length)=="9"?null:
+      <Table
+      columns={columns}
+      expandable={{ expandedRowRender }}
+      dataSource={data}
+    />
+      }
+    
     </ConfigProvider>
       
     </>
