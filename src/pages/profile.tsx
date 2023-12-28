@@ -1,6 +1,6 @@
 import { Button, Card, ConfigProvider, Drawer, Input, Modal, Typography, message } from "antd";
 import { useEffect, useState } from "react";
-import { DeleteOutlined ,EditFilled} from '@ant-design/icons'
+import { DeleteOutlined ,EditFilled, LoadingOutlined} from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
 
 
@@ -155,11 +155,12 @@ export default function Profile(){
 
 
   return(
-    <>
+    <div style={{display:"flex", flexDirection:"column",alignItems:"center"}}>
+      <LoadingOutlined style={{position:"fixed",marginTop:"2rem", fontSize:"2rem"}}/>
       {
       user.map((users)=>(
 
-        <Card key={users.id} style={{marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} >
+        <Card key={users.id} style={{width:"100%",marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} >
           <img src={users.profile}/>
           <h2>{users.fullname}</h2>
           
@@ -222,6 +223,6 @@ export default function Profile(){
                         
                 </Drawer>
     
-    </>
+    </div>
   )
 }
