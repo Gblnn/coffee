@@ -42,7 +42,6 @@ export default function Login(){
     //Data
     let [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
-    let final_username = ""
     
 
     // const [posts, setPosts] = useState<any[]>([])
