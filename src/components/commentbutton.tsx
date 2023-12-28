@@ -12,7 +12,7 @@ interface Props {
 export default function CommentButton(props:Props) {
 
     let [comment, setComment] = useState("")
-    let user = "user"
+    let user = window.name
     let postid = props.postid
     let date = new Date().toLocaleDateString()
     let [posts, setPosts] = useState<any[]>([])
