@@ -1,18 +1,20 @@
 import { Button, Card, ConfigProvider, Drawer, Input, Modal, Typography, message } from "antd";
 import { useEffect, useState } from "react";
 import { DeleteOutlined ,EditFilled} from '@ant-design/icons'
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function Profile(){
 
-  // const usenavigate = useNavigate()
+  const usenavigate = useNavigate()
 
   const user_data = window.name
-  const [user, setUser] =useState<any[]>([])
+  const [user, setUser] = useState<any[]>([])
   const [open, setOpen] = useState(false);
-
+  // const [posts, setPosts] = useState<any[]>([])
+  const [postid, setPostid] = useState("")
   const [loading, setLoading] = useState(false)
-
   const [fullname, setFullname] = useState("")
   const [username, setUsername] = useState("")
 
@@ -26,13 +28,30 @@ export default function Profile(){
   };
 
   useEffect(()=>{
-    fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data)
-        .then(res => res.json())
-        .then(data => {
-            setUser(data)
-            console.log(data)
-        })
-  },[])
+    setTimeout(()=>{
+      // fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data)
+      // .then(res => res.json())
+      // .then(data => setUser(data))
+
+      fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data, {
+        method: 'GET',
+        headers: {'content-type':'application/json'},
+      }).then(res => {
+      if (res.ok) {
+      return res.json();
+      }
+  
+    }).then(posts => {
+      setUser(posts)
+      console.log(user)
+    })
+    
+      user.map((post)=>(setPostid(post.id)))
+      console.log(user)
+      console.log(postid)
+    },3000)
+    
+  })
 
   // const Reload = () => {
   //   message.loading("Updating")
@@ -46,17 +65,41 @@ export default function Profile(){
 
   const onPost = () => {
     message.loading("Updating")
-    fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data, {
-      method: 'PUT',
-      headers: {'content-type':'application/json'},
-      body: JSON.stringify({fullname: fullname, username: username})
-    })
-    setLoading(true)
-    setTimeout(()=>{
+    // fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       setPosts(data)
+    //       console.log(posts)
+    //     } )
+
+        
+        user.map((post)=>(
+        setPostid(post.id)
+        ))
+      setLoading(true)
+      setTimeout(()=>{
+        console.log(postid)
+        fetch("https://6586a271468ef171392e80df.mockapi.io/users/"+postid, {
+        method: 'PUT',
+        headers: {'content-type':'application/json'},
+        body: JSON.stringify({fullname: fullname, username: username})
+        })
       setLoading(false)
-    },2000)
+      setOpen(false)
+      Login()
+      
+      },1000)
     
     
+    
+  }
+
+  const Login = () =>{
+    setTimeout(()=>{
+      usenavigate("/")
+      message.info("Username updated. Login to continue.")
+      
+    },1000)
   }
 
   const confirmDelete = () => {
@@ -74,18 +117,40 @@ export default function Profile(){
 
   const handleDelete = () => {
     message.loading("Deleting account")
-    fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data, {
-      method: 'DELETE',
-      
-    })
+    // fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setPosts(data) 
+    //         console.log(data)
+    //       })
+
+    // posts.map((post)=>{
+    //   setPostid(post.id)
+    //   console.log(postid)
+    // })
+    user.map((post)=>(
+      setPostid(post.id)
+      ))
     setTimeout(()=>{
+      console.log(postid)
+      fetch("https://6586a271468ef171392e80df.mockapi.io/users/"+postid, {
+      method: 'DELETE',
+      })
+
+      setTimeout(()=>{
       Redirect()
-    },3000)
+      },1000)
+
+    },2000)
+     
+    
+
+    
   }
 
   const Redirect = () => {
-    // usenavigate("/")
-    message.info("Bad request")
+    usenavigate("/")
+    message.info("Account removed")
   }
 
 
@@ -93,8 +158,8 @@ export default function Profile(){
     <>
       {
       user.map((users)=>(
-        <>
-        <Card style={{marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} key={users.id} id={users.id}>
+
+        <Card key={users.id} style={{marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} >
           <img src={users.profile}/>
           <h2>{users.fullname}</h2>
           
@@ -105,7 +170,7 @@ export default function Profile(){
             <Button onClick={showDrawer}>Edit<EditFilled/></Button>
           </div>
         </Card>
-        </>
+        
 
         
         

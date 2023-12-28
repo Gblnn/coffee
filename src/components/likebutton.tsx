@@ -27,7 +27,6 @@ export default function LikeButton(props:Props){
         if (likestate==="/heart.png"){
         setLiked(true)
           console.log("Liked post")
-
             fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
             method: 'PUT',
             headers: {'content-type':'application/json'},

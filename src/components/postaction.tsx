@@ -22,6 +22,7 @@ export default function PostAction(props:Props){
     let minutes = new Date().getMinutes()
     let hrs = hours.toString()
     let mins = minutes.toString()
+    let time = (hrs+":"+mins).toString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
     const [open, setOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function PostAction(props:Props){
         
     })
 
-    let time = (hrs+":"+mins).toString()
+    
 
     const showDrawer = () => {
         setOpen(true);

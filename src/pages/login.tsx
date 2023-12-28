@@ -11,7 +11,8 @@ export default function Login(){
     const [posts, setPosts] = useState<any[]>([])
     const [postable, setPostable] = useState(false)
     
-
+    let [username, usernameUpdate] = useState('')
+    const [password, passwordUpdate] = useState('')
 
     useEffect(()=>{
         if(username==""){
@@ -30,18 +31,23 @@ export default function Login(){
         
 
     useEffect(()=>{
-        setTimeout(()=>{   
+        setTimeout(()=>{ 
+            fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
+        .then(res => res.json())
+        .then(data => {
+            setPosts(data) 
+            console.log(data)
+        })  
         },3000)
         
-    })
+    },[password])
     
     
 
     const [loading, setLoading] = useState(false)
 
     //Data
-    let [username, usernameUpdate] = useState('')
-    const [password, passwordUpdate] = useState('')
+    
     
 
     // const [posts, setPosts] = useState<any[]>([])
@@ -62,12 +68,7 @@ export default function Login(){
 
     const Validate = () =>{
 
-        fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
-        .then(res => res.json())
-        .then(data => {
-            setPosts(data) 
-            console.log(data)
-        })
+        
         
 
         username = username.toLowerCase()

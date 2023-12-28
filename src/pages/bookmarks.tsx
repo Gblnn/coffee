@@ -3,6 +3,7 @@ import Post from '../components/post';
 import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Typography } from 'antd';
 
 
 
@@ -23,7 +24,13 @@ export default function bookmarks(){
     
     return(
         <>
+        <div style={{marginRight:"2rem",right:0,position:"fixed",display:"flex", justifyContent:"flex-end"}}>
+            <div className='hoverable' style={{userSelect:"none",boxShadow:"1px 1px 5px rgb(200,200,200)",alignItems:"center",justifyContent:"center",display:"flex", gap:"0.25rem", paddingLeft:"0.75rem",paddingRight:"0.75rem", border:"1px solid rgb(220,220,220)", borderRadius:"1rem"}}>
+                <img src='/coffee.png' style={{width:"1.2rem"}}></img>
+                <Typography style={{fontFamily:"Supreme",fontSize:"0.9rem", fontWeight:"600"}}>{user_data}</Typography>
+            </div>
         
+        </div>
         <div className='page_container'>
             
             <InfiniteScroll

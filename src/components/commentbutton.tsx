@@ -20,7 +20,6 @@ export default function CommentButton(props:Props) {
   
 
     useEffect(()=>{
-
     },[])
 
     const [open, setOpen] = useState(false);

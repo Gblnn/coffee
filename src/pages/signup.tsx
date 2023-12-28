@@ -1,8 +1,8 @@
-import { Button, ConfigProvider, Form, Input, Typography, message } from "antd"
+import { Button, ConfigProvider, Form, Input, Tooltip, Typography, message } from "antd"
 import '../styles/style.css'
 import '../styles/utils.css'
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export default function SignUp(){
@@ -17,6 +17,57 @@ export default function SignUp(){
     const usenavigate = useNavigate()
     let obj = {profile, email, fullname, username, password}
     window.name = username
+    const [postable, setPostable] = useState(false)
+    const [warn, setWarn] = useState(false)
+    const [passwarn, setPassWarn] = useState(false)
+    
+
+
+    useEffect(()=>{
+        if(fullname==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+        if(email==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+        if(username==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+        if(password==""){
+            setPostable(false)
+        }
+        
+
+        if(username.length>8){
+            setPostable(false)
+            setWarn(true)
+        }
+        else{
+        
+            setWarn(false)
+        }
+        if(password.length>1){  
+            setPassWarn(true)
+        }
+        if(password.length>7){
+            setPassWarn(false)
+        }
+        if(password.length<8){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+    })
 
     const SignUp=()=>{
         
@@ -72,16 +123,23 @@ export default function SignUp(){
                         <Input style={{fontSize:"14px"}} type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input_field" placeholder="Email or phone number"></Input>
                     </Form.Item>
                     <Form.Item name="fullname" hasFeedback rules={[{ min:3, required: true, message: 'Please enter your fullname' }]}>
+                        
                         <Input style={{fontSize:"14px"}} value={fullname} onChange={e=>setFullname(e.target.value)} className="input_field" placeholder="Full Name"></Input>
                     </Form.Item>
                     <Form.Item name="username" hasFeedback rules={[{ min:4, required:true, message: 'Please enter a username' }]}>
+                        <Tooltip title="Max limit is 8 characters" placement="topRight" open={warn}>
                         <Input style={{fontSize:"14px"}} value={username} onChange={e=>setUsername(e.target.value)} className="input_field" placeholder="Username"></Input>
+                        </Tooltip>
+                        
                     </Form.Item>
                     <Form.Item name="password" hasFeedback rules={[{ required: true, message: 'Please enter a password', min:6 }]}>
+                        <Tooltip title="Use atleast 8 characters" placement="topRight" open={passwarn}>
                         <Input.Password style={{fontSize:"14px"}} value={password} onChange={e=>setPassword(e.target.value)} className="input_field" type="Password" placeholder="Password"></Input.Password>
+                        </Tooltip>
+                        
                     </Form.Item>
                 </Form>
-                        <Button loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
+                        <Button disabled={!postable} loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
                 </ConfigProvider>
                 
                 <Typography.Text style={{color:"#4a4a4a"}} className="form_text">Already have an account?<Link style={{color:"black",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
