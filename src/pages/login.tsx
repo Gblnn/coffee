@@ -10,6 +10,8 @@ export default function Login(){
 
     const [posts, setPosts] = useState<any[]>([])
     const [postable, setPostable] = useState(false)
+    
+
 
     useEffect(()=>{
         if(username==""){
@@ -25,6 +27,7 @@ export default function Login(){
             setPostable(true)
         }
     })
+        
 
     useEffect(()=>{
         setTimeout(()=>{   
@@ -40,10 +43,18 @@ export default function Login(){
     let [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
 
+    window.name = username
+
     // const [posts, setPosts] = useState<any[]>([])
     
     // let id = "2"
     const usenavigate = useNavigate()
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            
+        },3000)
+    })
 
     const Validate = () =>{
 
@@ -53,6 +64,7 @@ export default function Login(){
             setPosts(data) 
             console.log(data)
         })
+        
 
         username = username.toLowerCase()     
         setLoading(true)
@@ -65,7 +77,8 @@ export default function Login(){
             console.log(post.username)
             if(post.username === username && post.password === password){
                 console.log("Login successful")
-                usenavigate('/layout/home/')
+                
+                usenavigate('/layout/home/',{state:{id:1,user:posts}})
             }
             else{
                 console.log("Login failed")

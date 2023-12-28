@@ -23,7 +23,10 @@ interface Props {
     liked:boolean;
     bookmarked:boolean
     time:string
+    activeuser:boolean
 }
+
+
 
 
 export default function Post(props: Props){
@@ -40,6 +43,7 @@ export default function Post(props: Props){
   let minutes = new Date().getMinutes()
   let time = hours+":"+minutes
   const [posts, setPosts] = useState("")
+
 
   useEffect(()=>{
     
@@ -179,7 +183,7 @@ useEffect(()=>{
                 <div className="procard_right">
                   <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                   {
-                    props.author==props.author?
+                    props.activeuser?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft">
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
                       <MoreOutlined style={{fontSize:"1.25rem"}}/>

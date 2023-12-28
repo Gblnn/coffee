@@ -8,6 +8,7 @@ import { FloatButton } from 'antd';
 
 
 
+
 export default function Home(){
 
     // const Reload = () =>{
@@ -18,6 +19,10 @@ export default function Home(){
     //   }
 
     const [posts, setPosts] = useState<any[]>([])
+    // const location = useLocation()
+    const user_data = window.name
+   
+
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
             .then(res => res.json())
@@ -25,6 +30,12 @@ export default function Home(){
                 setPosts(data)
                 console.log(data)
             })
+            
+            // user_data.map((data:any)=>{
+            //     setAuthor(data.username)
+            //     console.log(data)
+                
+            // }) 
     },[])
 
 
@@ -39,10 +50,10 @@ export default function Home(){
     
     return(
         <>
-        
+        <h1></h1>
         <div className='page_container'>
                 
-            <div >
+            <div>
                 <InfiniteScroll
                 style={{padding:"1rem"}}
                 className='container'
@@ -61,7 +72,7 @@ export default function Home(){
                     <div className='procard_container'>
                     {
                     posts.map((posts)=>(
-                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time} />
+                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time} activeuser={user_data==posts.author}/>
                     ))
                     }
                         </div>                 
@@ -75,7 +86,7 @@ export default function Home(){
             
         <FloatButton.Group shape="square" style={{ right: 24 }}>  
             <FloatButton.BackTop/>
-            <PostAction/>
+                <PostAction userdata={user_data}/>
         </FloatButton.Group>
         
         </>

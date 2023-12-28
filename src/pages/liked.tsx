@@ -11,7 +11,7 @@ import { Empty } from 'antd';
 export default function Liked(){
 
     const [posts, setPosts] = useState<any[]>([])
-
+    const user_data = window.name
 
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts?liked=true")
@@ -46,7 +46,7 @@ export default function Liked(){
                         {
                         posts==null?<Empty/>:
                     posts.map((posts)=>(
-                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time}/>
+                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time} activeuser={posts.author==user_data}/>
                     ))
                     }
                             </div>                 

@@ -18,8 +18,10 @@ interface ExpandedDataType {
 const App: React.FC = () => {
 
   const [posts, setPosts] = useState<any[]>([])
+  const user_data = window.name
+
   useEffect(()=>{
-    fetch("https://6586a271468ef171392e80df.mockapi.io/posts?author=gbln")
+    fetch("https://6586a271468ef171392e80df.mockapi.io/posts?author="+user_data)
             .then(res => res.json())
             .then(data => {
                 setPosts(data)
@@ -58,6 +60,7 @@ const App: React.FC = () => {
             upgradeNum: '',
           });
     return <Table columns={columns} dataSource={data} pagination={false} />;
+    
   };
 
   const columns: TableColumnsType<DataType> = [

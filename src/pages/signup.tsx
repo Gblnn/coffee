@@ -14,25 +14,12 @@ export default function SignUp(){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const usenavigate = useNavigate()
-
-    const Validate = () =>{
-        if (fullname==""||email==""||username==""||password==""){
-            message.info('Fields can not be empty');
-        }
-        else{
-            SignUp()
-            setLoading(true)
-            setTimeout(() => {
-            setLoading(false)
-            usenavigate('/success')
-    }, 2000);
-        }
-        
-    }
+    let obj = {email, fullname, username, password}
+    window.name = username
 
     const SignUp=()=>{
         
-        let obj = {email, fullname, username, password}
+        
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
@@ -45,6 +32,23 @@ export default function SignUp(){
             )
         }, 1000);
     }
+
+    const Validate = () =>{
+        if (fullname==""||email==""||username==""||password==""){
+            message.info('Fields can not be empty');
+        }
+        else{
+            SignUp()
+            setLoading(true)
+            setTimeout(() => {
+            setLoading(false)
+            usenavigate('/layout/home/')
+    }, 2000);
+        }
+        
+    }
+
+    
     return(
         <>
         <div className="fullpage_container">

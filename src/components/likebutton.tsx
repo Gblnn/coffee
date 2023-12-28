@@ -8,10 +8,12 @@ interface Props {
     id:string
 }
 
+
+
 export default function LikeButton(props:Props){
     let [likestate, setLikestate] = useState("/heart.png")
     let [liked, setLiked] = useState(props.liked)
-
+    
     useEffect(()=>{
         if(liked == false){
             setLikestate("/heart.png")

@@ -9,6 +9,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 export default function bookmarks(){
 
     const [posts, setPosts] = useState<any[]>([])
+    const user_data = window.name
 
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts?bookmarked=true")
@@ -42,7 +43,7 @@ export default function bookmarks(){
                 <div className='procard_container'>
                     {
                     posts.map((posts)=>(
-                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time}/>
+                        <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time} activeuser={user_data==posts.author}/>
                     ))
                     }
                 </div>                 

@@ -4,8 +4,11 @@ import {PlusOutlined} from '@ant-design/icons'
 import TextArea from "antd/es/input/TextArea";
 
 
-export default function PostAction(){
+interface Props {
+    userdata : string
+}
 
+export default function PostAction(props:Props){
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     let commentlist = ['']
@@ -68,7 +71,7 @@ export default function PostAction(){
 
       const onPost=()=>{
         if (author===""){   
-            author="user"
+            author=props.userdata
         }
         else{
             author = author.toLowerCase()
@@ -108,8 +111,9 @@ export default function PostAction(){
                         },
                     }}
                     >   <Tooltip title="Max limit is 6 characters" placement="topLeft" open={warn}>
-                        <Input onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
-                    </Tooltip>
+                        
+                        <Input disabled value={props.userdata} onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
+                        </Tooltip>
                         
                         
                     
