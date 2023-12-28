@@ -160,14 +160,23 @@ export default function Profile(){
       {
       user.map((users)=>(
 
-        <Card key={users.id} style={{height:"15rem",width:"100%",marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} >
+        <Card key={users.id} style={{height:"16rem",width:"100%",marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} >
           <img src={users.profile}/>
           <h2>{users.fullname}</h2>
           
           <Typography style={{fontFamily:"Supreme", fontSize:"1rem"}}>@{users.username}</Typography>
           <a>{users.email}</a>
-          <div style={{display:"flex", marginTop:"1.5rem", justifyContent:"space-between", gap:"0.5rem"}}>
-            <Button onClick={showDrawer}>Edit<EditFilled/></Button>
+          <div style={{display:"flex", marginTop:"2.5rem", justifyContent:"space-between", gap:"0.5rem"}}>
+          <ConfigProvider
+                    theme={{
+                        token: {
+                        colorPrimary:"black"
+                        },
+                    }}
+                    >
+                      <Button type="primary" onClick={showDrawer}>Edit<EditFilled/></Button>
+                    </ConfigProvider>
+            
             <Button onClick={confirmDelete}><DeleteOutlined/>Delete Account</Button>
             
           </div>
