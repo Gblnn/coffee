@@ -94,7 +94,7 @@ export default function Profile(){
       {
       user.map((users)=>(
         <>
-        <Card style={{borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} key={users.id} id={users.id}>
+        <Card style={{marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} key={users.id} id={users.id}>
           <img src={users.profile}/>
           <h2>{users.fullname}</h2>
           
@@ -104,7 +104,7 @@ export default function Profile(){
             <Button onClick={confirmDelete}><DeleteOutlined/>Delete Account</Button>
             <Button onClick={showDrawer}>Edit<EditFilled/></Button>
           </div>
-          </Card>
+        </Card>
         </>
 
         
