@@ -42,19 +42,24 @@ export default function Login(){
     //Data
     let [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
-
-    window.name = username
+    let final_username = ""
+    
 
     // const [posts, setPosts] = useState<any[]>([])
     
     // let id = "2"
     const usenavigate = useNavigate()
 
-    useEffect(()=>{
-        setTimeout(()=>{
+    // useEffect(()=>{
+    //     setTimeout(()=>{
             
-        },3000)
+    //     },3000)
+    // })
+
+    useEffect(()=>{
     })
+
+    window.name = username
 
     const Validate = () =>{
 
@@ -66,7 +71,7 @@ export default function Login(){
         })
         
 
-        username = username.toLowerCase()     
+        username = username.toLowerCase()
         setLoading(true)
 
 
