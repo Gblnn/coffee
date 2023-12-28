@@ -43,17 +43,23 @@ export default function Profile(){
 
   const onPost = () => {
     fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data, {
-            method: 'PUT',
-            headers: {'content-type':'application/json'},
-            body: JSON.stringify({fullname: fullname, username: username})
-            })
+      method: 'PUT',
+      headers: {'content-type':'application/json'},
+      body: JSON.stringify({fullname: fullname, username: username})
+    })
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },2000)
+    
     
   }
 
 
   return(
     <>
-      {user.map((users)=>(
+      {
+      user.map((users)=>(
         <>
         <Card style={{borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} key={users.id} id={users.id}>
           <img src={users.profile}/>
@@ -69,7 +75,8 @@ export default function Profile(){
 
         
         
-      ))}
+      ))
+      }
       <Drawer placement='bottom' size='default' title={"Edit Profile"} onClose={onClose} open={open}>
                     <ConfigProvider
                     theme={{
