@@ -1,8 +1,11 @@
-import { Button, Card, ConfigProvider, Drawer, Input, Typography, message } from "antd";
+import { Button, Card, ConfigProvider, Drawer, Input, Modal, Typography, message } from "antd";
 import { useEffect, useState } from "react";
-import {EditFilled} from '@ant-design/icons'
+import { DeleteOutlined ,EditFilled} from '@ant-design/icons'
+
 
 export default function Profile(){
+
+  // const usenavigate = useNavigate()
 
   const user_data = window.name
   const [user, setUser] =useState<any[]>([])
@@ -56,6 +59,35 @@ export default function Profile(){
     
   }
 
+  const confirmDelete = () => {
+    Modal.confirm({
+      centered:true,
+      title:"Delete Account?",
+      content:"This action can not be undone",
+      okText:"Delete",
+      cancelText:"Cancel",
+      onOk:handleDelete,
+      okButtonProps:{style:{background:"black"}},
+      cancelButtonProps:{style:{borderColor:"rgb(175,175,175)", color:"black"}}
+    })
+  }
+
+  const handleDelete = () => {
+    message.loading("Deleting account")
+    fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data, {
+      method: 'DELETE',
+      
+    })
+    setTimeout(()=>{
+      Redirect()
+    },3000)
+  }
+
+  const Redirect = () => {
+    // usenavigate("/")
+    message.info("Bad request")
+  }
+
 
   return(
     <>
@@ -68,7 +100,8 @@ export default function Profile(){
           
           <Typography style={{fontFamily:"Supreme", fontSize:"1rem"}}>@{users.username}</Typography>
           <a>{users.email}</a>
-          <div style={{display:"flex", marginTop:"1.25rem", justifyContent:"flex-end"}}>
+          <div style={{display:"flex", marginTop:"1.5rem", justifyContent:"flex-end", gap:"0.5rem"}}>
+            <Button onClick={confirmDelete}><DeleteOutlined/>Delete Account</Button>
             <Button onClick={showDrawer}>Edit<EditFilled/></Button>
           </div>
           </Card>

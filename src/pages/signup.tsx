@@ -10,11 +10,12 @@ export default function SignUp(){
     const [loading, setLoading] = useState(false)
     //Sign-in Data
     const [fullname, setFullname] = useState("")
+    const profile = "/coffee.png"
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const usenavigate = useNavigate()
-    let obj = {email, fullname, username, password}
+    let obj = {profile, email, fullname, username, password}
     window.name = username
 
     const SignUp=()=>{
