@@ -42,6 +42,7 @@ export default function Profile(){
   // }
 
   const onPost = () => {
+    message.loading("Updating")
     fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+user_data, {
       method: 'PUT',
       headers: {'content-type':'application/json'},
