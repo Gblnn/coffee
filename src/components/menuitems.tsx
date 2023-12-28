@@ -27,7 +27,7 @@ export default {
         },
         {
             path: 'layout/posts',
-            name: 'Posts (Not Ready)',
+            name: 'Posts',
             icon: <EditFilled />,
             
             
@@ -42,7 +42,7 @@ export default {
       // },
         {
             path: 'layout/profile',
-            name: 'Profile (Not Ready)',
+            name: 'Profile',
             icon: <UserOutlined />,
             
             
