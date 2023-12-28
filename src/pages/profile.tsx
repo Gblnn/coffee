@@ -166,9 +166,10 @@ export default function Profile(){
           
           <Typography style={{fontFamily:"Supreme", fontSize:"1rem"}}>@{users.username}</Typography>
           <a>{users.email}</a>
-          <div style={{display:"flex", marginTop:"1.5rem", justifyContent:"flex-end", gap:"0.5rem"}}>
-            <Button onClick={confirmDelete}><DeleteOutlined/>Delete Account</Button>
+          <div style={{display:"flex", marginTop:"1.5rem", justifyContent:"space-between", gap:"0.5rem"}}>
             <Button onClick={showDrawer}>Edit<EditFilled/></Button>
+            <Button onClick={confirmDelete}><DeleteOutlined/>Delete Account</Button>
+            
           </div>
         </Card>
         
