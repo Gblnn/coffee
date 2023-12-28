@@ -285,6 +285,15 @@
     background-color: rgba(0,0,0, 0.05);
 }
 
+.userid{
+    z-index: 100;
+    margin-right:2rem;
+    right:0;
+    position:fixed;
+    display:none;
+    justify-content:flex-end;
+}
+
 @media (min-width:768px){
 
     .procard_container{
@@ -309,6 +318,9 @@
         height: 87vh;
         
         
+    }
+    .userid{
+        display:flex;
     }
 }
 
