@@ -63,7 +63,7 @@ export default function SignUp(){
             setPostable(false)
         }
         
-    })
+    },[fullname, email, username, password])
 
     const SignUp=()=>{
         
