@@ -66,7 +66,7 @@ useEffect(()=>{
       .then(data => {
         setPosts(data)
       })
-})
+},[])
 
   const Reload = () =>{
     setTimeout(()=>{
