@@ -11,11 +11,11 @@ interface Props {
 
 export default function CommentButton(props:Props) {
 
-    let [comment, setComment] = useState("")
-    let user = window.name
-    let postid = props.postid
-    let date = new Date().toLocaleDateString()
-    let [posts, setPosts] = useState<any[]>([])
+    const [comment, setComment] = useState("")
+    const user = window.name
+    const postid = props.postid
+    const date = new Date().toLocaleDateString()
+    const [posts, setPosts] = useState<any[]>([])
     const [loading, setLoading] = useState(false)
   
 
@@ -51,7 +51,7 @@ export default function CommentButton(props:Props) {
 
     const onPost = () => {
 
-      let obj = {postid, user, comment, date}
+      const obj = {postid, user, comment, date}
       
       
       fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments",

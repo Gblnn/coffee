@@ -11,8 +11,8 @@ interface Props {
 
 
 export default function LikeButton(props:Props){
-    let [likestate, setLikestate] = useState("/heart.png")
-    let [liked, setLiked] = useState(props.liked)
+    const [likestate, setLikestate] = useState("/heart.png")
+    const [liked, setLiked] = useState(props.liked)
     
     useEffect(()=>{
         if(liked == false){
@@ -21,7 +21,7 @@ export default function LikeButton(props:Props){
         if(liked == true){
             setLikestate("/heart-filled.png")
         }
-    })
+    },[liked])
 
     const onLike = () =>{
         if (likestate==="/heart.png"){

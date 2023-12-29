@@ -38,10 +38,10 @@ export default function Post(props: Props){
   const [colorscheme, setColor] = useState("")
   // let [author, setAuthor] = useState("");
   const [content, setContent] = useState("")
-  let date = new Date().toLocaleDateString()
-  let hours = new Date().getHours()
-  let minutes = new Date().getMinutes()
-  let time = hours+":"+minutes
+  const date = new Date().toLocaleDateString()
+  const hours = new Date().getHours()
+  const minutes = new Date().getMinutes()
+  const time = hours+":"+minutes
   const [posts, setPosts] = useState("")
 
 

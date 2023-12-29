@@ -15,7 +15,7 @@ export default function SignUp(){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const usenavigate = useNavigate()
-    let obj = {profile, email, fullname, username, password}
+    const obj = {profile, email, fullname, username, password}
     window.name = username
     const [postable, setPostable] = useState(false)
     const [warn, setWarn] = useState(false)

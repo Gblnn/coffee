@@ -11,18 +11,17 @@ interface Props {
 export default function PostAction(props:Props){
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
-    let commentlist = ['']
-    let likes = ""
-    let liked = false
-    let bookmarked = false
-    let comments = ""
-    let date = new Date().toLocaleDateString()
+    const commentlist = ['']
     
-    let hours = new Date().getHours()
-    let minutes = new Date().getMinutes()
-    let hrs = hours.toString()
-    let mins = minutes.toString()
-    let time = (hrs+":"+mins).toString()
+    const liked = false
+    const bookmarked = false
+    const date = new Date().toLocaleDateString()
+    
+    const hours = new Date().getHours()
+    const minutes = new Date().getMinutes()
+    const hrs = hours.toString()
+    const mins = minutes.toString()
+    const time = (hrs+":"+mins).toString()
     const [colorscheme, setColor] = useState("")
     const [content, setContent] = useState("")
     const [open, setOpen] = useState(false);
@@ -46,9 +45,7 @@ export default function PostAction(props:Props){
         if (author.length > 6){
             setPostable(false)
         }
-        if (minutes<10){
-            mins = "0"+mins
-        }
+    
         
     })
 
@@ -78,7 +75,7 @@ export default function PostAction(props:Props){
             author = author.toLowerCase()
         }
         
-        let obj = {profile, author, content, colorscheme, date, time, commentlist, likes, comments, liked, bookmarked}
+        const obj = {profile, author, content, colorscheme, date, time, commentlist, liked, bookmarked}
         
         setLoading(true)
         setTimeout(() => {

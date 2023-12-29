@@ -10,8 +10,8 @@ interface Props {
 
 export default function BookmarkButton(props:Props){
 
-    let [likestate, setLikestate] = useState("/bookmark.png")
-    let [bookmarked, setBookmarked] = useState(props.bookmarked)
+    const [likestate, setLikestate] = useState("/bookmark.png")
+    const [bookmarked, setBookmarked] = useState(props.bookmarked)
 
     useEffect(()=>{
         if(bookmarked == false){
@@ -20,7 +20,7 @@ export default function BookmarkButton(props:Props){
         if(bookmarked == true){
             setLikestate("/bookmark-filled.png")
         }
-    })
+    },[bookmarked])
 
     const onLike = () =>{
         if (likestate==="/bookmark.png"){

@@ -30,20 +30,9 @@ export default function Home(){
                 setPosts(data)
                 console.log(data)
             })
-            
-            // user_data.map((data:any)=>{
-            //     setAuthor(data.username)
-            //     console.log(data)
-                
-            // }) 
     },[])
 
 
-    // useEffect(()=>{
-    //     setTimeout(()=>{
-    //         Reload()
-    //     },60000)
-    // },[])
    
         
         
