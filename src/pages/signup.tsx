@@ -39,22 +39,20 @@ export default function SignUp(){
         if(username==""){
             setPostable(false)
         }
-        else{
-            setPostable(true)
-        }
-        if(password==""){
-            setPostable(false)
-        }
-        
-
         if(username.length>8){
             setPostable(false)
             setWarn(true)
         }
         else{
-        
             setWarn(false)
         }
+
+        if(password==""){
+            setPostable(false)
+        }
+        
+
+        
         if(password.length>1){  
             setPassWarn(true)
         }
@@ -64,9 +62,7 @@ export default function SignUp(){
         if(password.length<8){
             setPostable(false)
         }
-        else{
-            setPostable(true)
-        }
+        
     })
 
     const SignUp=()=>{
