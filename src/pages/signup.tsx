@@ -24,6 +24,7 @@ export default function SignUp(){
 
 
     useEffect(()=>{
+        
         if(fullname==""){
             setPostable(false)
         }
@@ -51,8 +52,6 @@ export default function SignUp(){
             setPostable(false)
         }
         
-
-        
         if(password.length>1){  
             setPassWarn(true)
         }
@@ -67,7 +66,7 @@ export default function SignUp(){
 
     const SignUp=()=>{
         
-        
+        username.toLowerCase()
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
