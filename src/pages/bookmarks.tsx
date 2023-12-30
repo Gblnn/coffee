@@ -1,4 +1,4 @@
-import '../styles/colorscheme.css'
+// import '../styles/colorscheme.css'
 import Post from '../components/post';
 import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';

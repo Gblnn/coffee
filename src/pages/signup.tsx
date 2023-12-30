@@ -1,6 +1,6 @@
 import { Button, ConfigProvider, Form, Input, Tooltip, Typography, message } from "antd"
-import '../styles/style.css'
-import '../styles/utils.css'
+// import '../styles/style.css'
+// import '../styles/utils.css'
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 

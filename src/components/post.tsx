@@ -1,12 +1,11 @@
 import { ProCard } from "@ant-design/pro-components";
-import { Button, ConfigProvider, Drawer, Dropdown, MenuProps, Modal, Select, Typography, message } from "antd";
+import { Button, ConfigProvider, Drawer, Dropdown, MenuProps, Modal, Select, Typography, message, Input } from "antd";
 import {MoreOutlined} from '@ant-design/icons';
-
 import CommentButton from "./commentbutton";
 import LikeButton from "./likebutton";
 import BookmarkButton from "./bookmarkbutton";
 import { useEffect, useState } from "react";
-import TextArea from "antd/es/input/TextArea";
+
 
 
 interface Props {
@@ -238,7 +237,7 @@ useEffect(()=>{
                     
                     
                     
-                    <TextArea defaultValue={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Second thoughts'></TextArea>
+                    <Input defaultValue={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} maxLength={200} placeholder='Second thoughts'></Input>
                     
                     
                     </ConfigProvider>

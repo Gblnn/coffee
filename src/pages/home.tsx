@@ -1,4 +1,4 @@
-import '../styles/colorscheme.css'
+// import '../styles/colorscheme.css'
 import Post from '../components/post';
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
