@@ -7,19 +7,9 @@ import {LoadingOutlined} from '@ant-design/icons'
 import { FloatButton, Typography } from 'antd';
 
 
-
-
 export default function Home(){
 
-    // const Reload = () =>{
-    //     message.loading("Refreshing")
-    //     setTimeout(()=>{
-    //         window.location.reload()
-    //     },1000)       
-    //   }
-
     const [posts, setPosts] = useState<any[]>([])
-    // const location = useLocation()
     const user_data = window.name
    
 
@@ -31,11 +21,6 @@ export default function Home(){
                 console.log(data)
             })
     },[])
-
-
-   
-        
-        
     
     return(
         <>
