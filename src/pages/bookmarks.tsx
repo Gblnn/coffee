@@ -17,7 +17,7 @@ export default function bookmarks(){
         .then(res => res.json())
         .then(data => {
             setPosts(data)
-            console.log(data)
+            console.log(posts.length)
         })
         
     },[]) 
@@ -49,6 +49,7 @@ export default function bookmarks(){
             }>
                 <div className='procard_container'>
                     {
+                    String(posts.length)=="0"?null:
                     posts.map((posts)=>(
                         <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time} activeuser={user_data==posts.author}/>
                     ))

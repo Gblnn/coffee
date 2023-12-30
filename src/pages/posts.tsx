@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
   const expandedRowRender = () => {
     const columns: TableColumnsType<ExpandedDataType> = [
-      { title:"Content",dataIndex: 'name', key: 'name', render:()=><><p>Merry Christmas</p></> },
+      { title:"Content",dataIndex: 'name', key: 'name', render:()=><><p></p></> },
       {
         key: 'state',
         render: () => <></>,
