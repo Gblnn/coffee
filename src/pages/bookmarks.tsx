@@ -17,7 +17,7 @@ export default function bookmarks(){
         .then(res => res.json())
         .then(data => {
             setPosts(data)
-            console.log(posts.length)
+         
         })
         
     },[]) 

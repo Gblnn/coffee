@@ -18,7 +18,7 @@ export default function Liked(){
         .then(res => res.json())
         .then(data => {
             setPosts(data)
-            console.log(data)
+           
         })
     },[])
    

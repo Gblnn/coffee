@@ -79,14 +79,14 @@ export default function Login(){
 
             setLoading(false)
             posts.map((post)=>{
-            console.log(post.username)
+           
             if(post.username === username && post.password === password){
-                console.log("Login successful")
+               
                 
                 usenavigate('/layout/home/',{state:{id:1,user:posts}})
             }
             else{
-                console.log("Login failed")
+                
                 message.info("Invalid credentials")
                 }
             })

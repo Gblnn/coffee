@@ -25,7 +25,7 @@ export default function BookmarkButton(props:Props){
     const onLike = () =>{
         if (likestate==="/bookmark.png"){
         setBookmarked(true)
-          console.log("Liked post")
+          
           
         
             fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
@@ -37,7 +37,6 @@ export default function BookmarkButton(props:Props){
         }
         else{
         setBookmarked(false)
-          console.log("Removed Like")
           fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
             method: 'PUT',
             headers: {'content-type':'application/json'},

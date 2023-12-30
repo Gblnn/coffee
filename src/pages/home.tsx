@@ -18,7 +18,7 @@ export default function Home(){
             .then(res => res.json())
             .then(data => {
                 setPosts(data)
-                console.log(data)
+            
             })
     },[])
     
