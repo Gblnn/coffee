@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Drawer, FloatButton, Input, Select, Tooltip, message } from "antd";
 import { useEffect, useState } from "react";
 import {PlusOutlined} from '@ant-design/icons'
-import TextArea from "antd/es/input/TextArea";
+
 
 
 interface Props {
@@ -118,7 +118,7 @@ export default function PostAction(props:Props){
                     
                     
                     
-                    <TextArea allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} rows={7} maxLength={200} placeholder='Write your thoughts here'/>
+                    <Input allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} maxLength={200} placeholder='Write your thoughts here'/>
                     
                     
                     </ConfigProvider>

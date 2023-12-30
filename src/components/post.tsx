@@ -5,7 +5,8 @@ import CommentButton from "./commentbutton";
 import LikeButton from "./likebutton";
 import BookmarkButton from "./bookmarkbutton";
 import { useEffect, useState } from "react";
-
+import '../styles/utils.css'
+import '../styles/style.css'
 
 
 interface Props {
