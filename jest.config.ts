@@ -9,4 +9,6 @@ export default {
         '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__ mocks __/fileMock.js',
         '^.+\\.(css|less)$': '<rootDir>/config/CSSStub.js'
     },
+    transformIgnorePatterns: ['<rootDir>/node_modules/'],
 }
+
