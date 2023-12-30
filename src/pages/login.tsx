@@ -99,7 +99,7 @@ export default function Login(){
         <>
         
         <div className="fullpage_container">
-        <div style={{display:"flex",gap:"0.5rem",position:"absolute", top:0, left:0, padding:"1.5rem"}}>
+        <div style={{display:"flex",gap:"0.5rem",position:"absolute", top:0, left:0, padding:"2.5rem"}}>
             <img style={{width:"2rem"}} src="/coffee-black.png"></img>
             <h2 style={{fontWeight:900,color:"rgba(0,0,0,0.45)", fontSize:"1.5rem"}}>COFFEE</h2>
         </div>
