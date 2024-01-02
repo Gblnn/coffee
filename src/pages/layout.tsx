@@ -11,7 +11,6 @@ import { Modal } from "antd";
 import Chats from "./chat";
 
 
-
 export default function Layout(){
 
   const [open, setOpen] = useState(false);
@@ -24,7 +23,7 @@ export default function Layout(){
     if(user_data==""){
       usenavigate("/")
     }
-  },[user_data])
+  },[user_data, usenavigate])
   
   const handleOk = () => {
 
