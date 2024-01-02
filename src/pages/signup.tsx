@@ -111,6 +111,7 @@ export default function SignUp(){
                 <h1>SIGN-UP</h1>
                 <Form style={{marginTop:"1.5rem", width:"100%"}}>
 
+                <ConfigProvider theme={{token: {colorPrimary:"black"}}}>
                     {/* Email Field */}
                     <Form.Item name="email" hasFeedback rules={[{ required:true, type:"email", message: 'Please enter a valid email' }]}>
                         <Input style={{fontSize:"14px"}} type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input-field" placeholder="Email or phone number"></Input>
@@ -139,7 +140,7 @@ export default function SignUp(){
                     <div className="empty"></div>
 
 
-                    <ConfigProvider theme={{token: {colorPrimary:"black"}}}>
+                    
                         <Button disabled={!postable} loading={loading} block type="primary" onClick={Validate} htmlType="submit">Sign-up</Button>
                     </ConfigProvider>
 
@@ -148,7 +149,7 @@ export default function SignUp(){
                 
                 {/* Form Footer */}
                 <div className="form-footer" style={{width:"100%", marginTop:"1.5rem"}}>
-                <Typography.Text style={{color:"#4a4a4a"}} className="form-text">Already have an account?<Link style={{color:"black",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
+                <Typography.Text style={{color:"#4a4a4a", fontFamily:"Supreme"}} className="form-text">Already have an account?<Link style={{color:"black",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
                 </div>
                 
             </div>

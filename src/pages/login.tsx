@@ -77,7 +77,7 @@ export default function Login(){
         <>
         <div className="fullpage-container">
 
-            <div style={{display:"flex",gap:"0.5rem",position:"absolute", top:0, left:0, padding:"2.5rem"}}>
+            <div style={{display:"flex",gap:"0.5rem",position:"absolute", top:0, left:0, padding:"2rem"}}>
                 <img style={{width:"2rem"}} src="/coffee-black.png"></img>
                 <h2 style={{fontWeight:900,color:"rgba(0,0,0,0.45)", fontSize:"1.5rem"}}>COFFEE</h2>
             </div>
@@ -108,7 +108,7 @@ export default function Login(){
                     </Form.Item>
                 </Form>
 
-                <Typography.Text style={{color:"#4a4a4a",width:"100%", textAlign:"center"}} className="form-text">Don't have an account?<Link style={{color:"black",fontWeight:600}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
+                <Typography.Text style={{color:"#4a4a4a",width:"100%", textAlign:"center", fontFamily:"Supreme"}} className="form-text">Don't have an account?<Link style={{color:"black",fontWeight:600}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
                 
             </div>
         </div>
