@@ -70,8 +70,8 @@ export default function CommentButton(props:Props) {
 
     return(
         <>
-        <button id="comment-btn" className='no-bg no-border procard-buttons' onClick={showDrawer}>
-            <img alt="Comment" className='footer_icon' src='/comment.png'></img>
+        <button id="comment" className='no-bg no-border procard-buttons' onClick={showDrawer}>
+            <img alt="Comment" className='footer-icon' src='/comment.png'></img>
             <p className='like-count'>{props.comments}</p>
         </button>
         <Drawer size="large" title={"Comments"} onClose={onClose} open={open}>           

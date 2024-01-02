@@ -5,8 +5,11 @@ import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 
-
 export default function Login(){
+
+    //Declaring Variables
+    const [loading, setLoading] = useState(false)
+    const usenavigate = useNavigate()
 
     const [posts, setPosts] = useState<any[]>([])
     const [postable, setPostable] = useState(false)
@@ -14,6 +17,7 @@ export default function Login(){
     const [username, usernameUpdate] = useState('')
     const [password, passwordUpdate] = useState('')
 
+    // Validation
     useEffect(()=>{
         if(username==""){
             setPostable(false)
@@ -30,6 +34,7 @@ export default function Login(){
     },[username, password])
         
 
+    //Fetching Login Details from MockAPI
     useEffect(()=>{
         setTimeout(()=>{ 
             fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
@@ -41,110 +46,73 @@ export default function Login(){
         },3000)
         
     },[username, password])
-    
-    
-
-    const [loading, setLoading] = useState(false)
-
-    //Data
-    
-    
-
-    // const [posts, setPosts] = useState<any[]>([])
-    
-    // let id = "2"
-    const usenavigate = useNavigate()
-
-    // useEffect(()=>{
-    //     setTimeout(()=>{
-            
-    //     },3000)
-    // })
-
-    useEffect(()=>{
-    })
 
     window.name = username
 
     const Validate = () =>{
 
-        
-        
         usernameUpdate(username.toLowerCase())
-        // username = username.toLowerCase()
         setLoading(true)
-
 
         setTimeout(() => {
 
             setLoading(false)
             posts.map((post)=>{
            
-            if(post.username === username && post.password === password){
-               
-                
-                usenavigate('/layout/home/',{state:{id:1,user:posts}})
-            }
-            else{
-                
-                message.info("Invalid credentials")
+                if(post.username === username && post.password === password){
+                    message.success("Logged In")
+                    usenavigate('/layout/home/',{state:{id:1,user:posts}})
+                }
+                else{
+                    message.info("Invalid credentials")
                 }
             })
+
         },1000);
             
-        }
+    }
         
     
     return(
         <>
-        
         <div className="fullpage-container">
-        <div style={{display:"flex",gap:"0.5rem",position:"absolute", top:0, left:0, padding:"2.5rem"}}>
-            <img style={{width:"2rem"}} src="/coffee-black.png"></img>
-            <h2 style={{fontWeight:900,color:"rgba(0,0,0,0.45)", fontSize:"1.5rem"}}>COFFEE</h2>
-        </div>
-                <div className="form-container">
+
+            <div style={{display:"flex",gap:"0.5rem",position:"absolute", top:0, left:0, padding:"2.5rem"}}>
+                <img style={{width:"2rem"}} src="/coffee-black.png"></img>
+                <h2 style={{fontWeight:900,color:"rgba(0,0,0,0.45)", fontSize:"1.5rem"}}>COFFEE</h2>
+            </div>
+
+            <div className="form-container">
                 <div className="form-header">
                     <img alt="logo" style={{width:"2.75rem",height:"2.75rem"}} src="coffee-bag.png"></img>
                     <h1>LOGIN</h1>
                 </div>
                 <div className="empty"></div>
-                
-                <Form
-                name="basic"
-                style={{marginTop:"1.5rem", width:"100%"}}
-                >  
+                    
+                <Form name="basic" style={{marginTop:"1.5rem", width:"100%"}}>  
                     <Form.Item>
-                    <ConfigProvider
-                        theme={{
-                            token:{
-                                colorPrimary:"black",
-                            }
-                        }}
-                    >
-                        <Form.Item name="username" rules={[{ required: true }]}>
-                            <Input style={{fontSize:"14px"}} value={username} onChange={e=>usernameUpdate(e.target.value)} className="input-field" placeholder="Enter Username"></Input>
-                        </Form.Item>
+                        <ConfigProvider theme={{token:{colorPrimary:"black"}}}>
+                            <Form.Item name="username" rules={[{ required: true }]}>
+                                <Input style={{fontSize:"14px"}} value={username} onChange={e=>usernameUpdate(e.target.value)} className="input-field" placeholder="Enter Username"></Input>
+                            </Form.Item>
 
-                        <Form.Item name="password" rules={[{ required: true}]}> 
-                            <Input.Password style={{fontSize:"14px"}} value={password} onChange={e=>passwordUpdate(e.target.value)} className="input-field" type="Password" placeholder="Enter Password"></Input.Password>
-                        </Form.Item>
+                            <Form.Item name="password" rules={[{ required: true}]}> 
+                                <Input.Password style={{fontSize:"14px"}} value={password} onChange={e=>passwordUpdate(e.target.value)} className="input-field" type="Password" placeholder="Enter Password"></Input.Password>
+                            </Form.Item>
 
-                        <div className="empty"></div>
-                        
-                        <Button disabled={!postable} block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
-                                   
-                    </ConfigProvider>
+                            <div className="empty"></div>
+                                
+                            <Button disabled={!postable} block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
+                                        
+                        </ConfigProvider>
                     </Form.Item>
                 </Form>
+
                 <Typography.Text style={{color:"#4a4a4a",width:"100%", textAlign:"center"}} className="form-text">Don't have an account?<Link style={{color:"black",fontWeight:600}} to="/signup" className="link" type="link">Sign-up</Link></Typography.Text>
-                </div>
-           
-            
-            
+                
+            </div>
         </div>
-        
-        
+ 
         </>
     )
 }

@@ -1,9 +1,7 @@
-// import '../styles/colorscheme.css'
 import Post from '../components/post';
 import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-
 import { Empty, Typography } from 'antd';
 
 
