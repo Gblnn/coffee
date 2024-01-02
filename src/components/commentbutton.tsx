@@ -96,7 +96,7 @@ export default function CommentButton(props:Props) {
                         }
                     }}
                     >
-                      <Input onChange={e=>setComment(e.target.value)} placeholder="Add a comment" style={{marginRight:"1rem", fontSize:"16px"}}></Input>
+                      <Input onChange={e=>setComment(e.target.value)} placeholder="Add a comment" style={{marginRight:"1rem", fontSize:"16px", fontFamily:"Supreme"}}></Input>
                       <Button loading={loading} onClick={onPost} type="primary">Post</Button>
                       
                     </ConfigProvider>                   
