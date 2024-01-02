@@ -48,12 +48,9 @@ export default function ChatInput(props:Props){
         <Typography style={{textTransform:"uppercase",fontSize:"0.75rem", fontWeight:700}}>{props.author}</Typography>
         <p style={{fontSize:"0.6rem"}}>{props.date}</p>
         </div>
-        <div className="chat_option_btn" style={{display:"flex",marginBottom:"0.5rem", justifyContent:"space-between", alignItems:"center", background:"rgb(245,245,245)"}}>
+        <div className="chat-option-btn" style={{display:"flex",marginBottom:"0.5rem", justifyContent:"space-between", alignItems:"center", background:"rgb(245,245,245)"}}>
         <Typography style={{fontFamily:"Supreme",padding:"0.25rem", borderLeft:"4px solid black",paddingLeft:"0.5rem",fontSize:"16px"}}>{props.message}</Typography>
         
-        {/* <Dropdown trigger={['click']} menu={{items}} placement="topLeft">
-        <Button className="no_bg no_border"><MoreOutlined/></Button>
-        </Dropdown> */}
         
         </div>
         

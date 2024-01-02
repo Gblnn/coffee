@@ -22,8 +22,8 @@ export default function Chats(){
     return(
         <>
         <Input style={{fontWeight:700}} bordered={false} placeholder="How you'll appear"></Input>
-        <div className="chat_container">
-            <div className="comment_container">
+        <div className="chat-container">
+            <div className="comment-container">
             
             {/* {
                 posts.map((post)=>(           

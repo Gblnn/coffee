@@ -49,9 +49,9 @@ export default function LikeButton(props:Props){
     
     return(
         <>
-        <button id="like_btn" onClick={onLike} className=' no_bg no_border procard_buttons'>
-            <img alt="Like" className='footer_icon' src={likestate}></img>
-            <p className='like_count'>{props.likecount}</p>
+        <button id="like-btn" onClick={onLike} className=' no-bg no-border procard-buttons'>
+            <img alt="Like" className='footer-icon' src={likestate}></img>
+            <p className='like-count'>{props.likecount}</p>
         </button>
         </>
     )

@@ -7,7 +7,7 @@ import { Typography } from 'antd';
 
 
 
-export default function bookmarks(){
+export default function Bookmarks(){
 
     const [posts, setPosts] = useState<any[]>([])
     const user_data = window.name
@@ -31,7 +31,7 @@ export default function bookmarks(){
             </div>
         
         </div>
-        <div className='page_container'>
+        <div className='page-container'>
             
             <InfiniteScroll
             style={{padding:"1rem"}}

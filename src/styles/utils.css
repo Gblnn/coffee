@@ -1,351 +1,314 @@
-
-
-
-.fullpage_container{
-    width: 100%;
-    height: 100vh;
-    /* border: 1px solid; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: #9a9a9a; */
+.fullpage-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.page_container{
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    
-}
-.chat_container{
-    width: 100%;
-    height: 79vh;
-    flex-direction: column;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    
+.page-container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
-.empty_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width:100%;
-    
+.chat-container {
+  width: 100%;
+  height: 79vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }
 
-.comment_container{
-    width: 100%;
-    height: 90%;
-    /* border: 1px solid; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-   
-    
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
-#admin_true{
-    display: block;
+.comment-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-#admin_false{
-    display: hidden;
+#admin-true {
+  display: block;
 }
 
-#transclucent{
-    background-color: rgba(0,0,0, 0.05);
-    border-radius: 1rem;
-    user-select: none;
+#admin-false {
+  display: hidden;
 }
 
-.flex{
-    display: flex;
-    align-items: center;
-    align-self: center;
-    margin-top: 1rem;
-    width: 100%;
+#transclucent {
+  background-color: rgba(0 0 0/ 5%);
+  border-radius: 1rem;
+  user-select: none;
 }
 
-.form_container{
-    display: flex;
-    flex-direction: column;
-    /* background-color: var(--sub-background); */
-    gap: 0rem;
-    width: 15rem;
-    /* border: 1px solid rgba(0,0,0, 0.25); */
-    box-shadow: 1px 1px 20px rgba(0,0,0, 0.25);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    flex-wrap: wrap;
+.flex {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  margin-top: 1rem;
+  width: 100%;
 }
 
-.form_header{
-    /* border: 1px solid; */
-    display: flex;
+.form-container {
+  display: flex;
+  width: 15rem;
+  box-shadow: 1px 1px 20px rgba(0 0 0 /25%);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.form_footer{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.form-header {
+  display: flex;
+  flex-flow: row;
 }
 
-.link{
-    color: crimson;
-    padding: 0;
-    margin: 0.25rem;
+.form-footer {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
 }
 
-.input_field{
-    /* background-color: rgba(255, 255, 255, 0.15);
-    
-    color: var(--main-text); */
-    /* border: none; */
-    font-family: "Supreme";
+.link {
+  color: crimson;
+  padding: 0;
+  margin: 0.25rem;
 }
 
-::placeholder{
-    color: red;
+.input-field {
+  font-family: Supreme, sans-serif;
 }
 
-.form_text{
-    align-self: center;
-    /* color: rgba(255, 255, 255, 0.5); */
+::placeholder {
+  color: red;
 }
 
-.empty{
-    height: 1rem;
+.form-text {
+  align-self: center;
 }
 
-.big_empty{
-    height:4rem
+.empty {
+  height: 1rem;
 }
 
-.sidemenu{
-    height: 100vh;
+.big-empty {
+  height: 4rem;
 }
 
-.content{
-    background-color: #9a9a9a;
-    border-radius: 0.5rem;
-    
-    
+.sidemenu {
+  height: 100vh;
 }
 
-.procard_container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 2rem;
-    margin: 0;
-    flex-wrap: wrap;
-    width: 100%;
-    /* border: 1px solid; */
+.content {
+  background-color: #9a9a9a;
+  border-radius: 0.5rem;
 }
 
-.procard{
-    width: 88vw;
-    /* height:48ch; */
-    box-shadow: 1px 1px 10px #8a8a8a;
+.procard-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: column-reverse;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.procard_header{
-    /* border: 1px solid; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
+.procard {
+  width: 88vw;
+  box-shadow: 1px 1px 10px #8a8a8a;
 }
 
-.procard_img{
-    width: 1.5rem;
-    border-radius: 50%;
-    user-select: none;
+.procard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-.procard_name{
+.procard-img {
+  width: 1.5rem;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.procard-name {
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: Supreme, sans-serif;
+  user-select: none;
+}
+
+.procard-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.procard-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.procard-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  height: 30ch;
+  border-radius: 0.5rem;
+  background-color: rgb(240 240 240);
+  box-shadow: inset 1px 1px 10px rgba(0 0 0 /25%);
+}
+
+.procard-text {
+  font-family: Supreme, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  width: 80%;
+  user-select: none;
+  text-align: center;
+}
+
+.procard-footer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.procard-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.like-count {
+  font-weight: 800;
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.footer-icon {
+  width: 1.3rem;
+  user-select: none;
+}
+
+.footer-left {
+  display: flex;
+  gap: 1rem;
+}
+
+.no-bg {
+  background: none;
+}
+
+.no-border {
+  border: none;
+}
+
+.loader {
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  border: "1px solid";
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hoverable {
+  cursor: pointer;
+  background: white;
+  box-shadow: 1px 1px 5px rgb(200 200 200);
+  transition: 0.3s;
+}
+
+.hoverable:hover {
+  background-color: rgba(0 0 0 /2.5%);
+  box-shadow: 1px 1px 10px rgb(200 200 200);
+}
+
+.userid {
+  z-index: 100;
+  margin-right: 2rem;
+  right: 0;
+  position: fixed;
+  display: none;
+  justify-content: flex-end;
+}
+
+@media (width >= 768px) {
+  .procard-container {
+    width: 60ch;
+    margin-top: 4rem;
+  }
+
+  .procard {
+    width: 55ch;
+  }
+
+  .procard-name {
     font-size: 1rem;
-    font-weight: 800;
-    font-family: "Supreme";
-    user-select: none;
-}
+  }
 
-.procard_profile{
+  .procard-img {
+    width: 2rem;
+  }
+
+  .procard-content {
+    height: 40ch;
+  }
+
+  .chat-container {
+    height: 87vh;
+  }
+
+  .userid {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    /* border: 1px solid; */
-}
-.procard_right{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    /* border: 1px solid; */
+  }
 }
 
-.procard_content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    /* border: 1px solid; */
-    height: 30ch;
-    border-radius: 0.5rem;
-    background-color: rgb(240,240,240);
-    box-shadow: inset 1px 1px 10px rgba(0,0,0, 0.25);
-}
+@media (width >= 1028px) {
+  .procard-container {
+    width: 80ch;
+  }
 
-.procard_text{
-    font-family: "Supreme";
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #1a1a1a;
-    /* border: 1px solid; */
-    width: 80%;
-    user-select: none;
-    text-align: center;
-}
+  .procard {
+    width: 65ch;
+  }
 
-.procard_footer{
-    /* border: 1px solid; */
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    /* padding-left: 1rem; */
-    /* padding-right: 0.5rem; */
-}
+  .procard-name {
+    font-size: 1rem;
+  }
 
-.procard_buttons{
-    /* border: 1px solid; */
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    cursor: pointer;
-}
+  .procard-content {
+    height: 50ch;
+  }
 
-.like_count{
-    font-weight: 800;
-    color: #1a1a1a;
-    font-size: 0.75rem;
-    user-select: none;
-}
-
-.footer_icon{
-    width:1.3rem;
-    user-select: none;
-}
-
-.footer_left{
-    display: flex;
-    gap: 1rem;
-}
-
-.no_bg{
-    background: none;
-}
-
-.no_border{
-    border: none;
-}
-
-.empty{
-    height: 1rem;
-}
-
-.loader{
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-.container{
-    display: flex;
-    width: 100%;
-    border: "1px solid";
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.hoverable{
-    cursor: pointer;
-    background:white;
-    box-shadow:1px 1px 5px rgb(200,200,200);
-    transition: 0.3s;
-}
-.hoverable:hover{
-    background-color: rgba(0,0,0, 0.025);
-    box-shadow:1px 1px 10px rgb(200,200,200);
-}
-
-.userid{
-    z-index: 100;
-    margin-right:2rem;
-    right:0;
-    position:fixed;
-    display:none;
-    justify-content:flex-end;
-}
-
-@media (min-width:768px){
-
-    .procard_container{
-        width: 60ch;
-        margin-top: 4rem;
-    }
-    .procard{
-        width: 55ch;
-    }
-    .procard_name{
-        font-size: 1rem;
-    }
-    .procard_img{
-        width: 2rem;
-    }
-    .procard_content{
-        
-        height: 40ch;
-        
-    }
-    .chat_container{
-        height: 87vh;
-        
-        
-    }
-    .userid{
-        display:flex;
-    }
-}
-
-@media (min-width:1028px){
-
-    .procard_container{
-        width: 80ch;
-        
-    }
-    .procard{
-        width: 65ch;
-    }
-    .procard_name{
-        font-size: 1rem;
-    }
-    .procard_content{
-        height: 50ch;
-        
-    }
-    .procard_text{
-        
-        font-size: 1.5rem;
-        
-    }
+  .procard-text {
+    font-size: 1.5rem;
+  }
 }

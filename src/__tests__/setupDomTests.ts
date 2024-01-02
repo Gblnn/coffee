@@ -1,5 +1,4 @@
-// Dummy import so that the linter won't complain
- 
+
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: (query:any) => ({

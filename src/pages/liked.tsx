@@ -32,8 +32,8 @@ export default function Liked(){
         
         </div>
          
-        <div className='page_container'>
-            {posts.length==0?<><div className='empty_container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
+        <div className='page-container'>
+            {posts.length==0?<><div className='empty-container'><Empty style={{marginTop:"10%"}} image={Empty.PRESENTED_IMAGE_SIMPLE} description="No liked posts"/></div></>:
             <InfiniteScroll
                 style={{padding:"1rem"}}
                 className='container'
@@ -48,7 +48,7 @@ export default function Liked(){
                         </p>
                     </div>  
                       }>
-                        <div className='procard_container'>
+                        <div className='procard-container'>
                         {
                         String(posts.length)=="9"?null:
                     posts.map((posts)=>(

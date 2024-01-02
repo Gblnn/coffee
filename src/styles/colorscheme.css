@@ -1,10 +1,10 @@
 #black{
     background-color: #1a1a1a;
-    color: rgb(200,200,200)
+    color: rgb(200 200 200)
 }
 
 #white{
-    background-color: rgb(240,240,240);
+    background-color: rgb(240 240 240);
     color: #1a1a1a;
 }
 
@@ -20,17 +20,17 @@
 
 #pink{
     background-color: pink;
-    color: rgb(128, 66, 87);
+    color: rgb(128 66 87);
 
 }
 
 #sky{
-    background-color: rgb(60, 157, 255);
+    background-color: rgb(60 157 255);
     color: white;
 
 }
 
 #coffee{
-    background-color: rgb(51, 35, 24);
+    background-color: rgb(51 35 24);
     color: goldenrod;
 }

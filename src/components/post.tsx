@@ -66,7 +66,7 @@ useEffect(()=>{
       .then(data => {
         setPosts(data)
       })
-},[])
+},[props.id])
 
   const Reload = () =>{
     setTimeout(()=>{
@@ -172,20 +172,20 @@ useEffect(()=>{
         <ProCard id={props.id} className='procard' style={{ borderRadius:"1rem"}}>
 
             {/* Header */}
-            <div className='procard_header'>
+            <div className='procard-header'>
 
-                <div className='procard_profile'>
-                    <img alt="icon" className='procard_img' src={props.profile}></img>
-                    <Typography.Text className='procard_name'>{props.author}</Typography.Text>
+                <div className='procard-profile'>
+                    <img alt="icon" className='procard-img' src={props.profile}></img>
+                    <Typography.Text className='procard-name'>{props.author}</Typography.Text>
                     <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>{props.date}</Typography.Text>
                 </div>
 
-                <div className="procard_right">
+                <div className="procard-right">
                   <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
                   {
                     props.activeuser?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft">
-                      <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no_bg no_border">
+                      <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no-bg no-border">
                       <MoreOutlined style={{fontSize:"1.25rem"}}/>
                       </button>
                     </Dropdown>
@@ -197,15 +197,15 @@ useEffect(()=>{
             </div>
             
             {/* Content */}
-            <div id={props.colorscheme} className='procard_content'>
-                <h1 id={props.colorscheme} className='procard_text'>"{props.content}"</h1>
+            <div id={props.colorscheme} className='procard-content'>
+                <h1 id={props.colorscheme} className='procard-text'>"{props.content}"</h1>
             </div>
             
             {/* Footer */}
-            <div className='procard_footer'>
+            <div className='procard-footer'>
 
                 {/* Like & Comment Buttons */}
-                <div className="footer_left">
+                <div className="footer-left">
                   <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
                   {/* <CommentButton postid={props.id} comments={props.comments}/> */}
                   <CommentButton postid={props.id} comments={String(posts.length)=="9"?"0":String(posts.length)}/>

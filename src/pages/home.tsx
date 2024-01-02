@@ -32,7 +32,7 @@ export default function Home(){
         
         </div>
         
-        <div className='page_container'>
+        <div className='page-container'>
                 
             <div>
                 <InfiniteScroll
@@ -50,7 +50,7 @@ export default function Home(){
                         </p>
                     </div>  
                       }>
-                    <div className='procard_container'>
+                    <div className='procard-container'>
                     {
                     posts.map((posts)=>(
                         <Post id={posts.id}  key={posts.id} profile={posts.profile} author={posts.author} date={posts.date} content={posts.content} likes={posts.likes} comments={posts.comments} bookmarks={posts.bookmarks} colorscheme={posts.colorscheme} admin="" liked={posts.liked} bookmarked={posts.bookmarked} time={posts.time} activeuser={user_data==posts.author}/>

@@ -27,7 +27,7 @@ const App: React.FC = () => {
                 setPosts(data)
                 
             })
-    },[])
+    },[user_data])
 
 
   const expandedRowRender = () => {

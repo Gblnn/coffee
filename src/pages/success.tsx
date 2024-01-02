@@ -10,7 +10,7 @@ export default function Success(){
     }
     return(
         <>
-        <div className="fullpage_container">
+        <div className="fullpage-container">
         <Result
         status={"success"}
         title="Account Created Successfully"
