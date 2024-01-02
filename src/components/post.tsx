@@ -177,11 +177,11 @@ useEffect(()=>{
                 <div className='procard-profile'>
                     <img alt="icon" className='procard-img' src={props.profile}></img>
                     <Typography.Text className='procard-name'>{props.author}</Typography.Text>
-                    <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>{props.date}</Typography.Text>
+                    <Typography.Text id="transclucent" style={{fontSize:"0.75rem",paddingLeft:"0.5rem", paddingRight:"0.5rem", fontFamily:"Supreme"}}>{props.date}</Typography.Text>
                 </div>
 
                 <div className="procard-right">
-                  <Typography style={{fontSize:"0.75rem"}}>{props.time}</Typography>
+                  <Typography style={{fontSize:"0.75rem", fontFamily:"Supreme"}}>{props.time}</Typography>
                   {
                     props.activeuser?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft">

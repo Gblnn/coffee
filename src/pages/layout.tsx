@@ -1,6 +1,6 @@
 import ProLayout from "@ant-design/pro-layout";
 import MenuItems from "../components/menuitems";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home from "./home";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Likes from "./liked";
@@ -17,6 +17,14 @@ export default function Layout(){
   const [open, setOpen] = useState(false);
   const [pathname, setPathname] = useState('/home');
   const usenavigate = useNavigate()
+
+  const user_data = window.name
+
+  useEffect(()=>{
+    if(user_data==""){
+      usenavigate("/")
+    }
+  },[user_data])
   
   const handleOk = () => {
 
