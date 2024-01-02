@@ -37,7 +37,7 @@ export default function Post(props: Props){
   // const [postable, setPostable] = useState(false)
   const [colorscheme, setColor] = useState("")
   // let [author, setAuthor] = useState("");
-  const [content, setContent] = useState("")
+  let [content, setContent] = useState("")
   const date = new Date().toLocaleDateString()
   const hours = new Date().getHours()
   const minutes = new Date().getMinutes()
@@ -149,6 +149,7 @@ useEffect(()=>{
   ];
 
   const onPost=()=>{
+    content = props.content
     setLoading(true)
     setTimeout(() => {
         message.loading("Updating")
@@ -238,7 +239,7 @@ useEffect(()=>{
                     
                     
                     
-                    <Input defaultValue={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} maxLength={200} placeholder='Second thoughts'></Input>
+                    <Input value={props.content} allowClear bordered={false} onChange={e=>setContent(e.target.value)} style={{fontFamily:"Supreme", fontSize:"16px"}} maxLength={200} placeholder='Second thoughts'></Input>
                     
                     
                     </ConfigProvider>
@@ -251,7 +252,7 @@ useEffect(()=>{
                             }
                         }}
                         >
-                        <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}  >Post</Button>
+                        <Button style={{width:"6rem"}} type='primary' onClick={onPost} loading={loading}>Update</Button>
                         
                     </ConfigProvider>
 

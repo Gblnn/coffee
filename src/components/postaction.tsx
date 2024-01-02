@@ -53,7 +53,6 @@ export default function PostAction(props:Props){
 
     const showDrawer = () => {
         setOpen(true);
-        console.log(time)
       };
     
       const onClose = () => {
@@ -118,7 +117,7 @@ export default function PostAction(props:Props){
                     
                     </ConfigProvider>
                     
-                    <div className='empty' style={{marginTop:"0.75rem"}}></div>
+                    <div className='empty' style={{marginTop:"10rem"}}></div>
                     <ConfigProvider
                         theme={{
                             token: {
