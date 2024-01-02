@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function PostAction(props:Props){
-    const [author, setAuthor] = useState("")
+    let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     const commentlist = ['']
     
@@ -68,15 +68,8 @@ export default function PostAction(props:Props){
       }
 
       const onPost=()=>{
-        if (author===""){
-            setAuthor(props.userdata)   
-            // author=props.userdata
-        }
-        else{
-            setAuthor(author.toLowerCase())
-            // author = author.toLowerCase()
-        }
-        
+
+        author = props.userdata
         const obj = {profile, author, content, colorscheme, date, time, commentlist, liked, bookmarked}
         
         setLoading(true)
