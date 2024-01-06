@@ -2,7 +2,6 @@
 // import { useEffect, useState } from "react";
 
 // export default function FetchTest(){
-
 //     const [posts, setPosts] = useState<any[]>([])
   
 //     useEffect(()=>{
