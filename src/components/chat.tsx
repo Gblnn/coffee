@@ -46,10 +46,10 @@ export default function ChatInput(props:Props){
         <div id={props.id}>
         <div style={{display:"flex", justifyContent:"space-between"}}>
         <Typography style={{textTransform:"uppercase",fontSize:"0.75rem", fontWeight:700}}>{props.author}</Typography>
-        <p style={{fontSize:"0.6rem"}}>{props.date}</p>
+        <p style={{fontSize:"0.6rem", color:"#8a8a8a"}}>{props.date}</p>
         </div>
-        <div className="chat-option-btn" style={{display:"flex",marginBottom:"0.5rem", justifyContent:"space-between", alignItems:"center", background:"rgb(245,245,245)"}}>
-        <Typography style={{fontFamily:"Supreme",padding:"0.25rem", borderLeft:"4px solid black",paddingLeft:"0.5rem",fontSize:"16px"}}>{props.message}</Typography>
+        <div className="chat-option-btn" style={{display:"flex",marginBottom:"0.5rem", justifyContent:"space-between", alignItems:"center", background:"rgba(100 100 100/ 10%)"}}>
+        <Typography style={{fontFamily:"Supreme",padding:"0.25rem", borderLeft:"4px solid #8a8a8a",paddingLeft:"0.5rem",fontSize:"16px"}}>{props.message}</Typography>
         
         
         </div>

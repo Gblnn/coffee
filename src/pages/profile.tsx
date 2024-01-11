@@ -156,11 +156,11 @@ export default function Profile(){
 
   return(
     <div style={{display:"flex", flexDirection:"column",alignItems:"center"}}>
-      <LoadingOutlined style={{position:"fixed",marginTop:"5rem", fontSize:"2rem"}}/>
+      <LoadingOutlined style={{position:"fixed",marginTop:"5rem", fontSize:"2rem", color:"#8a8a8a"}}/>
       {
       user.map((users)=>(
 
-        <Card key={users.id} style={{height:"16rem",width:"100%",marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgb(200,200,200)"}} >
+        <Card key={users.id} style={{height:"16rem",width:"100%",marginBottom:"1rem",borderRadius:"1rem", boxShadow:"1px 1px 20px rgba(0 0 0/ 10%)"}} >
           <img src={users.profile}/>
           <h2>{users.fullname}</h2>
           

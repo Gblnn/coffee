@@ -128,7 +128,7 @@
 
 .procard {
   width: 88vw;
-  box-shadow: 1px 1px 10px #8a8a8a;
+  box-shadow: 1px 1px 10px rgba(0 0 0/ 35%);
 }
 
 .procard-header {
@@ -242,13 +242,13 @@
 .hoverable {
   cursor: pointer;
   background: white;
-  box-shadow: 1px 1px 5px rgb(200 200 200);
+  box-shadow: 1px 1px 5px rgba(0 0 0 /5%);
   transition: 0.3s;
 }
 
 .hoverable:hover {
-  background-color: rgba(0 0 0 /2.5%);
-  box-shadow: 1px 1px 10px rgb(200 200 200);
+  background-color: rgba(0 0 0 / 1%);
+  box-shadow: 1px 1px 10px rgba(200 200 200/ 5%);
 }
 
 .userid {

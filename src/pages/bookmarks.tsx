@@ -25,10 +25,10 @@ export default function Bookmarks(){
     return(
         <>
         <div className='userid'>
-            <div className='hoverable' style={{userSelect:"none",boxShadow:"1px 1px 5px rgb(200,200,200)",alignItems:"center",justifyContent:"center",display:"flex", gap:"0.25rem", paddingLeft:"0.75rem",paddingRight:"0.75rem", border:"1px solid rgb(220,220,220)", borderRadius:"1rem"}}>
+        <button className='hoverable' style={{zIndex:10,userSelect:"none",alignItems:"center",justifyContent:"center",display:"flex", gap:"0.25rem", paddingLeft:"0.75rem",paddingRight:"0.75rem", borderRadius:"1rem", background:"none"}}>
                 <img src='/coffee.png' style={{width:"1.2rem"}}></img>
-                <Typography style={{fontFamily:"Supreme",fontSize:"0.9rem", fontWeight:"600"}}>{user_data}</Typography>
-            </div>
+                <Typography style={{fontFamily:"Supreme",fontSize:"0.9rem", fontWeight:"600", color:"#8a8a8a"}}>{user_data}</Typography>
+            </button>
         
         </div>
         <div className='page-container'>

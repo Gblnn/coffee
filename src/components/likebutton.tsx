@@ -51,7 +51,7 @@ export default function LikeButton(props:Props){
         <>
         <button id="like-btn" onClick={onLike} className=' no-bg no-border procard-buttons'>
             <img alt="Like" className='footer-icon' src={likestate}></img>
-            <p className='like-count'>{props.likecount}</p>
+            <p style={{color:"#8a8a8a"}} className='like-count'>{props.likecount}</p>
         </button>
         </>
     )

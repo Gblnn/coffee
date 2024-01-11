@@ -187,7 +187,7 @@ useEffect(()=>{
                     props.activeuser?
                     <Dropdown trigger={['click']} menu={{items}} placement="bottomLeft">
                       <button style={{display:"hidden", cursor:"pointer"}} id={props.admin} className="no-bg no-border">
-                      <MoreOutlined style={{fontSize:"1.25rem"}}/>
+                      <MoreOutlined style={{fontSize:"1.25rem", color:"#8a8a8a"}}/>
                       </button>
                     </Dropdown>
                     :null
