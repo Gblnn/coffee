@@ -170,7 +170,7 @@ useEffect(()=>{
     return(
         <>
         
-        <ProCard id={props.id} className='procard' style={{ borderRadius:"1rem", border:"1px solid rgba(200 200 200 / 30%)"}}>
+        <ProCard id={props.id} className='procard' style={{ borderRadius:"1rem", border:"1px solid rgba(200 200 200 / 20%)"}}>
 
             {/* Header */}
             <div className='procard-header'>
