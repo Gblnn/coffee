@@ -149,7 +149,7 @@ export default function SignUp(){
                 
                 {/* Form Footer */}
                 <div className="form-footer" style={{width:"100%", marginTop:"1.5rem"}}>
-                <Typography.Text style={{color:"#4a4a4a", fontFamily:"Supreme"}} className="form-text">Already have an account?<Link style={{color:"black",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
+                <Typography.Text style={{color:"#4a4a4a", fontFamily:"Supreme"}} className="form-text">Already have an account?<Link style={{color:"#8a8a8a",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
                 </div>
                 
             </div>
