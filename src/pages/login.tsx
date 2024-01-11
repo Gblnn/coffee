@@ -83,7 +83,7 @@ export default function Login(){
                 <h2 style={{fontWeight:900,color:"#8a8a8a", fontSize:"1.5rem"}}>COFFEE</h2>
             </div>
 
-            <ProCard style={{width:"38ch", padding:"1rem"}} className="form-container">
+            <ProCard style={{width:"38ch", padding:"0.5rem"}} className="form-container">
                 <div className="form-header">
                     <img alt="logo" style={{width:"2.75rem",height:"2.75rem"}} src="coffee-bag-color.png"></img>
                     <h1>LOGIN</h1>
