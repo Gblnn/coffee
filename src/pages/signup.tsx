@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import '../styles/style.css'
 import '../styles/utils.css'
+import { ProCard } from "@ant-design/pro-components"
 
 
 export default function SignUp(){
@@ -106,7 +107,7 @@ export default function SignUp(){
 
         <div className="fullpage-container">
 
-            <div className="form-container">
+            <ProCard style={{width:"38ch", padding:"1rem"}} className="form-container">
 
                 <h1>SIGN-UP</h1>
                 <Form style={{marginTop:"1.5rem", width:"100%"}}>
@@ -152,7 +153,7 @@ export default function SignUp(){
                 <Typography.Text style={{color:"#4a4a4a", fontFamily:"Supreme"}} className="form-text">Already have an account?<Link style={{color:"#8a8a8a",fontWeight:600, fontFamily:"Supreme"}} to="/" className="link" type="link">Login</Link></Typography.Text>
                 </div>
                 
-            </div>
+            </ProCard>
         </div>
         </>
     )
