@@ -85,7 +85,7 @@ export default function Layout(){
                   lineHeight: '48rpx',
                   display: 'flex',
                   height: 48,
-                  color: 'black',
+                  color: '#8a8a8a',
                   alignItems: 'center',
                 }}
                 
