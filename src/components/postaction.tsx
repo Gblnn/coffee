@@ -11,7 +11,6 @@ interface Props {
 export default function PostAction(props:Props){
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
-    const commentlist = ['']
     
     const liked = false
     const bookmarked = false
@@ -69,7 +68,7 @@ export default function PostAction(props:Props){
       const onPost=()=>{
 
         author = props.userdata
-        const obj = {profile, author, content, colorscheme, date, time, commentlist, liked, bookmarked}
+        const obj = {profile, author, content, colorscheme, date, time, liked, bookmarked}
         
         setLoading(true)
         setTimeout(() => {
