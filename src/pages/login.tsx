@@ -103,7 +103,7 @@ export default function Login(){
 
                             <div className="empty"></div>
                                 
-                            <Button disabled={postable} block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
+                            <Button disabled={!postable} block type="primary" htmlType="submit" loading={loading} onClick={Validate} >LOGIN</Button>
                                         
                         </ConfigProvider>
                     </Form.Item>
