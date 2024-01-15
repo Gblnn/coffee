@@ -92,7 +92,7 @@ export default function Login(){
                     
                 <Form name="basic" style={{marginTop:"1.5rem", width:"100%"}}>  
                     <Form.Item>
-                        <ConfigProvider theme={{token:{colorPrimary:"black"}}}>
+                        <ConfigProvider theme={{token:{colorPrimary:"salmon"}}}>
                             <Form.Item name="username" rules={[{ required: true }]}>
                                 <Input style={{fontSize:"14px"}} value={username} onChange={e=>usernameUpdate(e.target.value)} className="input-field" placeholder="Enter Username"></Input>
                             </Form.Item>
