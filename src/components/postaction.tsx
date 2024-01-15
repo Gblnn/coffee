@@ -15,7 +15,6 @@ export default function PostAction(props:Props){
     const liked = false
     const bookmarked = false
     const date = new Date().toLocaleDateString()
-    
     const hours = new Date().getHours()
     const minutes = new Date().getMinutes()
     const hrs = hours.toString()

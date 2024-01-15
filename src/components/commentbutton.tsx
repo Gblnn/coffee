@@ -30,6 +30,7 @@ export default function CommentButton(props:Props) {
       .then(res => res.json())
       .then(data => {
         setPosts(data)
+        console.log(data)
       })
     };
     
@@ -63,9 +64,6 @@ export default function CommentButton(props:Props) {
       )
     
         Reload()
-    
-        
-    
     }
 
     return(
